@@ -50,7 +50,9 @@ src/
 
 ## 🔧 Scripts utiles
 
-npm run dev        [Lancer le serveur de développement]
-npm run build      [Générer la version de production]
-npm run lint       [Vérifier la qualité du code avec ESLint]
-npm run preview    [Prévisualiser du site en mode production]
+```bash
+npm run dev         # Lancer le serveur de développement
+npm run build       # Générer la version de production
+npm run lint        # Vérifier la qualité du code avec ESLint
+npm run preview     # Prévisualiser du site en mode production.
+```
