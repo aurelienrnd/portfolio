@@ -12,25 +12,31 @@ Bienvenue dans le dépôt de mon portfolio de développeur web, conçu avec des 
 
 ## 📁 Structure du projet
 
-- src/
-  - main.tsx
-  - App.tsx
-  - assets/
-  - styles/  
-    - style.css
-  - components/  
-    - layout/  
-      - Header.tsx
-      - Footer.tsx
-    - pages/  
-      - homePage/  
-        - HomePage.tsx
-        - sections/
-          - Banner.tsx
-          - About.tsx
-          - Skills.tsx
-      - projects/  
-        - Projects.tsx
+```bash
+src/
+│
+├── main.tsx
+├── App.tsx
+├── assets/
+├── styles/  
+│   └── style.css
+│
+├── components/  
+│   ├── layout/  
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   │
+│   └── pages/  
+│       ├── homePage/  
+│       │   ├── HomePage.tsx
+│       │   └── sections/
+│       │       ├── Banner.tsx
+│       │       ├── About.tsx
+│       │       └── Skills.tsx
+│       │
+│       └── projects/  
+│           └── Projects.tsx
+```
 
 ## ✅ Étapes déjà réalisées
 
@@ -48,3 +54,4 @@ npm run dev         # Lancer le serveur de développement
 npm run build       # Générer la version de production
 npm run lint        # Vérifier la qualité du code avec ESLint
 npm run preview     # Prévisualiser du site en mode production.
+```
