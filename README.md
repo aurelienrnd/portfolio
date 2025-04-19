@@ -12,29 +12,25 @@ Bienvenue dans le dépôt de mon portfolio de développeur web, conçu avec des 
 
 ## 📁 Structure du projet
 
-src/
-│
-├── main.tsx
-├── App.tsx
-├── assets/
-├── styles/  
-│ └── style.css
-│
-├── components/  
-│ ├── layout/  
-│ │ ├── Header.tsx
-│ │ └── Footer.tsx
-│ │
-│ └── pages/  
-│   ├── homePage/  
-│   │   ├── HomePage.tsx
-│   │   └── sections/
-│   │    ├── Banner.tsx
-│   │    ├── About.tsx
-│   │    └── Skills.tsx
-│   │
-│   └── projects/  
-│     └── Projects.tsx
+- src/
+  - main.tsx
+  - App.tsx
+  - assets/
+  - styles/  
+    - style.css
+  - components/  
+    - layout/  
+      - Header.tsx
+      - Footer.tsx
+    - pages/  
+      - homePage/  
+        - HomePage.tsx
+        - sections/
+          - Banner.tsx
+          - About.tsx
+          - Skills.tsx
+      - projects/  
+        - Projects.tsx
 
 ## ✅ Étapes déjà réalisées
 
