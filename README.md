@@ -36,6 +36,7 @@ src/
 │       │
 │       └── projects/  
 │           └── Projects.tsx
+└── ...            
 ```
 
 ## ✅ Étapes déjà réalisées
@@ -49,9 +50,7 @@ src/
 
 ## 🔧 Scripts utiles
 
-```bash
-npm run dev         # Lancer le serveur de développement
-npm run build       # Générer la version de production
-npm run lint        # Vérifier la qualité du code avec ESLint
-npm run preview     # Prévisualiser du site en mode production.
-```
+npm run dev        [Lancer le serveur de développement]
+npm run build      [Générer la version de production]
+npm run lint       [Vérifier la qualité du code avec ESLint]
+npm run preview    [Prévisualiser du site en mode production]
