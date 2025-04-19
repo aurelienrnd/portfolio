@@ -1,0 +1,11 @@
+# Ignore artifacts:
+node_modules
+dist
+build
+.vite
+.git
+.png
+.jpg
+.svg
+*.md
+
