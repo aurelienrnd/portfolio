@@ -6,6 +6,7 @@ Bienvenue dans le dépôt de mon portfolio de développeur web, conçu avec des 
 
 - [Vite] – bundler ultra rapide
 - [React] – bibliothèque UI
+- [React-Routeur] - routage entre les différente page du site
 - [TypeScript] – typage strict et sécurisé
 - [TailwindCSS] – framework CSS utilitaire
 - [Prettier] – formateur de code
@@ -34,8 +35,11 @@ src/
 │       │       ├── About.tsx
 │       │       └── Skills.tsx
 │       │
-│       └── projects/  
-│           └── Projects.tsx
+│       ├── projects/  
+│       │   └── Projects.tsx
+│       │
+│       └── error/
+│           └── Error.tsx
 └── ...            
 ```
 
@@ -47,6 +51,8 @@ src/
 - Installation et configuration de TailwindCSS v4
 - Mise en place de Prettier + prettier-plugin-tailwindcss
 - Initialisation Git, création du dépôt et premier push
+- Création du routage entre les différentes pages du site
+- Initialisation des premier elements de style utilisable dans style.css
 
 ## 🔧 Scripts utiles
 
