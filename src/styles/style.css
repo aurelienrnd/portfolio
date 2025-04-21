@@ -24,5 +24,5 @@
 .btn {
   @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
   hover:px-8 hover:py-5 hover:rounded-xl hover:duration-200
-  active:bg-color-three/50;
+  active:bg-color-three/80;
 }

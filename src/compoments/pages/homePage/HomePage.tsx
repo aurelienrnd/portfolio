@@ -4,8 +4,7 @@ import Skill from './sections/Skilles.tsx';
 
 function HomePage() {
   return (
-    <main>
-      <span>-- HomePage --</span>
+    <main className="max-w-[1024px] w-full flex flex-col items-center border-1 border-green-500">
       <Banner />
       <About />
       <Skill />

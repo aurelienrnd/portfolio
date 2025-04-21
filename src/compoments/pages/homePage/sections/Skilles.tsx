@@ -1,7 +1,7 @@
 function Skill() {
   return (
-    <section>
-      <span>-Skill-</span>
+    <section className="skilles border-1 border-blue-500">
+      <span>-Skilles-</span>
     </section>
   );
 }
