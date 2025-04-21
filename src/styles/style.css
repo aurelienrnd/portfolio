@@ -1,1 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 @import 'tailwindcss';
+@theme {
+  /*** Colors ***/
+  --color-color-one: #1e293b; /* fond */
+  --color-color-two: #e5e7eb; /* texte principal */
+  --color-color-three: #10b981; /* bouton principal */
+  --color-color-four: #6366f1; /* lien secondaire */
+
+  /*** Font ***/
+  --font-title: 'Poppins', sans-serif;
+  --font-text: 'Inter', sans-serif;
+  --font-code: 'Fira Code', monospace;
+}
+
+.title {
+  @apply text-3xl md:text-4xl font-bold font-title;
+}
+
+.text {
+  @apply text-lg md:text-xl font-normal font-text;
+}
+
+.btn {
+  @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
+  hover:px-8 hover:py-5 hover:rounded-xl hover:duration-200
+  active:bg-color-three/50;
+}
