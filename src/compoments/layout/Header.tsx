@@ -6,12 +6,18 @@ function NavDesktop() {
         <li className="border-1 border-blue-500">
           <Link to="/">Acceuil</Link>
         </li>
-        <li className="border-1 border-blue-500">A propos</li>
-        <li className="border-1 border-blue-500">Compétences</li>
         <li className="border-1 border-blue-500">
-          <Link to="project">Projet</Link>
+          <Link to="/#about">A propos de moi</Link>
         </li>
-        <li className="border-1 border-blue-500">Contactez moi</li>
+        <li className="border-1 border-blue-500">
+          <Link to="/#skilles">Compétences</Link>
+        </li>
+        <li className="border-1 border-blue-500">
+          <Link to="project">Projets</Link>
+        </li>
+        <li className="border-1 border-blue-500">
+          <Link to="/">Contact</Link>
+        </li>
       </ul>
     </nav>
   );
