@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 const navList = [
-  { destination: '/', label: 'Acceuil' },
+  { destination: '/#banner', label: 'Acceuil' },
   { destination: '/#about', label: 'A propos' },
   { destination: '/#skilles', label: 'Compétences' },
   { destination: 'project', label: 'Projets' },
@@ -33,7 +33,7 @@ function NavMobil() {
 
 function Header() {
   return (
-    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one border-1 border-indigo-500">
+    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one ">
       <span className="font-syne text-xl font-extrabold tracking-wide">
         Aurélien Arnaud
       </span>

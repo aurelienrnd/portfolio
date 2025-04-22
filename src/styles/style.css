@@ -30,3 +30,25 @@ body {
   hover:px-8 hover:py-5 hover:rounded-xl
   active:bg-color-three/80;
 }
+
+.slide-top {
+  animation: slide-and-rotate 1.5s ease-in-out infinite both;
+}
+
+@keyframes slide-and-rotate {
+  0% {
+    transform: translateY(5px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(30deg);
+  }
+
+  75% {
+    transform: translateY(-5px) rotate(60deg);
+  }
+
+  100% {
+    transform: translateY(5px) rotate(90deg);
+  }
+}

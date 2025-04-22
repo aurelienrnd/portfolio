@@ -2,7 +2,7 @@ import photoProfile from '../../../../assets/photo-test.webp';
 
 function About() {
   return (
-    <section id="About " className="flex">
+    <section id="about" className="flex mb-6 border-1 border-indigo-500">
       <img
         src={photoProfile}
         alt="Photo de aurélien Arnaud"

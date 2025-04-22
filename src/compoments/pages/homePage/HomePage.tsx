@@ -4,7 +4,7 @@ import Skill from './sections/Skilles.tsx';
 
 function HomePage() {
   return (
-    <main className="px-2 mt-6 max-w-[1024px] w-full flex flex-col items-center border-1 border-indigo-500">
+    <main className="px-10 mt-6 w-full flex flex-col items-center">
       <Banner />
       <About />
       <Skill />
