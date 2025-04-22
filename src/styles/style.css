@@ -13,6 +13,10 @@
   --font-code: 'Fira Code', monospace;
 }
 
+body {
+  @apply bg-color-one text-color-two font-text;
+}
+
 .title {
   @apply text-3xl md:text-4xl font-bold font-title;
 }
@@ -23,6 +27,6 @@
 
 .btn {
   @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
-  hover:px-8 hover:py-5 hover:rounded-xl hover:duration-200
+  hover:px-8 hover:py-5 hover:rounded-xl
   active:bg-color-three/80;
 }
