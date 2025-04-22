@@ -2,7 +2,10 @@ import { Link } from 'react-router';
 
 function Banner() {
   return (
-    <section className="banner flex justify-between border-1 border-blue-500">
+    <section
+      id="banner"
+      className="flex justify-between border-1 border-blue-500"
+    >
       <p className="w-3/4 border-1 border-blue-500">
         Développeur web en reconversion, passionné par le code. Mon parcours
         atypique m’a appris à apprendre vite, partout dans le monde.

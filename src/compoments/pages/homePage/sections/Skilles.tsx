@@ -1,6 +1,6 @@
 function Skill() {
   return (
-    <section className="skilles border-1 border-blue-500">
+    <section id="skilles" className="border-1 border-blue-500">
       <span>-Skilles-</span>
     </section>
   );
