@@ -10,6 +10,8 @@ Bienvenue dans le dépôt de mon portfolio de développeur web, conçu avec des 
 - [TypeScript] – typage strict et sécurisé
 - [TailwindCSS] – framework CSS utilitaire
 - [Prettier] – formateur de code
+- [Fortawesome] - Affichage d'iconne
+- [React-modal] - Création de model 
 
 ## 📁 Structure du projet
 

@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import ReactModal from 'react-modal';
 
 type NavList = {
   destination: string;
@@ -43,7 +46,7 @@ function Header(): React.JSX.Element {
         Aurélien Arnaud
       </span>
       <NavDesktop navList={navList} />
-      <button className="flex md:hidden px-8">Nav</button>
+      <MenuMobile navList={navList} />
     </header>
   );
 }
@@ -58,7 +61,7 @@ function NavDesktop({ navList }: NavProps): React.JSX.Element {
     <nav className="md:flex md:items-center h-full hidden">
       <ul className="flex items-center h-full gap-3">
         {navList.map(nav => (
-          <li key={nav.label} className="flex items-center h-full">
+          <li key={`nav-${nav.label}`} className="flex items-center h-full">
             <Link
               to={nav.destination}
               className="flex items-center h-full hover:items-start hover:border-b-1 hover:border-b-color-three py-2"
@@ -69,6 +72,40 @@ function NavDesktop({ navList }: NavProps): React.JSX.Element {
         ))}
       </ul>
     </nav>
+  );
+}
+
+function MenuMobile({ navList }: NavProps): React.JSX.Element {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="md:hidden">
+      <button onClick={handleMenuToggle}>
+        <FontAwesomeIcon icon={faBars} className="text-xl text-color-twoo" />
+      </button>
+      <ReactModal
+        isOpen={isOpen}
+        onRequestClose={handleMenuToggle}
+        className="fixed top-0 left-0 w-full h-auto py-10 bg-color-one z-9999 flex justify-center items-center openModal"
+      >
+        <nav className="flex flex-col items-center gap-8">
+          {navList.map(nav => (
+            <button key={nav.label} onClick={handleMenuToggle}>
+              <Link
+                to={nav.destination}
+                className=" hover:border-b-1 hover:border-b-color-three py-2"
+              >
+                {nav.label}
+              </Link>
+            </button>
+          ))}
+        </nav>
+      </ReactModal>
+    </div>
   );
 }
 
