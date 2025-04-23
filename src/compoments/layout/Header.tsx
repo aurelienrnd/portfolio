@@ -5,7 +5,6 @@ type NavList = {
   destination: string;
   label: string;
 };
-
 type NavProps = {
   navList: NavList[];
 };
@@ -14,7 +13,6 @@ type NavProps = {
  * @description utilise le hook useLocation pour changer le label et la destination du lien en fonction de l'url,
  * @returns {JSX.Element} - Header du site
  * @component NavDesktop - Menu de navigation pour les écrans larges
- * @component NavMobil - Menu de navigation pour les écrans mobiles
  */
 function Header(): React.JSX.Element {
   //Création d'un tableaux dinamique qui contient les info de navigation
@@ -45,7 +43,7 @@ function Header(): React.JSX.Element {
         Aurélien Arnaud
       </span>
       <NavDesktop navList={navList} />
-      <NavMobil />
+      <button className="flex md:hidden px-8">Nav</button>
     </header>
   );
 }
@@ -72,13 +70,6 @@ function NavDesktop({ navList }: NavProps): React.JSX.Element {
       </ul>
     </nav>
   );
-}
-
-/** Menu de navigation pour les écrans mobiles
- * @returns {JSX.Element} - Menu de navigation pour les écrans mobiles
- */
-function NavMobil(): React.JSX.Element {
-  return <button className="flex md:hidden px-16">Nav</button>;
 }
 
 export default Header;
