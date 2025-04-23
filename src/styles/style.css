@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 @import 'tailwindcss';
+
 @theme {
   /*** Colors ***/
   --color-color-one: #1e293b; /* fond */
@@ -13,39 +14,44 @@
   --font-code: 'Fira Code', monospace;
 }
 
-body {
-  @apply bg-color-one text-color-two font-text;
-}
-
-h1,
-h2 {
-  @apply text-3xl md:text-4xl font-bold font-title;
-}
-
-.text {
-  @apply text-lg md:text-xl font-normal font-text;
-}
-
-.btn {
-  @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
-  hover:px-8 hover:py-5 hover:rounded-xl
-  active:bg-color-three/80;
-}
-
-.slide-top {
-  animation: slide-and-rotate 1.5s ease-in-out infinite both;
-}
-
-@keyframes slide-and-rotate {
-  0% {
-    transform: translateY(10px) rotate(0deg);
+@layer base {
+  body {
+    @apply bg-color-one text-color-two font-text;
   }
 
-  50% {
-    transform: translateY(-10px) rotate(90deg);
+  main {
+    @apply px-10 mt-6 w-full flex flex-col items-center;
   }
 
-  100% {
-    transform: translateY(10px) rotate(180deg);
+  h1,
+  h2 {
+    @apply text-3xl md:text-4xl font-bold font-title;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
+    hover:px-8 hover:py-5 hover:rounded-xl
+    active:bg-color-three/80;
+  }
+}
+
+@layer utilities {
+  @keyframes slide-and-rotate {
+    0% {
+      transform: translateY(10px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-10px) rotate(90deg);
+    }
+
+    100% {
+      transform: translateY(10px) rotate(180deg);
+    }
+  }
+  .slide-top {
+    animation: slide-and-rotate 1.5s ease-in-out infinite both;
   }
 }

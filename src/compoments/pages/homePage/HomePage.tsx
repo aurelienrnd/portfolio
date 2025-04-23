@@ -12,7 +12,7 @@ import Skill from './sections/Skilles.tsx';
  */
 function HomePage(): React.JSX.Element {
   return (
-    <main className="px-10 mt-6 w-full flex flex-col items-center">
+    <main>
       <Banner />
       <About />
       <Skill />
