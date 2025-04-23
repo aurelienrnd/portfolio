@@ -38,8 +38,11 @@ src/
 │       ├── projects/  
 │       │   └── Projects.tsx
 │       │
-│       └── error/
-│           └── Error.tsx
+│       ├── error/
+│       │   └── Error.tsx
+│       │
+│       └── utility
+│           └── ScrollToAnchor
 └── ...            
 ```
 
@@ -53,6 +56,7 @@ src/
 - Initialisation Git, création du dépôt et premier push
 - Création du routage entre les différentes pages du site
 - Initialisation des premier elements de style utilisable dans style.css
+- Creation du component "ScrollToAnchor" pour naviger d'une page a une ancre situé sur une autre page
 
 ## 🔧 Scripts utiles
 
