@@ -1,27 +1,43 @@
-import { Link } from 'react-router';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router';
 
 // Tableaux contenant les informations afin de créer les liens de navigation
 const navList = [
-  { destination: 'project', label: 'Projets' },
+  { destination: '/project', label: 'Projets' },
   { destination: '/#about', label: 'A propos' },
   { destination: '/#skilles', label: 'Compétences' },
   { destination: '/#footer', label: 'Contact' },
 ];
+
+function whereAmI(location: string) {
+  if (location === '/project') {
+    navList[0].destination = '/';
+    navList[0].label = 'Accueil';
+  } else {
+    navList[0].destination = '/project';
+    navList[0].label = 'Projets';
+  }
+}
 
 /** Menu de navigation pour les écrans larges
  * @description Utilise .map sur le tableau navList pour créer une de balise Link pour chaque élément
  * @returns {JSX.Element} - Menu de navigation pour les écrans larges
  */
 function NavDesktop(): React.JSX.Element {
-  const classStyle = 'flex items-center h-full';
+  const location = useLocation();
+  whereAmI(location.pathname);
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location.pathname]);
+
   return (
     <nav className="md:flex md:items-center h-full hidden">
-      <ul className={`${classStyle} gap-3`}>
+      <ul className="flex items-center h-full gap-3">
         {navList.map(nav => (
-          <li key={nav.label} className={`${classStyle}`}>
+          <li key={nav.label} className="flex items-center h-full">
             <Link
               to={nav.destination}
-              className={`${classStyle} hover:items-start py-2`}
+              className="flex items-center h-full      hover:items-start hover:border-b-1 hover:border-b-color-three py-2"
             >
               {nav.label}
             </Link>
@@ -46,6 +62,8 @@ function NavMobil(): React.JSX.Element {
  * @component NavMobil - Menu de navigation pour les écrans mobiles
  */
 function Header(): React.JSX.Element {
+  console.log(location.pathname);
+
   return (
     <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
       <span className="font-syne text-xl font-extrabold tracking-wide">
