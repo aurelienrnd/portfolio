@@ -17,7 +17,8 @@ body {
   @apply bg-color-one text-color-two font-text;
 }
 
-.title {
+h1,
+h2 {
   @apply text-3xl md:text-4xl font-bold font-title;
 }
 
@@ -37,18 +38,14 @@ body {
 
 @keyframes slide-and-rotate {
   0% {
-    transform: translateY(5px) rotate(0deg);
+    transform: translateY(10px) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-5px) rotate(30deg);
-  }
-
-  75% {
-    transform: translateY(-5px) rotate(60deg);
+    transform: translateY(-10px) rotate(90deg);
   }
 
   100% {
-    transform: translateY(5px) rotate(90deg);
+    transform: translateY(10px) rotate(180deg);
   }
 }

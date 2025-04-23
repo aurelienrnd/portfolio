@@ -2,7 +2,15 @@ import Banner from './sections/Banner.tsx';
 import About from './sections/About.tsx';
 import Skill from './sections/Skilles.tsx';
 
-function HomePage() {
+/**Affiche la page d'accueil du site
+ * @description Contient les sections Banner, About et Skill
+ *
+ * @returns {JSX.Element} - Page d'accueil du site
+ * @component Banner - Section d'accueil
+ * @component About - Section à propos
+ * @component Skill - Section compétences
+ */
+function HomePage(): React.JSX.Element {
   return (
     <main className="px-10 mt-6 w-full flex flex-col items-center">
       <Banner />

@@ -1,7 +1,13 @@
 import { Link } from 'react-router';
 import { useState } from 'react';
 
-function Cmd() {
+/** Affiche un questionaire de navigation avec un style de terminal
+ * @description Utilise un tableaux de question et le useState pour gérer l'affichage de la question
+ * Redirige vers la section correspondante si l'utilisateur clique sur le bouton "oui"
+ * Affiche la question suivante si l'utilisateur clique sur le bouton "non"
+ * @returns {JSX.Element} - Questionaire de navigation
+ */
+function Cmd(): React.JSX.Element {
   const [questionLength, setQuestionLength] = useState(1);
 
   const questionList = [
@@ -22,12 +28,14 @@ function Cmd() {
         >
           <div className="slide-top">⬜</div>
           <p>{element.question}</p>
-          <a href={element.direction}>oui\</a>
+          <a href={element.direction} className="hover:border-b-1">
+            oui\
+          </a>
           <button
             onClick={() =>
               setQuestionLength((questionLength + 1) % questionList.length)
             }
-            className="cursor-pointer"
+            className="cursor-pointer hover:border-b-1"
           >
             non\
           </button>
@@ -37,7 +45,12 @@ function Cmd() {
   );
 }
 
-function Banner() {
+/** Section Banner
+ * @description Affiche la section Banner à l'interieur de HomePage
+ * @returns {JSX.Element} - Section Banner
+ * @component Cmd - Affiche un questionaire de navigation avec un style de terminal
+ */
+function Banner(): React.JSX.Element {
   const text =
     'Passionné par le code. Mon parcours atypique m’a appris à apprendre vite, partout dans le monde. Aujourd’hui, je crée des interfaces claires et responsives avec React';
 
@@ -45,8 +58,8 @@ function Banner() {
     <section id="banner" className="h-screen flex flex-col">
       <div className=" h-3/5 flex items-center justify-center gap-4">
         <div className="w-2/3 flex flex-col space-y-6">
-          <h1 className="title">Aurélien Arnaud</h1>
-          <h2 className="title">Développeur d'aplication web</h2>
+          <h1>Aurélien Arnaud</h1>
+          <h2>Développeur d'aplication web</h2>
           <p>{text}</p>
         </div>
         <Link to="project" className="btn">
