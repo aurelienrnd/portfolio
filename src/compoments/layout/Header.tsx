@@ -1,35 +1,61 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 
-// Tableaux contenant les informations afin de créer les liens de navigation
-const navList = [
-  { destination: '/project', label: 'Projets' },
-  { destination: '/#about', label: 'A propos' },
-  { destination: '/#skilles', label: 'Compétences' },
-  { destination: '/#footer', label: 'Contact' },
-];
+type NavList = {
+  destination: string;
+  label: string;
+};
 
-function whereAmI(location: string) {
-  if (location === '/project') {
-    navList[0].destination = '/';
-    navList[0].label = 'Accueil';
-  } else {
-    navList[0].destination = '/project';
-    navList[0].label = 'Projets';
-  }
+type NavProps = {
+  navList: NavList[];
+};
+
+/** Gestion de l'entête du site
+ * @description utilise le hook useLocation pour changer le label et la destination du lien en fonction de l'url,
+ * @returns {JSX.Element} - Header du site
+ * @component NavDesktop - Menu de navigation pour les écrans larges
+ * @component NavMobil - Menu de navigation pour les écrans mobiles
+ */
+function Header(): React.JSX.Element {
+  //Création d'un tableaux dinamique qui contient les info de navigation
+  const [navDestination, setNavDestination] = useState('/project');
+  const [navLabel, setNavLabel] = useState('Projets');
+  const navList: NavList[] = [
+    { destination: navDestination, label: navLabel },
+    { destination: '/#about', label: 'À propos' },
+    { destination: '/#skilles', label: 'Compétences' },
+    { destination: '/#footer', label: 'Contact' },
+  ];
+
+  // Modifie le liens dinamique du tableaux en fonction de la page visitée
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === '/project') {
+      setNavDestination('/');
+      setNavLabel('Accueil');
+    } else {
+      setNavDestination('/project');
+      setNavLabel('Projets');
+    }
+  }, [location.pathname]);
+
+  return (
+    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
+      <span className="font-syne text-xl font-extrabold tracking-wide">
+        Aurélien Arnaud
+      </span>
+      <NavDesktop navList={navList} />
+      <NavMobil />
+    </header>
+  );
 }
 
 /** Menu de navigation pour les écrans larges
  * @description Utilise .map sur le tableau navList pour créer une de balise Link pour chaque élément
+ * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation
  * @returns {JSX.Element} - Menu de navigation pour les écrans larges
  */
-function NavDesktop(): React.JSX.Element {
-  const location = useLocation();
-  whereAmI(location.pathname);
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location.pathname]);
-
+function NavDesktop({ navList }: NavProps): React.JSX.Element {
   return (
     <nav className="md:flex md:items-center h-full hidden">
       <ul className="flex items-center h-full gap-3">
@@ -37,7 +63,7 @@ function NavDesktop(): React.JSX.Element {
           <li key={nav.label} className="flex items-center h-full">
             <Link
               to={nav.destination}
-              className="flex items-center h-full      hover:items-start hover:border-b-1 hover:border-b-color-three py-2"
+              className="flex items-center h-full hover:items-start hover:border-b-1 hover:border-b-color-three py-2"
             >
               {nav.label}
             </Link>
@@ -53,26 +79,6 @@ function NavDesktop(): React.JSX.Element {
  */
 function NavMobil(): React.JSX.Element {
   return <button className="flex md:hidden px-16">Nav</button>;
-}
-
-/** Gestion de l'entête du site
- * @description Affiche le nom prénon et le menu de navigation
- * @returns {JSX.Element} - Header du site
- * @component NavDesktop - Menu de navigation pour les écrans larges
- * @component NavMobil - Menu de navigation pour les écrans mobiles
- */
-function Header(): React.JSX.Element {
-  console.log(location.pathname);
-
-  return (
-    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
-      <span className="font-syne text-xl font-extrabold tracking-wide">
-        Aurélien Arnaud
-      </span>
-      <NavDesktop />
-      <NavMobil />
-    </header>
-  );
 }
 
 export default Header;
