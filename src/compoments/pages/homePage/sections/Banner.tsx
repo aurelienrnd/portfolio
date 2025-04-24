@@ -19,25 +19,30 @@ function Cmd(): React.JSX.Element {
   ];
 
   return (
-    <div className="font-code">
+    <div>
       {questionList.map((element, index) => (
         <div
           key={`question-${index}`}
-          className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex justify-center items-center gap-4`}
+          className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex flex-col md:flex-row justify-center items-center gap-4`}
         >
-          <div className="slide-top">⬜</div>
-          <p>{element.question}</p>
-          <a href={element.direction} className="hover:border-b-1">
-            oui\
-          </a>
-          <button
-            onClick={() =>
-              setQuestionLength((questionLength + 1) % questionList.length)
-            }
-            className="cursor-pointer hover:border-b-1"
-          >
-            non\
-          </button>
+          <div className="flex justify-center items-center gap-4">
+            <div className="slide-top hidden md:block">⬜</div>
+            <p className="text-center">{element.question}</p>
+          </div>
+
+          <div className="flex gap-4">
+            <a href={element.direction} className="hover:border-b-1">
+              oui\
+            </a>
+            <button
+              onClick={() =>
+                setQuestionLength((questionLength + 1) % questionList.length)
+              }
+              className="cursor-pointer hover:border-b-1"
+            >
+              non\
+            </button>
+          </div>
         </div>
       ))}
     </div>
@@ -45,11 +50,7 @@ function Cmd(): React.JSX.Element {
 }
 
 function FakeLoader(): React.JSX.Element {
-  return (
-    <div className="flex justify-center">
-      <div className="bg-color-three h-1 fake-loader rounded-md"></div>
-    </div>
-  );
+  return <div className="bg-color-three h-1 fake-loader rounded-md"></div>;
 }
 
 /** Section Banner
@@ -69,18 +70,21 @@ function Banner(): React.JSX.Element {
   }, []);
 
   return (
-    <section id="banner" className="h-screen flex flex-col">
-      <div className=" h-3/5 flex items-center justify-center gap-4">
-        <div className="w-2/3 flex flex-col space-y-6">
-          <h1>Aurélien Arnaud</h1>
+    <section id="banner" className="h-screen flex flex-col pb-16">
+      <div className="flex flex-col items-center md:items-start justify-around md:justify-center md:gap-4 h-2/3 md:h-1/2 text-center md:text-left">
+        <h1>Aurélien Arnaud</h1>
+        <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-8">
           <h2>Développeur d'aplication web</h2>
-          <p>{text}</p>
+          <Link to="project" className="btn md:mr-16">
+            Voir mes projets
+          </Link>
         </div>
-        <Link to="project" className="btn">
-          Voir mes projets
-        </Link>
+
+        <p className="md:w-2/3">{text}</p>
       </div>
-      {isLoading ? <FakeLoader /> : <Cmd />}
+      <div className="h-1/3 font-code flex justify-center items-center">
+        {isLoading ? <FakeLoader /> : <Cmd />}
+      </div>
     </section>
   );
 }
