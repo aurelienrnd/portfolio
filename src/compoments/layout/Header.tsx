@@ -13,7 +13,8 @@ type NavProps = {
 };
 
 /** Gestion de l'entête du site
- * @description utilise le hook useLocation pour changer le label et la destination du lien en fonction de l'url,
+ * @description Utilise le hook useLocation pour changer le label et la destination du lien "Projet" dans le tableau navList,
+ * et affiche le header de la page
  * @returns {JSX.Element} - Header du site
  * @component NavDesktop - Menu de navigation pour les écrans larges
  */
@@ -75,6 +76,12 @@ function NavDesktop({ navList }: NavProps): React.JSX.Element {
   );
 }
 
+/** Menu de navigation pour les petit écrans
+ * @description Utilise ReactModal pour créer un menu de navigation qui s'ouvre et se ferme au clic sur le bouton hamburger
+ * Utilise .map sur le tableau navList pour créer une de balise Link pour chaque élément
+ * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation
+ * @returns {JSX.Element} - Menu de navigation pour les petit écrans
+ */
 function MenuMobile({ navList }: NavProps): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
