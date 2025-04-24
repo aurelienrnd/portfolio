@@ -97,14 +97,14 @@ function MenuMobile({ navList }: NavProps): React.JSX.Element {
       <ReactModal
         isOpen={isOpen}
         onRequestClose={handleMenuToggle}
-        className="fixed top-0 left-0 w-full h-auto py-10 bg-color-one z-9999 flex justify-center items-center openModal"
+        className="fixed top-16 left-0 w-full h-auto bg-color-one z-9999 flex justify-center items-center openModal"
       >
-        <nav className="flex flex-col items-center gap-8">
+        <nav className="flex flex-col items-center gap-4 mb-6">
           {navList.map(nav => (
             <button key={nav.label} onClick={handleMenuToggle}>
               <Link
                 to={nav.destination}
-                className=" hover:border-b-1 hover:border-b-color-three py-2"
+                className=" hover:border-b-1 hover:border-b-color-three"
               >
                 {nav.label}
               </Link>
