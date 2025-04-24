@@ -1,6 +1,8 @@
 # 🌐 Portfolio - Aurélien Arnaud
 
-Bienvenue dans le dépôt de mon portfolio de développeur web, conçu avec des technologies modernes pour valoriser mes compétences, projets et parcours professionnel.
+Pour voir les derniere mise a jours du projet, rendez vous sur la branche production
+
+Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies modernes pour valoriser mes compétences, projets et parcours professionnel.
 
 ## 🚀 Stack technique
 
