@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import ReactModal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBars,
+  faHouse,
+  faGear,
+  faPaperPlane,
+  faAddressCard,
+  faFolder,
+} from '@fortawesome/free-solid-svg-icons';
 
 type NavList = {
   destination: string;
   label: string;
+  icon: import('@fortawesome/fontawesome-svg-core').IconDefinition;
 };
 type NavProps = {
   navList: NavList[];
@@ -22,11 +30,12 @@ function Header(): React.JSX.Element {
   //Création d'un tableaux dinamique qui contient les info de navigation
   const [navDestination, setNavDestination] = useState('/project');
   const [navLabel, setNavLabel] = useState('Projets');
+  const [navIcon, setNavIcon] = useState(faFolder);
   const navList: NavList[] = [
-    { destination: navDestination, label: navLabel },
-    { destination: '/#about', label: 'À propos' },
-    { destination: '/#skilles', label: 'Compétences' },
-    { destination: '/#footer', label: 'Contact' },
+    { destination: navDestination, label: navLabel, icon: navIcon },
+    { destination: '/#about', label: 'À propos', icon: faAddressCard },
+    { destination: '/#skilles', label: 'Compétences', icon: faGear },
+    { destination: '/#footer', label: 'Contact', icon: faPaperPlane },
   ];
 
   // Modifie le liens dinamique du tableaux en fonction de la page visitée
@@ -35,9 +44,11 @@ function Header(): React.JSX.Element {
     if (location.pathname === '/project') {
       setNavDestination('/');
       setNavLabel('Accueil');
+      setNavIcon(faHouse);
     } else {
       setNavDestination('/project');
       setNavLabel('Projets');
+      setNavIcon(faFolder);
     }
   }, [location.pathname]);
 
@@ -97,17 +108,20 @@ function MenuMobile({ navList }: NavProps): React.JSX.Element {
       <ReactModal
         isOpen={isOpen}
         onRequestClose={handleMenuToggle}
-        className="fixed top-16 right-0 w-1/2 h-auto bg-color-four z-9999 flex justify-center items-center rounded-bl-md openModal"
+        className="fixed top-16 right-0 w-2/3 h-auto bg-color-four z-9999 flex justify-center items-center rounded-bl-md openModal"
       >
-        <nav className="flex flex-col items-center gap-4 my-6">
+        <nav className="flex flex-col items-start gap-4 my-6 w-2/3">
           {navList.map(nav => (
-            <button key={nav.label} onClick={handleMenuToggle}>
-              <Link
-                to={nav.destination}
-                className=" hover:border-b-1 hover:border-b-color-three"
-              >
-                {nav.label}
-              </Link>
+            <button
+              key={nav.label}
+              onClick={handleMenuToggle}
+              className="flex gap-4 items-center w-full h-12 px-4 rounded-md hover:bg-color-three"
+            >
+              <FontAwesomeIcon
+                icon={nav.icon}
+                className="text-xl text-color-twoo"
+              />
+              <Link to={nav.destination}>{nav.label}</Link>
             </button>
           ))}
         </nav>
