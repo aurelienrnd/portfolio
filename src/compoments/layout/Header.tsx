@@ -97,9 +97,9 @@ function MenuMobile({ navList }: NavProps): React.JSX.Element {
       <ReactModal
         isOpen={isOpen}
         onRequestClose={handleMenuToggle}
-        className="fixed top-16 left-0 w-full h-auto bg-color-one z-9999 flex justify-center items-center openModal"
+        className="fixed top-16 right-0 w-1/2 h-auto bg-color-four z-9999 flex justify-center items-center rounded-bl-md openModal"
       >
-        <nav className="flex flex-col items-center gap-4 mb-6">
+        <nav className="flex flex-col items-center gap-4 my-6">
           {navList.map(nav => (
             <button key={nav.label} onClick={handleMenuToggle}>
               <Link
