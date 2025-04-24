@@ -59,6 +59,8 @@ src/
 - Création du routage entre les différentes pages du site
 - Initialisation des premier elements de style utilisable dans style.css
 - Creation du component "ScrollToAnchor" pour naviger d'une page a une ancre situé sur une autre page
+- Creation d'un menu Burger pour avec une icone et une modal pour la navigation mobil
+- Affichage du menu et de la section Banner de manière responssive
 
 ## 🔧 Scripts utiles
 
