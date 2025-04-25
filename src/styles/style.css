@@ -20,7 +20,7 @@
   }
 
   main {
-    @apply px-10 mt-6 w-full flex flex-col items-center;
+    @apply px-10 w-full flex flex-col items-center;
   }
 
   h1,
@@ -32,8 +32,13 @@
 @layer components {
   .btn {
     @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
-    hover:px-8 hover:py-5 hover:rounded-xl
-    active:bg-color-three/80 text-center;
+    hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-one;
+  }
+}
+
+@layer utilities {
+  .h-screen-desktop {
+    height: calc(100vh - 4rem);
   }
 }
 

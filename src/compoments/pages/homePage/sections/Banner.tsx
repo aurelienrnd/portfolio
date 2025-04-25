@@ -70,8 +70,8 @@ function Banner(): React.JSX.Element {
   }, []);
 
   return (
-    <section id="banner" className="h-screen flex flex-col pb-16">
-      <div className="flex flex-col items-center md:items-start justify-around md:justify-center md:gap-4 h-2/3 md:h-1/2 text-center md:text-left">
+    <section id="banner" className="h-screen-desktop min-h-85 flex flex-col">
+      <div className="flex flex-col items-center md:items-start justify-around md:justify-center md:gap-4 h-2/3 text-center md:text-left">
         <h1>Aurélien Arnaud</h1>
         <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-8">
           <h2>Développeur d'aplication web</h2>
@@ -82,7 +82,7 @@ function Banner(): React.JSX.Element {
 
         <p className="md:w-2/3">{text}</p>
       </div>
-      <div className="h-1/3 font-code flex justify-center items-center">
+      <div className="h-1/3 font-code flex justify-center items-center pb-16 md:pb-0">
         {isLoading ? <FakeLoader /> : <Cmd />}
       </div>
     </section>

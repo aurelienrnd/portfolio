@@ -53,7 +53,7 @@ function Header(): React.JSX.Element {
   }, [location.pathname]);
 
   return (
-    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
+    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999 ">
       <span className="font-syne text-sm font-extrabold tracking-wide">
         Aurélien Arnaud
       </span>
@@ -102,7 +102,7 @@ function MenuMobile({ navList }: NavProps): React.JSX.Element {
 
   return (
     <div className="md:hidden">
-      <button onClick={handleMenuToggle}>
+      <button onClick={handleMenuToggle} aria-label="Menu">
         <FontAwesomeIcon icon={faBars} className="text-xl text-color-twoo" />
       </button>
       <ReactModal
@@ -115,7 +115,7 @@ function MenuMobile({ navList }: NavProps): React.JSX.Element {
             <button
               key={nav.label}
               onClick={handleMenuToggle}
-              className="flex gap-4 items-center w-full h-12 px-4 rounded-md hover:bg-color-three"
+              className="flex gap-4 items-center w-full h-12 px-4 rounded-md active:bg-color-three"
             >
               <FontAwesomeIcon
                 icon={nav.icon}
