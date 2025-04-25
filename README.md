@@ -43,8 +43,10 @@ src/
 │       ├── error/
 │       │   └── Error.tsx
 │       │
-│       └── utility
-│           └── ScrollToAnchor
+│       └── utility/
+│           ├── ScrollToAnchor.tsx
+│           ├── Cmd.tsx
+│           └── Nav.tsx
 └── ...            
 ```
 
@@ -58,9 +60,14 @@ src/
 - Initialisation Git, création du dépôt et premier push
 - Création du routage entre les différentes pages du site
 - Initialisation des premier elements de style utilisable dans style.css
-- Creation du component "ScrollToAnchor" pour naviger d'une page a une ancre situé sur une autre page
-- Creation d'un menu Burger pour avec une icone et une modal pour la navigation mobil
-- Affichage du menu et de la section Banner de manière responssive
+- Création du Header
+  - Création du component "ScrollToAnchor" pour naviger d'une page a une ancre situé sur une autre page
+  - Modification du lien Projets/Acceuil dynamiquement selon la page visitée
+  - En verssion mobil, affichage du menu de navigation dans une modal au clic sur une icone 
+- Création de la HomePage
+  - Section Banner
+    - Création d'un bouton CTA qui navigue vers la page projet
+    - Création d'un faux loader qui affiche un questionaire proposant a l'utilisateur de se rediriger vers différente partie du site
 
 ## 🔧 Scripts utiles
 

@@ -1,3 +1,4 @@
+// Compoments
 import Banner from './sections/Banner.tsx';
 import About from './sections/About.tsx';
 import Skill from './sections/Skilles.tsx';

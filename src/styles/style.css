@@ -27,18 +27,18 @@
   h2 {
     @apply text-3xl md:text-4xl font-bold font-title;
   }
+
+  .h-screen-desktop {
+    height: calc(
+      100vh - 4rem
+    ); /* Soustrais le header a la taille total de la page*/
+  }
 }
 
 @layer components {
   .btn {
     @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
     hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
-  }
-}
-
-@layer utilities {
-  .h-screen-desktop {
-    height: calc(100vh - 4rem);
   }
 }
 
