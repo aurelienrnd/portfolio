@@ -27,7 +27,7 @@ function Banner(): React.JSX.Element {
   }, []);
 
   return (
-    <section id="banner" className="h-screen-desktop min-h-85 flex flex-col">
+    <section id="banner" className="flex flex-col">
       <div className="flex flex-col items-center md:items-start justify-around md:justify-center md:gap-4 h-2/3 text-center md:text-left">
         <h1>Aurélien Arnaud</h1>
         <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-8">
@@ -45,4 +45,7 @@ function Banner(): React.JSX.Element {
     </section>
   );
 }
+
+//TODO - afficher dans le navigateur la page afficher a l'écrant
+
 export default Banner;

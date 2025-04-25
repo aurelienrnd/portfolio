@@ -28,10 +28,16 @@
     @apply text-3xl md:text-4xl font-bold font-title;
   }
 
-  .h-screen-desktop {
+  #banner {
     height: calc(
       100vh - 4rem
     ); /* Soustrais le header a la taille total de la page*/
+    @apply min-h-85 max-h-320;
+  }
+
+  #about,
+  #skilles {
+    @apply h-screen pt-16 min-h-85 max-h-300;
   }
 }
 
