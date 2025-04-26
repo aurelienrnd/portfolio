@@ -20,7 +20,7 @@
   }
 
   main {
-    @apply px-10 w-full flex flex-col items-center;
+    @apply px-10 w-full flex flex-col items-center h-full;
   }
 
   h1,
@@ -37,7 +37,7 @@
 
   #about,
   #skilles {
-    @apply h-screen pt-16 min-h-85 max-h-300;
+    @apply md:h-screen md:max-h-250 min-h-150 pt-16;
   }
 }
 
