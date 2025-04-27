@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
+/** Section About
+ * @description Affiche la section About
+ * utilise un UseState et useEffect pour aficher le texte au fur et amesure que l'utilisateur schrool
+ */
 function About(): React.JSX.Element {
   //gestion de l'etat de chaque phrase
   const [isVisible, setIsVisible] = useState([
@@ -11,8 +15,8 @@ function About(): React.JSX.Element {
     false,
   ]);
 
-  //contien les info de chaque phrase
-  const santanceList = [
+  //Contien les info de chaque phrase
+  const sentenceList = [
     {
       text: 'Après 10 ans dans l’industrie en tant qu’opérateur et pilote de ligne industriel, j’ai décidé de donner un nouveau souffle à mon parcours.',
       classStyle: 'slide-left',
@@ -53,7 +57,7 @@ function About(): React.JSX.Element {
 
   useEffect(() => {
     // pour chaque phrase
-    santanceList.map((santance, index) => {
+    sentenceList.map((sentence, index) => {
       // je creer un observateur
       const observer = new IntersectionObserver(
         elements => {
@@ -73,7 +77,7 @@ function About(): React.JSX.Element {
       );
 
       // j'associe la phrase a l'observateur
-      const currentRef = santance.ref.current;
+      const currentRef = sentence.ref.current;
       if (currentRef) {
         observer.observe(currentRef);
       }
@@ -92,15 +96,15 @@ function About(): React.JSX.Element {
       <h2 className="">Trouver un Titrre</h2>
 
       <div className="h-full flex flex-col gap-4 md:gap-0 md:justify-between pb-4">
-        {santanceList.map((santance, index) => (
+        {sentenceList.map((sentence, index) => (
           <span
-            ref={santance.ref}
-            key={santance.key}
+            ref={sentence.ref}
+            key={sentence.key}
             className={`                                  
-              ${isVisible[index] ? `${santance.classStyle}` : 'opacity-0'} 
+              ${isVisible[index] ? `${sentence.classStyle}` : 'opacity-0'} 
               w-2/3 md:text-center`}
           >
-            {santance.text}
+            {sentence.text}
           </span>
         ))}
       </div>
