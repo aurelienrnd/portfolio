@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer id="footer" className="w-full flex px-8">
+    <footer className="border-1">
       <span>-- FOOTER --</span>
     </footer>
   );
