@@ -89,7 +89,7 @@ function Skilles() {
   return (
     <section id="skilles" className="flex flex-col gap-8 md:gap-16">
       <h2>Mes compétence de developpeur</h2>
-      <div className="flex flex-col h-1/2 justify-between">
+      <div className="flex flex-col gap-8">
         {skilles.map((skill, index) => (
           <Skill
             key={`${skill.technologie}-${index}`}
