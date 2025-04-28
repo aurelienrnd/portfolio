@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 
 /** Section About
  * @description Affiche la section About
- * utilise un UseState et useEffect pour aficher le texte au fur et amesure que l'utilisateur schrool
+ * utilise un UseState et useEffect pour afficher le texte au fur et amesure que l'utilisateur schrool
  */
 function About(): React.JSX.Element {
-  //gestion de l'etat de chaque phrase
+  //Gestion de l'etat de chaque phrase
   const [isVisible, setIsVisible] = useState([
     false,
     false,
@@ -15,7 +15,7 @@ function About(): React.JSX.Element {
     false,
   ]);
 
-  //Contien les info de chaque phrase
+  //Contient les info de chaque phrase
   const sentenceList = [
     {
       text: 'Après 10 ans dans l’industrie en tant qu’opérateur et pilote de ligne industriel, j’ai décidé de donner un nouveau souffle à mon parcours.',
@@ -56,15 +56,15 @@ function About(): React.JSX.Element {
   ];
 
   useEffect(() => {
-    // pour chaque phrase
+    // Pour chaque phrase
     sentenceList.map((sentence, index) => {
-      // je creer un observateur
+      // Je créer un observateur
       const observer = new IntersectionObserver(
         elements => {
           elements.forEach(element => {
-            // si l'element rentre dans le viewpoint
+            // Si l'element rentre dans le viewpoint
             if (element.isIntersecting) {
-              // je l'affiche
+              // Je l'affiche
               setIsVisible(prev => {
                 const newState = [...prev];
                 newState[index] = true;
@@ -76,13 +76,13 @@ function About(): React.JSX.Element {
         { threshold: 0.1 }
       );
 
-      // j'associe la phrase a l'observateur
+      // J'associe la phrase a l'observateur
       const currentRef = sentence.ref.current;
       if (currentRef) {
         observer.observe(currentRef);
       }
 
-      // je stop l'observation
+      // Je stop l'observation
       return () => {
         if (currentRef) {
           observer.unobserve(currentRef);
@@ -93,7 +93,7 @@ function About(): React.JSX.Element {
 
   return (
     <section id="about" className="flex flex-col gap-8 md:gap-16 ">
-      <h2 className="">Trouver un Titrre</h2>
+      <h2 className="">Mon parcours de développeur</h2>
 
       <div className="h-full flex flex-col gap-4 md:gap-0 md:justify-between pb-4">
         {sentenceList.map((sentence, index) => (
