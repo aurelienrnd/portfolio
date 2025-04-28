@@ -35,9 +35,12 @@
     @apply min-h-85 max-h-320;
   }
 
-  #about,
+  #about {
+    @apply md:h-screen md:max-h-250 min-h-150 w-full pt-16;
+  }
+
   #skilles {
-    @apply md:h-screen md:max-h-250 min-h-150 pt-16;
+    @apply w-full pt-16;
   }
 }
 

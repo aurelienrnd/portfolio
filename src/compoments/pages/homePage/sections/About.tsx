@@ -92,14 +92,14 @@ function About(): React.JSX.Element {
   });
 
   return (
-    <section id="about" className="flex flex-col gap-8 md:gap-16 ">
-      <h2 className="">Mon parcours de développeur</h2>
+    <section id="about" className="flex flex-col gap-8 md:gap-16">
+      <h2>Mon parcours de développeur</h2>
 
       <div className="h-full flex flex-col gap-4 md:gap-0 md:justify-between pb-4">
         {sentenceList.map((sentence, index) => (
           <span
             ref={sentence.ref}
-            key={sentence.key}
+            key={`${sentence.key}-${index}`}
             className={`                                  
               ${isVisible[index] ? `${sentence.classStyle}` : 'opacity-0'} 
               w-2/3 md:text-center`}
