@@ -35,12 +35,9 @@
     @apply min-h-85 max-h-320;
   }
 
+  #skilles,
   #about {
     @apply md:h-screen md:max-h-250 min-h-150 w-full pt-16;
-  }
-
-  #skilles {
-    @apply w-full pt-16;
   }
 }
 
@@ -48,10 +45,6 @@
   .btn {
     @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
     hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
-  }
-
-  .skillCard {
-    @apply border-1 border-color-three px-6 py-3 rounded-md font-semibold duration-200 text-center;
   }
 }
 
@@ -96,11 +89,11 @@
       width: 0%;
     }
     to {
-      width: 50%;
+      width: 100%;
     }
   }
   .fake-loader {
-    animation: line-bounce 1.25s infinite;
+    animation: line-bounce 1.25s both;
   }
 
   @keyframes slide-in-blurred-right {
@@ -120,7 +113,6 @@
   .slide-right {
     animation: slide-in-blurred-right 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
-
   @keyframes slide-in-blurred-left {
     0% {
       transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);

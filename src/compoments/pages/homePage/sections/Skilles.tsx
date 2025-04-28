@@ -1,77 +1,106 @@
-import catSkillesList from '../../../../datas/skilles.json';
-
-interface Cat {
-  id: string;
-  name: string;
-  skilles: Skill[];
-}
-
-interface CatProp {
-  cat: Cat;
-}
-
-interface Skill {
-  id: string;
-  name: string;
-  commentaire?: string[];
-}
-
-interface SkillProp {
-  skill: Skill;
-}
-
-interface comProp {
-  com: string;
-}
+import { useEffect, useRef, useState } from 'react';
+import Skill from '../../../utility/Skill';
+import {
+  faHtml5,
+  faJs,
+  faNodeJs,
+  faReact,
+  faCss,
+} from '@fortawesome/free-brands-svg-icons';
 
 function Skilles() {
+  const [isVisible, setIsVisible] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const skilles = [
+    {
+      technologie: 'HTML5:',
+      maitrise: '80%',
+      logo: faHtml5,
+      ref: useRef<HTMLDivElement>(null),
+    },
+    {
+      technologie: 'CSS:',
+      maitrise: '75%',
+      logo: faCss,
+      ref: useRef<HTMLDivElement>(null),
+    },
+    {
+      technologie: 'React:',
+      maitrise: '65%',
+      logo: faReact,
+      ref: useRef<HTMLDivElement>(null),
+    },
+    {
+      technologie: 'JavaScript:',
+      maitrise: '75%',
+      logo: faJs,
+      ref: useRef<HTMLDivElement>(null),
+    },
+    {
+      technologie: 'Node.js:',
+      maitrise: '50%',
+      logo: faNodeJs,
+      ref: useRef<HTMLDivElement>(null),
+    },
+  ];
+
+  useEffect(() => {
+    // Pour chaque phrase
+    skilles.map((skill, index) => {
+      // Je créer un observateur
+      const observer = new IntersectionObserver(
+        elements => {
+          elements.forEach(element => {
+            // Si l'element rentre dans le viewpoint
+            if (element.isIntersecting) {
+              // Je l'affiche
+              setIsVisible(prev => {
+                const newState = [...prev];
+                newState[index] = true;
+                return newState;
+              });
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // J'associe la phrase a l'observateur
+      const currentRef = skill.ref.current;
+      if (currentRef) {
+        observer.observe(currentRef);
+      }
+
+      // Je stop l'observation
+      return () => {
+        if (currentRef) {
+          observer.unobserve(currentRef);
+        }
+      };
+    });
+  });
+
   return (
-    <section
-      id="skilles"
-      className="flex flex-col gap-8 md:gap-8 border-1 border-indigo-500"
-    >
+    <section id="skilles" className="flex flex-col gap-8 md:gap-16">
       <h2>Mes compétence de developpeur</h2>
-      <div className="flex flex-wrap justify-center gap-16 items-center ">
-        {catSkillesList.map((cat, index) => (
-          <Category key={`${cat.id}-${index}`} cat={cat} />
+      <div className="flex flex-col h-1/2 justify-between">
+        {skilles.map((skill, index) => (
+          <Skill
+            key={`${skill.technologie}-${index}`}
+            skill={skill}
+            index={index}
+            isVisible={isVisible}
+          />
         ))}
       </div>
     </section>
   );
 }
+
 export default Skilles;
-
-function Category({ cat }: CatProp) {
-  return (
-    <div className=" flex flex-col w-2/5 gap-4 skillCard">
-      <h3 className="text-2xl">{cat.name}</h3>
-      <div className="flex flex-col gap-4">
-        {cat.skilles.map((skill, index) => (
-          <Skill key={`${cat.id}-${skill.id}-${index}`} skill={skill} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Skill({ skill }: SkillProp) {
-  return (
-    <div className="flex flex-col gap-2 items-start text-start">
-      <h4 className="">{skill.name}</h4>
-      <div>
-        {skill.commentaire &&
-          skill.commentaire.map((com, index) => (
-            <Commentaire key={`${skill.id}-com-${index}`} com={com} />
-          ))}
-      </div>
-    </div>
-  );
-}
-
-function Commentaire({ com }: comProp) {
-  return (
-    <ul>
-      <li>{com}</li>
-    </ul>
-  );
-}

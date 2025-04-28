@@ -15,7 +15,9 @@ function Banner(): React.JSX.Element {
 
   // Création d'un loader
   const FakeLoader = (): React.JSX.Element => (
-    <div className="bg-color-three h-1 fake-loader rounded-md"></div>
+    <div className="w-1/2 flex justify-center">
+      <div className="bg-color-three h-1 fake-loader rounded-md"></div>
+    </div>
   );
 
   // Gestion de l'état du loader
