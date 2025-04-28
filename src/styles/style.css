@@ -49,6 +49,10 @@
     @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
     hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
   }
+
+  .skillCard {
+    @apply border-1 border-color-three px-6 py-3 rounded-md font-semibold duration-200 text-center;
+  }
 }
 
 @layer utilities {
