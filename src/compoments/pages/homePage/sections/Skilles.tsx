@@ -22,31 +22,31 @@ function Skilles() {
       technologie: 'HTML5:',
       maitrise: '80%',
       logo: faHtml5,
-      ref: useRef<HTMLDivElement>(null),
+      ref: useRef<HTMLDivElement>(null!),
     },
     {
       technologie: 'CSS:',
       maitrise: '75%',
       logo: faCss,
-      ref: useRef<HTMLDivElement>(null),
+      ref: useRef<HTMLDivElement>(null!),
     },
     {
       technologie: 'React:',
       maitrise: '65%',
       logo: faReact,
-      ref: useRef<HTMLDivElement>(null),
+      ref: useRef<HTMLDivElement>(null!),
     },
     {
       technologie: 'JavaScript:',
       maitrise: '75%',
       logo: faJs,
-      ref: useRef<HTMLDivElement>(null),
+      ref: useRef<HTMLDivElement>(null!),
     },
     {
       technologie: 'Node.js:',
       maitrise: '50%',
       logo: faNodeJs,
-      ref: useRef<HTMLDivElement>(null),
+      ref: useRef<HTMLDivElement>(null!),
     },
   ];
 
