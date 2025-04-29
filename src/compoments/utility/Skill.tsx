@@ -22,7 +22,7 @@ function Skill({ skill, index, isVisible }: SkillProps) {
 
       <div className="" style={{ width: skill.maitrise }}>
         <div
-          className={`border-1 border-color-three bg-color-four h-6 justify-center rounded-md flex items-center
+          className={`border-1 border-color-three bg-color-four h-6 justify-end pr-4 rounded-md flex items-center
             ${isVisible[index] ? 'fake-loader' : 'opacity-0'}`}
           ref={skill.ref}
         >

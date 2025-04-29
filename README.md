@@ -46,7 +46,8 @@ src/
 │       └── utility/
 │           ├── ScrollToAnchor.tsx
 │           ├── Cmd.tsx
-│           └── Nav.tsx
+│           ├── Nav.tsx
+│           └── Skill.jsx
 └── ...            
 ```
 
@@ -68,6 +69,12 @@ src/
   - Section Banner
     - Création d'un bouton CTA qui navigue vers la page projet
     - Création d'un faux loader qui affiche un questionaire proposant a l'utilisateur de se rediriger vers différente partie du site
+  - Section About
+    - Ajout texte et photo
+    - Adaptation au MediaQuery
+  - Section Skilles
+    - Affichage les différentes competence de maniere dinamanique avec une animation au schrool de la page
+    - Adaptation au MediaQuery
 
 ## 🔧 Scripts utiles
 

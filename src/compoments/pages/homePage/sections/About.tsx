@@ -2,7 +2,6 @@ import phtoProfil from '../../../../assets/Screenshot_20250428-230534.png';
 
 /** Section About
  * @description Affiche la section About
- * utilise un UseState et useEffect pour afficher le texte au fur et amesure que l'utilisateur schrool
  */
 function About(): React.JSX.Element {
   return (
