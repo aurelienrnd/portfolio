@@ -8,7 +8,7 @@ function About(): React.JSX.Element {
     <section id="about">
       <h2>Mon parcours de développeur</h2>
       <div className="flex flex-col-reverse items-center gap-4 md:my-4 md:flex-row md:h-full">
-        <div className="flex flex-col gap-2 md:h-full md:justify-between">
+        <div className="flex flex-col gap-4 md:h-full md:justify-between">
           <p>
             Après 10 ans dans l’industrie en tant qu’opérateur et pilote de
             ligne, j’ai décidé de donner un nouveau souffle à mon parcours.

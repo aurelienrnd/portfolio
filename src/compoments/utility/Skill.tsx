@@ -14,13 +14,13 @@ interface SkillProps {
 
 function Skill({ skill, index, isVisible }: SkillProps) {
   return (
-    <div className="md:flex md:gap-8">
-      <div className="flex gap-2 md:justify-between items-center md:w-1/10 ">
+    <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex gap-2 items-center md:w-30 ">
         <p className="">{skill.technologie}</p>
-        <FontAwesomeIcon icon={skill.logo} />
+        <FontAwesomeIcon icon={skill.logo} className="text-2xl" />
       </div>
 
-      <div className="" style={{ width: skill.maitrise }}>
+      <div style={{ width: skill.maitrise }}>
         <div
           className={`border-1 border-color-three bg-color-four h-6 justify-end pr-4 rounded-md flex items-center
             ${isVisible[index] ? 'fake-loader' : 'opacity-0'}`}

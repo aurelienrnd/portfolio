@@ -90,8 +90,8 @@ function Skilles() {
     <section id="skilles">
       <h2>Mes compétence de developpeur</h2>
 
-      <div className="flex flex-col gap-8 md:h-full md:my-4">
-        <div className="flex flex-col gap-4 md:justify-between md:h-2/3">
+      <div className=" md:my-4 md:flex-row md:h-full">
+        <div className="flex flex-col gap-4 md:justify-between h-full">
           {skilles.map((skill, index) => (
             <Skill
               key={`${skill.technologie}-${index}`}
@@ -101,11 +101,6 @@ function Skilles() {
             />
           ))}
         </div>
-
-        <p className="md:h-1/3 flex items-center justify-center border">
-          J'ai déjà aussie au cour de mes projets utilisé TypeScript, Taiwind,
-          git/gitHub et LightHouse
-        </p>
       </div>
     </section>
   );
