@@ -29,19 +29,20 @@ function Banner(): React.JSX.Element {
   }, []);
 
   return (
-    <section id="banner" className="flex flex-col">
-      <div className="flex flex-col items-center md:items-start justify-around md:justify-center md:gap-4 h-2/3 text-center md:text-left">
+    <section id="banner">
+      <div className=" h-2/3 flex flex-col justify-between text-center mt-8 md:items-start md:text-start">
         <h1>Aurélien Arnaud</h1>
-        <div className="flex flex-col md:flex-row md:justify-between items-center w-full gap-8">
+
+        <div className="flex flex-col items-center gap-8 md:flex-row md:w-full md:justify-between md:pr-16">
           <h2>Développeur d'aplication web</h2>
-          <Link to="project" className="btn md:mr-16">
+          <Link to="project" className="btn">
             Voir mes projets
           </Link>
         </div>
 
         <p className="md:w-2/3">{text}</p>
       </div>
-      <div className="h-1/3 font-code flex justify-center items-center pb-16 md:pb-0">
+      <div className="font-code h-1/3 flex items-center justify-center">
         {isLoading ? <FakeLoader /> : <Cmd />}
       </div>
     </section>

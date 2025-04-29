@@ -20,7 +20,7 @@
   }
 
   main {
-    @apply px-10 w-full flex flex-col items-center h-full;
+    @apply md:mx-8;
   }
 
   h1,
@@ -29,18 +29,16 @@
   }
 
   #banner {
-    height: calc(
-      100vh - 4rem
-    ); /* Soustrais le header a la taille total de la page*/
-    @apply min-h-85 max-h-320;
-  }
-
-  #skilles {
-    @apply md:h-screen md:max-h-250 h-120 w-full pt-16;
+    height: calc(100vh - 8rem);
+    @apply max-h-[1024px] min-h-[400px] flex flex-col;
   }
 
   #about {
-    @apply md:h-screen md:max-h-250 min-h-150 w-full pt-16;
+    @apply max-h-[1024px] min-h-[400px] pt-16 flex flex-col gap-4 text-center md:text-start md:h-screen;
+  }
+
+  #skilles {
+    @apply max-h-[1024px] min-h-[400px] pt-16 flex flex-col gap-4 text-center md:text-start md:h-screen;
   }
 }
 

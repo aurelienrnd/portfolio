@@ -5,13 +5,11 @@ import phtoProfil from '../../../../assets/Screenshot_20250428-230534.png';
  * utilise un UseState et useEffect pour afficher le texte au fur et amesure que l'utilisateur schrool
  */
 function About(): React.JSX.Element {
-  //Gestion de l'etat de chaque phrase
-
   return (
-    <section id="about" className="flex flex-col gap-8 md:gap-16 pb-8">
+    <section id="about">
       <h2>Mon parcours de développeur</h2>
-      <div className="flex flex-col-reverse md:flex-row items-center gap-8 h-full">
-        <div className="flex flex-col gap-4 md:gap-0 justify-between text-center md:w-2/3 h-full">
+      <div className="flex flex-col-reverse items-center gap-4 md:my-4 md:flex-row md:h-full">
+        <div className="flex flex-col gap-2 md:h-full md:justify-between">
           <p>
             Après 10 ans dans l’industrie en tant qu’opérateur et pilote de
             ligne, j’ai décidé de donner un nouveau souffle à mon parcours.
@@ -46,4 +44,3 @@ function About(): React.JSX.Element {
   );
 }
 export default About;
-//TODO - reécrire le paragraphe
