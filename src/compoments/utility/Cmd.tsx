@@ -10,7 +10,7 @@ import { useState } from 'react';
 function Cmd(): React.JSX.Element {
   const [questionLength, setQuestionLength] = useState(1);
   const questionList = [
-    { question: 'Vous souhaitez me contacter ?', direction: '#footer' },
+    { question: 'Vous souhaitez me contacter ?', direction: '#contact' },
     {
       question: 'En savoir plus à propos de moi ?',
       direction: '#about',

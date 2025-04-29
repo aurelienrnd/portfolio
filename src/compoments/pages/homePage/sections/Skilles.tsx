@@ -88,7 +88,7 @@ function Skilles() {
 
   return (
     <section id="skilles">
-      <h2>Mes compétence de developpeur</h2>
+      <h2>Mes compétence en developpement web</h2>
 
       <div className=" md:my-4 md:flex-row md:h-full">
         <div className="flex flex-col gap-4 md:justify-between h-full">

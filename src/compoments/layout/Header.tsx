@@ -35,7 +35,7 @@ function Header(): React.JSX.Element {
     { destination: navDestination, label: navLabel, icon: navIcon },
     { destination: '/#about', label: 'À propos', icon: faAddressCard },
     { destination: '/#skilles', label: 'Compétences', icon: faGear },
-    { destination: '/#footer', label: 'Contact', icon: faPaperPlane },
+    { destination: '/#contact', label: 'Contact', icon: faPaperPlane },
   ];
 
   // Modifie le liens "Projet" en "Acceuil" en fonction de la page visitée
