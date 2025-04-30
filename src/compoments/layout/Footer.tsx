@@ -11,25 +11,32 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
  */
 function Footer(): React.JSX.Element {
   return (
-    <footer id="contact" className="">
-      <span className="font-syne text-sm font-extrabold">Aurelien Arnaud</span>
+    <footer id="contact">
+      <h2>Contact</h2>
+      <div className="flex flex-col-reverse gap-8">
+        <div className="flex justify-between items-center">
+          <span className="font-syne text-sm font-extrabold">
+            Aurelien Arnaud
+          </span>
 
-      <FormContact />
+          <div className="flex text-5xl gap-8">
+            <a href="https://github.com/aurelienrnd">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="hover:text-color-three"
+              />
+            </a>
 
-      <div className="flex gap-4">
-        <a href="https://github.com/aurelienrnd">
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="text-3xl text-color-twoo hover:text-color-three flex gap-2"
-          />
-        </a>
+            <a href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="hover:text-color-three"
+              />
+            </a>
+          </div>
+        </div>
 
-        <a href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/">
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="text-3xl text-color-twoo hover:text-color-three flex gap-2"
-          />
-        </a>
+        <FormContact />
       </div>
     </footer>
   );

@@ -69,29 +69,45 @@
   }
 
   header {
-    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999 border;
-  }
-
-  main {
-    @apply border;
+    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999;
   }
 
   section {
-    @apply px-4 pt-16 border;
+    @apply px-4 pt-18 pb-8;
   }
 
   #home-page #banner {
     height: calc(100vh - 4rem);
-    @apply min-h-[640px] flex flex-col items-center border;
+    @apply min-h-[640px] flex flex-col items-center;
+  }
+
+  #home-page #about {
+    @apply bg-color-four flex flex-col gap-8 text-center;
+  }
+
+  #home-page #skilles {
+    @apply flex flex-col gap-8;
   }
 
   footer {
-    @apply px-4 border;
+    @apply px-4 pt-18 pb-2 bg-color-four flex flex-col gap-8 w-full;
   }
 
   h1,
   h2 {
     @apply text-3xl md:text-4xl font-bold font-title;
+  }
+
+  h3 {
+    @apply text-xl font-bold font-title;
+  }
+
+  input {
+    @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1;
+  }
+
+  textarea {
+    @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1 w-full h-20;
   }
 }
 

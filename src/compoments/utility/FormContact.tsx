@@ -35,43 +35,41 @@ function FormContact(): React.JSX.Element {
   };
 
   return (
-    <div className="">
-      <form onSubmit={handleSubmit} className="">
-        <div className="">
-          <input
-            type="text"
-            name="nom"
-            placeholder="Votre nom"
-            value={formData.nom}
-            onChange={handleChange}
-            required
-            className=""
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Votre email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className=""
-          />
-        </div>
-
-        <textarea
-          name="message"
-          placeholder="Votre message"
-          rows={2}
-          value={formData.message}
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center w-full gap-4"
+    >
+      <div className="flex flex-col items-center gap-4 w-full">
+        <input
+          type="text"
+          name="nom"
+          placeholder="Votre nom"
+          value={formData.nom}
           onChange={handleChange}
           required
-          className=""
         />
-        <button type="submit" className="">
-          Envoyer
-        </button>
-      </form>
-    </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Votre email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <textarea
+        name="message"
+        placeholder="Votre message"
+        rows={2}
+        value={formData.message}
+        onChange={handleChange}
+        required
+      />
+      <button type="submit" className="btn">
+        Envoyer
+      </button>
+    </form>
   );
 }
 
