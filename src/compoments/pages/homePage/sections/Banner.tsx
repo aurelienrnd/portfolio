@@ -25,7 +25,7 @@ function Banner(): React.JSX.Element {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1250);
+    }, 1250); // Le meme temps que l'animation
   }, []);
 
   return (

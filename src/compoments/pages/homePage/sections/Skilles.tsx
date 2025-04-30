@@ -1,3 +1,4 @@
+// Hooks
 import { useEffect, useRef, useState } from 'react';
 import Skill from '../../../utility/Skill';
 import {
@@ -8,7 +9,13 @@ import {
   faCss,
 } from '@fortawesome/free-brands-svg-icons';
 
-function Skilles() {
+/** Section Skilles
+ * @description Affiche la section Skilles à l'interieur de HomePage
+ * @returns {JSX.Element} - Section Skilles
+ * @component Skill - Affiche une animation en % de chaque skill
+ */
+function Skilles(): React.JSX.Element {
+  //Gestion de l'état d'affichage de chaque skill
   const [isVisible, setIsVisible] = useState([
     false,
     false,
@@ -17,6 +24,7 @@ function Skilles() {
     false,
   ]);
 
+  // Liste des données de chaque skill
   const skilles = [
     {
       technologie: 'HTML5:',
@@ -56,8 +64,21 @@ function Skilles() {
     },
   ];
 
+  //Liste des données de chaque soft skill
+  const softSkilles = [
+    { name: 'Autonomie', type: 'bg-color-four' },
+    { name: 'Adaptabilité', type: 'bg-color-four' },
+    { name: 'Rigueur', type: 'bg-color-four' },
+    { name: 'Travail en équipe', type: 'bg-color-four' },
+    { name: 'Responsive Design', type: 'bg-color-three' },
+    { name: 'SEO de base', type: 'bg-color-three' },
+    { name: 'Git & GitHub', type: 'bg-color-three' },
+    { name: 'Notion', type: 'bg-color-three' },
+  ];
+
+  // Démarre l'animation quand l'element rentre dans le viewport
   useEffect(() => {
-    // Pour chaque phrase
+    // Pour chaque skill
     skilles.map((skill, index) => {
       // Je créer un observateur
       const observer = new IntersectionObserver(
@@ -107,38 +128,21 @@ function Skilles() {
             />
           ))}
         </div>
+
         <div className="mt-10">
           <h3 className="text-xl font-semibold mb-4">
             Compétences transverses & soft skills
           </h3>
-          <div className="flex flex-wrap gap-4">
-            {/* Soft skills */}
-            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Autonomie
-            </span>
-            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Adaptabilité
-            </span>
-            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Rigueur
-            </span>
-            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Travail en équipe
-            </span>
 
-            {/* Compétences annexes */}
-            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Responsive Design
-            </span>
-            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              SEO de base
-            </span>
-            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Git & GitHub
-            </span>
-            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
-              Trello / Kanban
-            </span>
+          <div className="flex flex-wrap gap-4">
+            {softSkilles.map((skilles, index) => (
+              <span
+                key={`${skilles.name}-${index}`}
+                className={`${skilles.type} text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform"`}
+              >
+                {skilles.name}
+              </span>
+            ))}
           </div>
         </div>
       </div>

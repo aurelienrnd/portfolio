@@ -19,10 +19,11 @@ export type NavList = {
 };
 
 /** Gestion de l'entête du site
- * @description Utilise le hook useLocation pour changer le label et la destination du lien "Projet" dans le tableau navList,
+ * @description -  Utilise le hook useLocation pour changer le label et la destination du lien "Projet" dans le tableau navList,
  * et affiche le header de la page
  * @returns {JSX.Element} - Header du site
  * @component NavDesktop - Menu de navigation pour les écrans larges
+ * @component NavMobile - Menu de navigation pour les petit écrant
  */
 function Header(): React.JSX.Element {
   // Création de UseStates pour modiffier les données du lien "Projet/Acceuil" de façons dynamique

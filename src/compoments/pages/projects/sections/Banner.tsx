@@ -1,4 +1,8 @@
-function Banner() {
+/**Affiche la page Projet
+ * @description Contient un text d'untroduction
+ * @returns {JSX.Element} - Page Projet du site
+ */
+function Banner(): React.JSX.Element {
   return (
     <section className="text-center flex flex-col gap-8">
       <h1>Mes projets web</h1>

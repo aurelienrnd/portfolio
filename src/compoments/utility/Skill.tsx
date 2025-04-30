@@ -1,3 +1,4 @@
+// Library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -12,7 +13,11 @@ interface SkillProps {
   isVisible: boolean[];
 }
 
-function Skill({ skill, index, isVisible }: SkillProps) {
+/** Affiche un skill avec les information contenue en prop
+ * @description -  Affiche une animation en % de chaque skill
+ * @returns {JSX.Element} -
+ */
+function Skill({ skill, index, isVisible }: SkillProps): React.JSX.Element {
   return (
     <div className="flex flex-col md:flex-row gap-4">
       <div className="flex gap-2 items-center md:w-30 ">

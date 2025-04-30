@@ -1,3 +1,4 @@
+//Type
 type Props = {
   title: string;
   description: string;
@@ -7,7 +8,18 @@ type Props = {
   siteUrl?: string;
 };
 
-function Card({ title, description, image, techs, codeUrl, siteUrl }: Props) {
+/** Affiche un projet sous forme de carte
+ * @description - Utilise les information transmise en prop pour créer une carte avec les info du projet
+ * @returns {JSX.Element} - une carte projet
+ */
+function Card({
+  title,
+  description,
+  image,
+  techs,
+  codeUrl,
+  siteUrl,
+}: Props): React.JSX.Element {
   return (
     <div className="bg-color-two text-color-one p-4 rounded-xl shadow hover:scale-105 transition-transform duration-300">
       <img
@@ -15,8 +27,10 @@ function Card({ title, description, image, techs, codeUrl, siteUrl }: Props) {
         alt={`aperçu du projet ${title}`}
         className="rounded mb-4"
       />
+
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-sm mb-4">{description}</p>
+
       <div className="flex gap-2 mb-4 flex-wrap">
         {techs.map(tech => (
           <span
@@ -27,6 +41,7 @@ function Card({ title, description, image, techs, codeUrl, siteUrl }: Props) {
           </span>
         ))}
       </div>
+
       <div className="flex gap-4 text-sm">
         {siteUrl && (
           <a

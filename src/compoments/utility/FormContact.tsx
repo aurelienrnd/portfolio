@@ -1,12 +1,19 @@
+// Hook
 import { useState } from 'react';
 
-function FormContact() {
+/** Affiche un formulaire de contact dans le footer
+ * @description - Affiche un formulaire qui preremplie un email quand l'utilisateur le valide
+ * @returns {JSX.Element} - Un formulaire de contact
+ */
+function FormContact(): React.JSX.Element {
+  //Datas du formulaire
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
     message: '',
   });
 
+  //Gestion des data du formulaire
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -15,10 +22,9 @@ function FormContact() {
     const value = champForm.value;
 
     setFormData(prev => ({ ...prev, [name]: value }));
-
-    console.log(formData);
   };
 
+  //Creation d'un email preremplie
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 

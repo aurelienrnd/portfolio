@@ -1,6 +1,13 @@
+// Compoments
 import Card from '../../../utility/Card.tsx';
 
-function Cards() {
+/** Section Skilles
+ * @description Affiche la section Cards à l'interieur de la page Projet
+ * @returns {JSX.Element} - Section Cards
+ * @component Card - Affiche une carte de chaque projet
+ */
+function Cards(): React.JSX.Element {
+  // List des données de chaque projet
   const projects = [
     {
       id: 1,
