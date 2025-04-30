@@ -51,7 +51,8 @@ src/
 │           ├── Cmd.tsx
 │           ├── Nav.tsx
 │           ├── Skill.tsx
-│           └── Card.tsx
+│           ├── Card.tsx
+│           └── Skill.tsx
 └── ...            
 ```
 
