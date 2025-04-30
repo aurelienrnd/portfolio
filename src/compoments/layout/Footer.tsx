@@ -20,14 +20,17 @@ function Footer(): React.JSX.Element {
           </span>
 
           <div className="flex text-5xl gap-8">
-            <a href="https://github.com/aurelienrnd">
+            <a href="https://github.com/aurelienrnd" target="_blank">
               <FontAwesomeIcon
                 icon={faGithub}
                 className="hover:text-color-three"
               />
             </a>
 
-            <a href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/">
+            <a
+              href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="hover:text-color-three"

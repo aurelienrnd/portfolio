@@ -49,9 +49,9 @@ function Cards(): React.JSX.Element {
   ];
 
   return (
-    <section className="">
+    <section id="cards" className="">
       <h2 className="">Projets réalisés</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center max-w-6xl mx-auto">
         {projects.map(project => (
           <Card key={project.id} {...project} />
         ))}

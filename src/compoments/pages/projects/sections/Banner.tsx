@@ -4,7 +4,7 @@
  */
 function Banner(): React.JSX.Element {
   return (
-    <section className="">
+    <section id="banner-project" className="">
       <h1>Mes projets web</h1>
       <p>
         Découvrez une sélection de projets réalisés durant ma formation

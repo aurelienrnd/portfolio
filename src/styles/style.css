@@ -11,7 +11,6 @@
   /*** Font ***/
   --font-title: 'Poppins', sans-serif;
   --font-text: 'Inter', sans-serif;
-  --font-code: 'Fira Code', monospace;
 }
 
 @layer utilities {
@@ -86,11 +85,19 @@
   }
 
   #home-page #skilles {
-    @apply flex flex-col gap-8;
+    @apply flex flex-col gap-8 text-center;
+  }
+
+  #project #banner-project {
+    @apply bg-color-four flex flex-col gap-8 text-center;
+  }
+
+  #project #cards {
+    @apply flex flex-col gap-8 text-center;
   }
 
   footer {
-    @apply px-4 pt-18 pb-2 bg-color-four flex flex-col gap-8 w-full;
+    @apply px-4 pt-18 pb-2 bg-color-four flex flex-col gap-8 w-full text-center;
   }
 
   h1,
@@ -113,7 +120,10 @@
 
 @layer components {
   .btn {
-    @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
-    hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
+    @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-105 transition-transform duration-300 text-center text-color-four;
+  }
+
+  .card {
+    @apply bg-color-two text-color-one p-4 rounded-xl hover:scale-105 transition-transform duration-300 text-sm flex flex-col gap-2;
   }
 }

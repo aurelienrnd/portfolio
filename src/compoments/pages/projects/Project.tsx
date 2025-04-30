@@ -10,7 +10,7 @@ import Cards from './sections/Cards.tsx';
  */
 function Project(): React.JSX.Element {
   return (
-    <main>
+    <main id="project">
       <Banner />
       <Cards />
     </main>
