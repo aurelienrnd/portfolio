@@ -54,9 +54,7 @@ function Header(): React.JSX.Element {
 
   return (
     <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
-      <span className="font-syne text-sm font-extrabold tracking-wide">
-        Aurélien Arnaud
-      </span>
+      <span className="font-syne text-sm font-extrabold tracking-wide"></span>
       <NavDesktop navList={navList} />
       <NavMobile navList={navList} />
     </header>

@@ -6,21 +6,19 @@ function Footer() {
   return (
     <footer
       id="contact"
-      className="h-16 w-full flex justify-between items-center px-8 border-t"
+      className="min-h-16 w-full flex justify-between items-center px-8 border-t"
     >
-      <span className="font-syne text-sm font-extrabold tracking-wide">
-        Aurélien Arnaud
-      </span>
+      <span className="">Aurélien Arnaud</span>
 
       <a
         href="mailto:tonemail@example.com"
-        className="hover:text-color-three flex gap-2"
+        className="hover:text-color-three flex flex-col gap-2 text-center"
       >
         <FontAwesomeIcon
           icon={faEnvelope}
           className="text-xl text-color-twoo"
         />
-        Contactez moi: aurelienarnaud921@gmail.com
+        Contactez moi
       </a>
 
       <div className="flex gap-4">

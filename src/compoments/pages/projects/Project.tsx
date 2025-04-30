@@ -1,7 +1,11 @@
+import Banner from './section/Banner.tsx';
+import Cards from './section/Cards.tsx';
+
 function Project() {
   return (
-    <main>
-      <span>-- PROJECT --</span>
+    <main className="">
+      <Banner />
+      <Cards />
     </main>
   );
 }
