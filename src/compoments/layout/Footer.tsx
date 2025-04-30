@@ -1,5 +1,6 @@
+import FormContact from '../utility/FormContact';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
@@ -10,16 +11,7 @@ function Footer() {
     >
       <span className="">Aurélien Arnaud</span>
 
-      <a
-        href="mailto:tonemail@example.com"
-        className="hover:text-color-three flex flex-col gap-2 text-center"
-      >
-        <FontAwesomeIcon
-          icon={faEnvelope}
-          className="text-xl text-color-twoo"
-        />
-        Contactez moi
-      </a>
+      <FormContact />
 
       <div className="flex gap-4">
         <a href="https://github.com/aurelienrnd">
