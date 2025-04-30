@@ -11,7 +11,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 - [TailwindCSS] – framework CSS utilitaire
 - [Prettier] – formateur de code
 - [Fortawesome] - Affichage d'iconne
-- [React-modal] - Création de model 
+- [React-modal] - Création de modal
 
 ## 📁 Structure du projet
 
@@ -35,11 +35,14 @@ src/
 │       │   └── sections/
 │       │       ├── Banner.tsx
 │       │       ├── About.tsx
-│       │       └── Skills.tsx
+│       │       └── Skilles.tsx
 │       │
 │       ├── projects/  
-│       │   └── Projects.tsx
-│       │
+│       │   ├── Projects.tsx
+│       │   └── section/
+│       │       ├── Banner.tsx
+│       │       └── Cards.tsx
+│       │       
 │       ├── error/
 │       │   └── Error.tsx
 │       │
@@ -47,7 +50,8 @@ src/
 │           ├── ScrollToAnchor.tsx
 │           ├── Cmd.tsx
 │           ├── Nav.tsx
-│           └── Skill.jsx
+│           ├── Skill.tsx
+│           └── Card.tsx
 └── ...            
 ```
 
@@ -75,6 +79,15 @@ src/
   - Section Skilles
     - Affichage les différentes competence de maniere dinamanique avec une animation au schrool de la page
     - Adaptation au MediaQuery
+- Création de la page Project
+  - Section Banner
+    - Contient un texte d'introduction
+  - Section Cards
+    - Contient une liste de chaque projet sous forme de card
+    - Adaptation au MediaQuery
+- Creation du footer
+  - Contient différent liens de contact
+
 
 ## 🔧 Scripts utiles
 

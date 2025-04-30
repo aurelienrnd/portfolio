@@ -25,15 +25,9 @@ function Skilles() {
       ref: useRef<HTMLDivElement>(null!),
     },
     {
-      technologie: 'CSS:',
+      technologie: 'CSS3:',
       maitrise: '75%',
       logo: faCss,
-      ref: useRef<HTMLDivElement>(null!),
-    },
-    {
-      technologie: 'React:',
-      maitrise: '65%',
-      logo: faReact,
       ref: useRef<HTMLDivElement>(null!),
     },
     {
@@ -43,9 +37,21 @@ function Skilles() {
       ref: useRef<HTMLDivElement>(null!),
     },
     {
-      technologie: 'Node.js:',
+      technologie: 'React:',
+      maitrise: '65%',
+      logo: faReact,
+      ref: useRef<HTMLDivElement>(null!),
+    },
+    {
+      technologie: 'Express.js:',
       maitrise: '50%',
-      logo: faNodeJs,
+      logo: faNodeJs, // Pas d’icône FA pour Express, tu peux réutiliser celle de Node.js
+      ref: useRef<HTMLDivElement>(null!),
+    },
+    {
+      technologie: 'Tailwind:',
+      maitrise: '70%',
+      logo: faCss, // Remplaçable par une image custom ou un composant SVG
       ref: useRef<HTMLDivElement>(null!),
     },
   ];
@@ -100,6 +106,40 @@ function Skilles() {
               isVisible={isVisible}
             />
           ))}
+        </div>
+        <div className="mt-10">
+          <h3 className="text-xl font-semibold mb-4">
+            Compétences transverses & soft skills
+          </h3>
+          <div className="flex flex-wrap gap-4">
+            {/* Soft skills */}
+            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Autonomie
+            </span>
+            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Adaptabilité
+            </span>
+            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Rigueur
+            </span>
+            <span className="bg-color-four text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Travail en équipe
+            </span>
+
+            {/* Compétences annexes */}
+            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Responsive Design
+            </span>
+            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              SEO de base
+            </span>
+            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Git & GitHub
+            </span>
+            <span className="bg-color-three text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition-transform">
+              Trello / Kanban
+            </span>
+          </div>
         </div>
       </div>
     </section>
