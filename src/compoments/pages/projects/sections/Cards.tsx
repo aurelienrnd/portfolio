@@ -49,8 +49,8 @@ function Cards(): React.JSX.Element {
   ];
 
   return (
-    <section className="p-8 flex flex-col gap-8">
-      <h2 className="text-2xl font-semibold">Projets réalisés</h2>
+    <section className="">
+      <h2 className="">Projets réalisés</h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
         {projects.map(project => (
           <Card key={project.id} {...project} />

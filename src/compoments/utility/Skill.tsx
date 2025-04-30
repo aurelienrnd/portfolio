@@ -19,16 +19,15 @@ interface SkillProps {
  */
 function Skill({ skill, index, isVisible }: SkillProps): React.JSX.Element {
   return (
-    <div className="flex flex-col md:flex-row gap-4">
-      <div className="flex gap-2 items-center md:w-30 ">
+    <div className="">
+      <div className="">
         <p className="">{skill.technologie}</p>
-        <FontAwesomeIcon icon={skill.logo} className="text-2xl" />
+        <FontAwesomeIcon icon={skill.logo} className="" />
       </div>
 
       <div style={{ width: skill.maitrise }}>
         <div
-          className={`border-1 border-color-three bg-color-four h-6 justify-end pr-4 rounded-md flex items-center
-            ${isVisible[index] ? 'fake-loader' : 'opacity-0'}`}
+          className={`${isVisible[index] ? 'fake-loader' : 'opacity-0'}`}
           ref={skill.ref}
         >
           <span>{skill.maitrise}</span>

@@ -23,7 +23,7 @@ export type NavList = {
  * et affiche le header de la page
  * @returns {JSX.Element} - Header du site
  * @component NavDesktop - Menu de navigation pour les écrans larges
- * @component NavMobile - Menu de navigation pour les petit écrant
+ * @component NavMobile - Menu de navigation pour les petit ecrant
  */
 function Header(): React.JSX.Element {
   // Création de UseStates pour modiffier les données du lien "Projet/Acceuil" de façons dynamique
@@ -54,8 +54,8 @@ function Header(): React.JSX.Element {
   }, [location.pathname]);
 
   return (
-    <header className="h-16 w-full flex justify-between items-center px-8 sticky top-0 bg-color-one z-9999">
-      <span className="font-syne text-sm font-extrabold tracking-wide"></span>
+    <header className="">
+      <span className="font-syne text-sm font-extrabold">Aurelien Arnaud</span>
       <NavDesktop navList={navList} />
       <NavMobile navList={navList} />
     </header>

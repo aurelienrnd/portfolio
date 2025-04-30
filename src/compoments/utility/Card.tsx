@@ -21,42 +21,27 @@ function Card({
   siteUrl,
 }: Props): React.JSX.Element {
   return (
-    <div className="bg-color-two text-color-one p-4 rounded-xl shadow hover:scale-105 transition-transform duration-300">
-      <img
-        src={image}
-        alt={`aperçu du projet ${title}`}
-        className="rounded mb-4"
-      />
+    <div className="">
+      <img src={image} alt={`aperçu du projet ${title}`} className="" />
 
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-sm mb-4">{description}</p>
+      <h3 className="">{title}</h3>
+      <p className="">{description}</p>
 
-      <div className="flex gap-2 mb-4 flex-wrap">
+      <div className="">
         {techs.map(tech => (
-          <span
-            key={tech}
-            className="px-2 py-1 text-xs bg-color-four text-white rounded-full"
-          >
+          <span key={tech} className="">
             {tech}
           </span>
         ))}
       </div>
 
-      <div className="flex gap-4 text-sm">
+      <div className="">
         {siteUrl && (
-          <a
-            href={siteUrl}
-            target="_blank"
-            className="text-color-three hover:underline"
-          >
+          <a href={siteUrl} target="_blank" className="">
             Voir le site
           </a>
         )}
-        <a
-          href={codeUrl}
-          target="_blank"
-          className="text-color-three hover:underline"
-        >
+        <a href={codeUrl} target="_blank" className="">
           Code source
         </a>
       </div>

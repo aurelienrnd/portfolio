@@ -4,7 +4,7 @@
  */
 function Banner(): React.JSX.Element {
   return (
-    <section className="text-center flex flex-col gap-8">
+    <section className="">
       <h1>Mes projets web</h1>
       <p>
         Découvrez une sélection de projets réalisés durant ma formation

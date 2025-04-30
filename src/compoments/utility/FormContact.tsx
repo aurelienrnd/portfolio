@@ -35,9 +35,9 @@ function FormContact(): React.JSX.Element {
   };
 
   return (
-    <div className="bg-color-one p-6 rounded-2xl shadow-lg max-w-lg mx-auto">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="flex gap-2">
+    <div className="">
+      <form onSubmit={handleSubmit} className="">
+        <div className="">
           <input
             type="text"
             name="nom"
@@ -45,7 +45,7 @@ function FormContact(): React.JSX.Element {
             value={formData.nom}
             onChange={handleChange}
             required
-            className="p-1 rounded-md bg-white text-black placeholder-gray-400"
+            className=""
           />
           <input
             type="email"
@@ -54,7 +54,7 @@ function FormContact(): React.JSX.Element {
             value={formData.email}
             onChange={handleChange}
             required
-            className="p-1 rounded-md bg-white text-black placeholder-gray-400"
+            className=""
           />
         </div>
 
@@ -65,9 +65,9 @@ function FormContact(): React.JSX.Element {
           value={formData.message}
           onChange={handleChange}
           required
-          className="p-1 rounded-md bg-white text-black placeholder-gray-400"
+          className=""
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="">
           Envoyer
         </button>
       </form>

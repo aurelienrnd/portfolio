@@ -11,10 +11,9 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
  */
 function Footer(): React.JSX.Element {
   return (
-    <footer
-      id="contact"
-      className="min-h-16 w-full flex justify-between items-center px-8"
-    >
+    <footer id="contact" className="">
+      <span className="font-syne text-sm font-extrabold">Aurelien Arnaud</span>
+
       <FormContact />
 
       <div className="flex gap-4">

@@ -15,7 +15,7 @@ function Banner(): React.JSX.Element {
 
   // Création d'un loader
   const FakeLoader = (): React.JSX.Element => (
-    <div className="w-1/2 flex justify-center">
+    <div className="w-1/2 h-1/3 flex items-center">
       <div className="bg-color-three h-1 fake-loader rounded-md"></div>
     </div>
   );
@@ -30,21 +30,20 @@ function Banner(): React.JSX.Element {
 
   return (
     <section id="banner">
-      <div className=" h-2/3 flex flex-col justify-between text-center mt-8 md:items-start md:text-start">
+      <div className="h-2/3 text-center flex flex-col justify-between">
         <h1>Aurélien Arnaud</h1>
 
-        <div className="flex flex-col items-center gap-8 md:flex-row md:w-full md:justify-between md:pr-16">
+        <div className=" h-1/3 flex flex-col items-center justify-between">
           <h2>Développeur d'aplication web</h2>
           <Link to="project" className="btn">
             Voir mes projets
           </Link>
         </div>
 
-        <p className="md:w-2/3">{text}</p>
+        <p className="">{text}</p>
       </div>
-      <div className="font-code h-1/3 flex items-center justify-center">
-        {isLoading ? <FakeLoader /> : <Cmd />}
-      </div>
+
+      {isLoading ? <FakeLoader /> : <Cmd />}
     </section>
   );
 }

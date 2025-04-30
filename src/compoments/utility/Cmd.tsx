@@ -19,26 +19,23 @@ function Cmd(): React.JSX.Element {
   ];
 
   return (
-    <div>
+    <div className=" h-1/3 flex justify-center items-center">
       {questionList.map((element, index) => (
         <div
           key={`question-${index}`}
-          className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex flex-col md:flex-row justify-center items-center gap-4`}
+          className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex flex-col gap-4`}
         >
-          <div className="flex justify-center items-center gap-4">
-            <div className="slide-top hidden md:block">⬜</div>
-            <p className="text-center">{element.question}</p>
+          <div className="flex gap-4">
+            <div className="slide-top">⬜</div>
+            <p>{element.question}</p>
           </div>
 
-          <div className="flex gap-4">
-            <a href={element.direction} className="hover:border-b-1">
-              oui\
-            </a>
+          <div className=" flex gap-8 justify-center">
+            <a href={element.direction}>oui\</a>
             <button
               onClick={() =>
                 setQuestionLength((questionLength + 1) % questionList.length)
               }
-              className="cursor-pointer hover:border-b-1"
             >
               non\
             </button>

@@ -19,14 +19,11 @@ type NavProps = {
  */
 export function NavDesktop({ navList }: NavProps): React.JSX.Element {
   return (
-    <nav className="md:flex md:items-center h-full hidden">
-      <ul className="flex items-center h-full gap-3">
+    <nav className="hidden">
+      <ul className="">
         {navList.map(nav => (
-          <li key={`nav-${nav.label}`} className="flex items-center h-full">
-            <Link
-              to={nav.destination}
-              className="flex items-center h-full hover:items-start hover:border-b-1 hover:border-b-color-three py-2"
-            >
+          <li key={`nav-${nav.label}`} className="">
+            <Link to={nav.destination} className="">
               {nav.label}
             </Link>
           </li>
@@ -50,15 +47,15 @@ export function NavMobile({ navList }: NavProps): React.JSX.Element {
   };
 
   return (
-    <div className="md:hidden">
-      <button onClick={handleMenuToggle} aria-label="Menu">
-        <FontAwesomeIcon icon={faBars} className="text-xl text-color-twoo" />
+    <div className="">
+      <button onClick={handleMenuToggle} aria-label="">
+        <FontAwesomeIcon icon={faBars} className="mr-4" />
       </button>
 
       <ReactModal
         isOpen={isOpen}
         onRequestClose={handleMenuToggle}
-        className="fixed top-16 right-0 w-2/3 h-auto bg-color-four z-9999 flex justify-center items-center rounded-bl-md openModal"
+        className="fixed top-16 right-0 w-2/3 bg-color-four z-9999 flex justify-center items-center rounded-bl-md openModal"
       >
         <nav className="flex flex-col items-start gap-4 my-6 w-2/3">
           {navList.map(nav => (

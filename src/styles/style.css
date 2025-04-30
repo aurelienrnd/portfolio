@@ -14,37 +14,6 @@
   --font-code: 'Fira Code', monospace;
 }
 
-@layer base {
-  body {
-    @apply bg-color-one text-color-two font-text;
-  }
-
-  h1,
-  h2 {
-    @apply text-3xl md:text-4xl font-bold font-title;
-  }
-
-  #banner {
-    height: calc(100vh - 4rem);
-    @apply max-h-[1024px] min-h-[400px] flex flex-col md:px-8;
-  }
-
-  #about {
-    @apply max-h-[1024px] min-h-[400px] py-20 flex flex-col gap-4 text-center md:text-start md:h-screen md:px-8 bg-color-four;
-  }
-
-  #skilles {
-    @apply max-h-[1024px] min-h-[400px] py-20 flex flex-col gap-4 text-center md:text-start md:px-8;
-  }
-}
-
-@layer components {
-  .btn {
-    @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
-    hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
-  }
-}
-
 @layer utilities {
   @keyframes slide-and-rotate {
     0% {
@@ -91,5 +60,44 @@
   }
   .fake-loader {
     animation: line-bounce 1.25s both;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-color-one text-color-two font-text;
+  }
+
+  header {
+    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999 border;
+  }
+
+  main {
+    @apply border;
+  }
+
+  section {
+    @apply px-4 pt-16 border;
+  }
+
+  #home-page #banner {
+    height: calc(100vh - 4rem);
+    @apply min-h-[640px] flex flex-col items-center border;
+  }
+
+  footer {
+    @apply px-4 border;
+  }
+
+  h1,
+  h2 {
+    @apply text-3xl md:text-4xl font-bold font-title;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-color-three px-6 py-3 rounded-md font-semibold duration-200 ease-in
+    hover:px-8 hover:py-5 hover:rounded-xl text-center text-color-four;
   }
 }
