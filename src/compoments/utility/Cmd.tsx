@@ -19,7 +19,7 @@ function Cmd(): React.JSX.Element {
   ];
 
   return (
-    <div className=" h-1/3 flex justify-center items-center">
+    <div className=" h-1/3 flex justify-center items-center md:font-code">
       {questionList.map((element, index) => (
         <div
           key={`question-${index}`}
@@ -31,8 +31,11 @@ function Cmd(): React.JSX.Element {
           </div>
 
           <div className=" flex gap-8 justify-center">
-            <a href={element.direction}>oui\</a>
+            <a href={element.direction} className="hover:border-b-1">
+              oui\
+            </a>
             <button
+              className="cursor-pointer hover:border-b-1"
               onClick={() =>
                 setQuestionLength((questionLength + 1) % questionList.length)
               }

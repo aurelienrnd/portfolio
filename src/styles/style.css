@@ -11,6 +11,7 @@
   /*** Font ***/
   --font-title: 'Poppins', sans-serif;
   --font-text: 'Inter', sans-serif;
+  --font-code: 'Fira Code', monospace;
 }
 
 @layer utilities {
@@ -68,7 +69,7 @@
   }
 
   header {
-    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999;
+    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999 border;
   }
 
   section {
@@ -77,7 +78,7 @@
 
   #home-page #banner {
     height: calc(100vh - 4rem);
-    @apply min-h-[640px] flex flex-col items-center;
+    @apply min-h-[600px] md:min-h-[400px] flex flex-col items-center md:gap-8;
   }
 
   #home-page #about {

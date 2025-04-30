@@ -54,7 +54,7 @@ function Header(): React.JSX.Element {
   }, [location.pathname]);
 
   return (
-    <header className="">
+    <header>
       <span className="font-syne text-sm font-extrabold">Aurelien Arnaud</span>
       <NavDesktop navList={navList} />
       <NavMobile navList={navList} />

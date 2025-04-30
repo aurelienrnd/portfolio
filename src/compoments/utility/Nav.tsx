@@ -19,11 +19,14 @@ type NavProps = {
  */
 export function NavDesktop({ navList }: NavProps): React.JSX.Element {
   return (
-    <nav className="hidden">
-      <ul className="">
+    <nav className="hidden md:flex items-center h-full">
+      <ul className="flex gap-8 items-center h-full">
         {navList.map(nav => (
-          <li key={`nav-${nav.label}`} className="">
-            <Link to={nav.destination} className="">
+          <li key={`nav-${nav.label}`} className="flex items-center h-full">
+            <Link
+              to={nav.destination}
+              className="flex items-center h-full hover:items-start hover:border-b-1 hover:border-b-color-three"
+            >
               {nav.label}
             </Link>
           </li>
@@ -47,7 +50,7 @@ export function NavMobile({ navList }: NavProps): React.JSX.Element {
   };
 
   return (
-    <div className="">
+    <div className="md:hidden">
       <button onClick={handleMenuToggle} aria-label="">
         <FontAwesomeIcon icon={faBars} className="mr-4" />
       </button>
