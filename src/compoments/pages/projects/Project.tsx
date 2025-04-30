@@ -1,5 +1,5 @@
-import Banner from './section/Banner.tsx';
-import Cards from './section/Cards.tsx';
+import Banner from './sections/Banner.tsx';
+import Cards from './sections/Cards.tsx';
 
 function Project() {
   return (
