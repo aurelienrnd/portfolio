@@ -48,6 +48,7 @@ function FormContact(): React.JSX.Element {
           value={formData.nom}
           onChange={handleChange}
           required
+          aria-label="nom"
         />
         <input
           type="email"
@@ -56,6 +57,7 @@ function FormContact(): React.JSX.Element {
           value={formData.email}
           onChange={handleChange}
           required
+          aria-label="email"
         />
       </div>
 
@@ -66,6 +68,7 @@ function FormContact(): React.JSX.Element {
         value={formData.message}
         onChange={handleChange}
         required
+        aria-label="message"
       />
       <button type="submit" className="btn">
         Envoyer

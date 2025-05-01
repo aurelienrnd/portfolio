@@ -87,7 +87,25 @@ src/
     - Contient une liste de chaque projet sous forme de card
     - Adaptation au MediaQuery
 - Creation du footer
-  - Contient différent liens de contact
+  - Contient un formulaire et différent liens de contact
+
+## Étapes encore a réalisées
+
+- Modifier et transformer dans une taille et un format adaptés la photo de profil
+- Modifier et transformer dans une taille et un format adaptés les photos des projets présentés dans les différentes cards
+- Ajouter les difficultés dans les différents projets
+- Ajouter le bon lien du repo gitHub a chaque projet
+- Rajouter une favicon
+- Un titre SEO
+- Une description SEO
+- Une balise Open Graph
+- Une balise Twitter Card
+- Et un modèle de données structurées
+- Créer la page erreur 404
+- Rajouter des label pour le formulaire
+- Mofifier les erreur de contraste
+- Poster en ligne
+- audit lighthouse
 
 
 ## 🔧 Scripts utiles

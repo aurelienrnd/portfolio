@@ -27,7 +27,7 @@ function Cards(): React.JSX.Element {
         'Application de location avec React et composants dynamiques.',
       dificulty:
         'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
-      image: '/images/test.png',
+      image: '/images/kasa.png',
       techs: ['React', 'Sass'],
       codeUrl: 'https://github.com/aurelienrnd/kasa',
     },
@@ -38,7 +38,7 @@ function Cards(): React.JSX.Element {
         'Site vitrine responsive d’une agence de voyage, réalisé en HTML et CSS, avec respect des maquettes et accessibilité.',
       dificulty:
         'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
-      image: '/images/test.png',
+      image: '/images/booki.png',
       techs: ['HTML', 'CSS'],
       codeUrl: 'https://github.com/aurelienrnd/booki',
     },
