@@ -27,7 +27,7 @@ function Card({
       <h3 className="">{title}</h3>
       <p className="">{description}</p>
 
-      <div className="flex gap-2 flex-wrap justify-center">
+      <div className="flex gap-2 flex-wrap justify-center md:justify-start">
         {techs.map(tech => (
           <span
             key={tech}

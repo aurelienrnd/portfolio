@@ -1,7 +1,7 @@
 // Compoments
 import Card from '../../../utility/Card.tsx';
 
-/** Section Skilles
+/** Section Cards
  * @description Affiche la section Cards à l'interieur de la page Projet
  * @returns {JSX.Element} - Section Cards
  * @component Card - Affiche une carte de chaque projet
@@ -51,7 +51,7 @@ function Cards(): React.JSX.Element {
   return (
     <section id="cards" className="">
       <h2 className="">Projets réalisés</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 justify-center mx-auto">
         {projects.map(project => (
           <Card key={project.id} {...project} />
         ))}

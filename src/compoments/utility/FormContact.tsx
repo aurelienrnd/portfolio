@@ -37,9 +37,10 @@ function FormContact(): React.JSX.Element {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center w-full gap-4"
+      className="flex flex-col items-center w-full md:w-1/3 gap-4"
     >
-      <div className="flex flex-col items-center gap-4 w-full">
+      <h2>Contact</h2>
+      <div className="flex flex-col md:flex-row items-center gap-4 w-full">
         <input
           type="text"
           name="nom"

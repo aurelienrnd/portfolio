@@ -12,9 +12,8 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 function Footer(): React.JSX.Element {
   return (
     <footer id="contact">
-      <h2>Contact</h2>
-      <div className="flex flex-col-reverse gap-8">
-        <div className="flex justify-between items-center">
+      <div className="flex flex-col-reverse md:flex-row-reverse gap-8">
+        <div className="flex md:flex-row-reverse justify-between md:justify-start items-center md:items-end md:gap-8 md:w-1/3">
           <span className="font-syne text-sm font-extrabold">
             Aurelien Arnaud
           </span>

@@ -117,8 +117,8 @@ function Skilles(): React.JSX.Element {
     <section id="skilles">
       <h2>Mes compétence en developpement web</h2>
 
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:h-full md:justify-between">
+        <div className="flex flex-col justify-around gap-4 md:h-3/4">
           {skilles.map((skill, index) => (
             <Skill
               key={`${skill.technologie}-${index}`}
@@ -129,7 +129,7 @@ function Skilles(): React.JSX.Element {
           ))}
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:h-1/4 md:justify-center">
           <h3 className="">Compétences transverses & soft skills</h3>
 
           <div className="flex flex-wrap gap-2">

@@ -43,7 +43,7 @@ function Header(): React.JSX.Element {
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === '/project') {
-      setNavDestination('/');
+      setNavDestination('/#banner');
       setNavLabel('Accueil');
       setNavIcon(faHouse);
     } else {
