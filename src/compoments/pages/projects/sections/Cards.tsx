@@ -17,12 +17,16 @@ function Cards(): React.JSX.Element {
       image: '/images/test.png',
       techs: ['MongoDB', 'Node.js', 'Express', 'JWT', 'Multer'],
       codeUrl: 'https://github.com/aurelienrnd/vieux-grimoire',
+      dificulty:
+        'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
     },
     {
       id: 2,
       title: 'Kasa',
       description:
         'Application de location avec React et composants dynamiques.',
+      dificulty:
+        'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
       image: '/images/test.png',
       techs: ['React', 'Sass'],
       codeUrl: 'https://github.com/aurelienrnd/kasa',
@@ -32,6 +36,8 @@ function Cards(): React.JSX.Element {
       title: 'Booki',
       description:
         'Site vitrine responsive d’une agence de voyage, réalisé en HTML et CSS, avec respect des maquettes et accessibilité.',
+      dificulty:
+        'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
       image: '/images/test.png',
       techs: ['HTML', 'CSS'],
       codeUrl: 'https://github.com/aurelienrnd/booki',
@@ -41,6 +47,8 @@ function Cards(): React.JSX.Element {
       title: 'Portfolio',
       description:
         'Site personnel de présentation, codé en React, TypeScript et TailwindCSS v4. Responsive, clair et optimisé SEO.',
+      dificulty:
+        'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
       image: '/images/test.png',
       techs: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
       codeUrl: 'https://github.com/aurelienrnd/portfolio',

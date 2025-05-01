@@ -29,7 +29,7 @@ function FormContact(): React.JSX.Element {
     event.preventDefault();
 
     const { nom, email, message } = formData;
-    const mailtoLink = `mailto:tonemail@example.com?subject=Contact depuis le portfolio&body=Nom: ${encodeURIComponent(nom)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+    const mailtoLink = `mailto:aurelienarnaud921@gmail.com?subject=Contact depuis le portfolio&body=Nom: ${encodeURIComponent(nom)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
 
     window.location.href = mailtoLink;
   };

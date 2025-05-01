@@ -2,6 +2,7 @@
 type Props = {
   title: string;
   description: string;
+  dificulty: string;
   image: string;
   techs: string[];
   codeUrl: string;
@@ -15,6 +16,7 @@ type Props = {
 function Card({
   title,
   description,
+  dificulty,
   image,
   techs,
   codeUrl,
@@ -24,8 +26,12 @@ function Card({
     <article className="card">
       <img src={image} alt={`aperçu du projet ${title}`} className="rounded" />
 
-      <h3 className="">{title}</h3>
-      <p className="">{description}</p>
+      <div>
+        <h3 className="">{title}</h3>
+        <p className="">{description}</p>
+      </div>
+
+      <p className="">{dificulty}</p>
 
       <div className="flex gap-2 flex-wrap justify-center md:justify-start">
         {techs.map(tech => (
