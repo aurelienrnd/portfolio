@@ -19,7 +19,11 @@ function Footer(): React.JSX.Element {
           </span>
 
           <div className="flex text-5xl gap-8">
-            <a href="https://github.com/aurelienrnd" target="_blank">
+            <a
+              href="https://github.com/aurelienrnd"
+              target="_blank"
+              aria-label="github"
+            >
               <FontAwesomeIcon
                 icon={faGithub}
                 className="hover:text-color-three"
@@ -29,6 +33,7 @@ function Footer(): React.JSX.Element {
             <a
               href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/"
               target="_blank"
+              aria-label="linkedin"
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
