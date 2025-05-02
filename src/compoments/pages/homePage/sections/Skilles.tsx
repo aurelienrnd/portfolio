@@ -66,14 +66,14 @@ function Skilles(): React.JSX.Element {
 
   //Liste des données de chaque soft skill
   const softSkilles = [
-    { name: 'Autonomie', type: 'bg-color-four' },
-    { name: 'Adaptabilité', type: 'bg-color-four' },
-    { name: 'Rigueur', type: 'bg-color-four' },
-    { name: 'Travail en équipe', type: 'bg-color-four' },
-    { name: 'Responsive Design', type: 'bg-color-three' },
-    { name: 'SEO de base', type: 'bg-color-three' },
-    { name: 'Git & GitHub', type: 'bg-color-three' },
-    { name: 'Notion', type: 'bg-color-three' },
+    { name: 'Autonomie', type: 'soft' },
+    { name: 'Adaptabilité', type: 'soft' },
+    { name: 'Rigueur', type: 'soft' },
+    { name: 'Travail en équipe', type: 'soft' },
+    { name: 'Responsive Design', type: 'transvers' },
+    { name: 'SEO de base', type: 'transvers' },
+    { name: 'Git & GitHub', type: 'transvers' },
+    { name: 'Notion', type: 'transvers' },
   ];
 
   // Démarre l'animation quand l'element rentre dans le viewport
@@ -136,7 +136,12 @@ function Skilles(): React.JSX.Element {
             {softSkilles.map((skilles, index) => (
               <span
                 key={`${skilles.name}-${index}`}
-                className={`${skilles.type} border-1 border-color-three p-1 rounded-md `}
+                className={` ${
+                  skilles.type === 'soft'
+                    ? 'bg-color-four text-color-two'
+                    : 'bg-color-three text-color-four'
+                } 
+                   border-1 border-color-three p-1 rounded-md `}
               >
                 {skilles.name}
               </span>
