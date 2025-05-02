@@ -101,6 +101,11 @@
     @apply px-4 pt-8 pb-2 bg-color-four flex flex-col gap-8 w-full text-center;
   }
 
+  #error {
+    height: calc(100vh - 4rem);
+    @apply flex flex-col items-center justify-around;
+  }
+
   h1,
   h2 {
     @apply text-3xl md:text-4xl font-bold font-title;

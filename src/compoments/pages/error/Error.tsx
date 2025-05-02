@@ -1,7 +1,17 @@
+import { Link } from 'react-router';
 function Error() {
   return (
     <main>
-      <span>-- Error 404 --</span>
+      <section id="error">
+        <div className="text-center">
+          <h1 className="">Erreur 404</h1>
+          <p className="">Page non trouvée</p>
+        </div>
+
+        <Link to="/" className="btn">
+          Retour à l’accueil
+        </Link>
+      </section>
     </main>
   );
 }

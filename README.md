@@ -96,8 +96,6 @@ src/
 - Une balise Open Graph
 - Une balise Twitter Card
 - Et un modèle de données structurées
-- Créer la page erreur 404
-- Mofifier les erreur de contraste
 - Poster en ligne
 - audit lighthouse
 
