@@ -93,11 +93,6 @@ src/
 
 - Modifier et transformer dans une taille et un format adaptés la photo de profil
 - Modifier et transformer dans une taille et un format adaptés les photos des projets présentés dans les différentes cards
-
-
-- Rajouter une favicon
-- Un titre SEO
-- Une description SEO
 - Une balise Open Graph
 - Une balise Twitter Card
 - Et un modèle de données structurées
