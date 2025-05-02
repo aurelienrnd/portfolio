@@ -93,8 +93,8 @@ src/
 
 - Modifier et transformer dans une taille et un format adaptés la photo de profil
 - Modifier et transformer dans une taille et un format adaptés les photos des projets présentés dans les différentes cards
-- Ajouter les difficultés dans les différents projets
-- Ajouter le bon lien du repo gitHub a chaque projet
+
+
 - Rajouter une favicon
 - Un titre SEO
 - Une description SEO
@@ -102,7 +102,6 @@ src/
 - Une balise Twitter Card
 - Et un modèle de données structurées
 - Créer la page erreur 404
-- Rajouter des label pour le formulaire
 - Mofifier les erreur de contraste
 - Poster en ligne
 - audit lighthouse
