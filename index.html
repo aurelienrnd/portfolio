@@ -2,17 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Rajouter un favIcone -->
     <link rel="icon" type="image/svg+xml" href="./fav-icon/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aurélien Arnaud – Développeur Web Front-End React | Portfolio</title>
+
+    <!-- OpenGraph -->
     <meta
       name="description"
       content="Aurélien Arnaud, développeur web spécialisé en React, TypeScript et Node.js. Découvrez mes projets, compétences et parcours sur mon portfolio."
     />
-    <!-- Open Graph (prévisualisation réseaux sociaux) -->
+    <meta property="og:title" content="Portfolio de Aurélien Arnaud" />
+    <meta
+      property="og:description"
+      content="Développeur web spécialisé en React, Node.js et interfaces modernes. Découvrez mes projets."
+    />
+    <!-- //TODO - mofif content -->
+    <meta
+      property="og:image"
+      content="https://tonsite.com/images/aperçu-portfolio.png"
+    />
+    <!-- //TODO - mofif content -->
+    <meta property="og:url" content="https://tonsite.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
     <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio de Aurélien Arnaud" />
+    <meta
+      name="twitter:description"
+      content="Développeur web React & Node.js — Interfaces modernes, responsive & performantes."
+    />
+    <!-- //TODO - mofif content -->
+    <meta
+      name="twitter:image"
+      content="https://tonsite.com/images/aperçu-portfolio.png"
+    />
+    <!-- //TODO - mofif content -->
+    <meta name="twitter:url" content="https://tonsite.com/" />
+
     <!-- Model données structurées -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aurélien Arnaud",
+        "url": "https://aurelienarnaud.dev", //TODO - à modifier
+        "image": "https://aurelienarnaud.dev/images/photo-profil.jpg", //TODO - à modifier
+        "description": "Développeur web spécialisé en React, TypeScript et Node.js. Passionné par les interfaces modernes et l'expérience utilisateur.",
+        "sameAs": [
+          "https://github.com/aurelienarnaud",
+          "https://www.linkedin.com/in/aurelien-arnaud/"
+        ],
+        "jobTitle": "Développeur Web Front-End"
+      }
+    </script>
   </head>
   <body class="flex flex-col items-center">
     <div

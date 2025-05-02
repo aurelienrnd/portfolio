@@ -90,12 +90,6 @@ src/
   - Contient un formulaire et différent liens de contact
 
 ## Étapes encore a réalisées
-
-- Modifier et transformer dans une taille et un format adaptés la photo de profil
-- Modifier et transformer dans une taille et un format adaptés les photos des projets présentés dans les différentes cards
-- Une balise Open Graph
-- Une balise Twitter Card
-- Et un modèle de données structurées
 - Poster en ligne
 - audit lighthouse
 
