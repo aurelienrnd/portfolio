@@ -16,7 +16,7 @@ function Cards(): React.JSX.Element {
         'Application de notation de livres avec authentification, backend Node.js et base MongoDB. Projet fullstack complet.',
       dificulty:
         'La gestion des erreurs et des routes dans une API REST m’a posé problème au début, mais j’ai mis en place une architecture claire en middleware et testé chaque endpoint avec Postman pour garantir la stabilité du back-end',
-      image: '/images/test.png',
+      image: '/images/mon-vieux-grimoire.webp',
       techs: ['MongoDB', 'Node.js', 'Express', 'JWT', 'Multer'],
       codeUrl: 'https://github.com/aurelienrnd/Le_Vieux_Grimoire_Backend.git',
     },
@@ -27,7 +27,7 @@ function Cards(): React.JSX.Element {
         'Application de location avec React et composants dynamiques.',
       dificulty:
         'les problématiques que vous avez rencontrées et comment vous les avez surmontées',
-      image: '/images/kasa.png',
+      image: '/images/kasa.webp',
       techs: ['React', 'Sass'],
       codeUrl: 'https://github.com/aurelienrnd/kasa',
     },
@@ -38,7 +38,7 @@ function Cards(): React.JSX.Element {
         'Site vitrine responsive d’une agence de voyage, réalisé en HTML et CSS, avec respect des maquettes et accessibilité.',
       dificulty:
         'J’ai été confronté à la complexité des routes dynamiques avec React Router, que j’ai réussi à dompter en structurant soigneusement mes composants',
-      image: '/images/booki.png',
+      image: '/images/booki.webp',
       techs: ['HTML', 'CSS'],
       codeUrl: 'https://github.com/aurelienrnd/booki',
     },

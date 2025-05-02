@@ -24,7 +24,11 @@ function Card({
 }: Props): React.JSX.Element {
   return (
     <article className="card">
-      <img src={image} alt={`aperçu du projet ${title}`} className="rounded" />
+      <img
+        src={image}
+        alt={`aperçu du projet ${title}`}
+        className="rounded h-55 object-cover"
+      />
 
       <div className="flex flex-col gap-2 justify-around h-full">
         <div className="flex flex-col gap-2">
