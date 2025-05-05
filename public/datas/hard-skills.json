@@ -1,0 +1,32 @@
+[
+  {
+    "technologie": "HTML5",
+    "logo": "faHtml5",
+    "description": "Structure propre et sémantique des pages web, avec attention à l’accessibilité."
+  },
+  {
+    "technologie": "CSS3",
+    "logo": "faCss",
+    "description": "Mise en page responsive avec Flexbox et Grid, animations simples et design soigné."
+  },
+  {
+    "technologie": "JavaScript",
+    "logo": "faJs",
+    "description": "Scripts dynamiques, interactions DOM, logique d’application claire et modulaire."
+  },
+  {
+    "technologie": "React",
+    "logo": "faReact",
+    "description": "Composants fonctionnels, gestion d’état, hooks et routage via React Router."
+  },
+  {
+    "technologie": "Express.js",
+    "logo": "faNodeJs",
+    "description": "Création d’API REST simples, gestion des routes et middleware côté serveur."
+  },
+  {
+    "technologie": "TailwindCSS",
+    "logo": "faCss",
+    "description": "Stylisation rapide, design responsive moderne et respect d’une charte graphique cohérente."
+  }
+]

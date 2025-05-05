@@ -1,70 +1,39 @@
 // Hooks
+import { useEffect, useState } from 'react';
+// Compoment
 import Skill from '../../../utility/Skill';
-import {
-  faHtml5,
-  faJs,
-  faNodeJs,
-  faReact,
-  faCss,
-} from '@fortawesome/free-brands-svg-icons';
+// Type
+import { IconList } from '../../../utility/Skill.tsx';
+interface HardSkillType {
+  technologie: string;
+  logo: keyof IconList;
+  description: string;
+}
+interface SoftSkillType {
+  name: string;
+  type: string;
+}
 
 /** Section Skilles
- * @description Affiche la section Skilles à l'interieur de HomePage
+ * @description Envoie des requête pour recuperer les données soft et hard skill
  * @returns {JSX.Element} - Section Skilles
  * @component Skill - Affiche une animation en % de chaque skill
  */
 function Skilles(): React.JSX.Element {
-  // Liste des données de chaque skill
-  const skilles = [
-    {
-      technologie: 'HTML5',
-      logo: faHtml5,
-      description:
-        'Structure propre et sémantique des pages web, avec attention à l’accessibilité.',
-    },
-    {
-      technologie: 'CSS3',
-      logo: faCss,
-      description:
-        'Mise en page responsive avec Flexbox et Grid, animations simples et design soigné.',
-    },
-    {
-      technologie: 'JavaScript',
-      logo: faJs,
-      description:
-        'Scripts dynamiques, interactions DOM, logique d’application claire et modulaire.',
-    },
-    {
-      technologie: 'React',
-      logo: faReact,
-      description:
-        'Composants fonctionnels, gestion d’état, hooks et routage via React Router.',
-    },
-    {
-      technologie: 'Express.js',
-      logo: faNodeJs,
-      description:
-        'Création d’API REST simples, gestion des routes et middleware côté serveur.',
-    },
-    {
-      technologie: 'TailwindCSS',
-      logo: faCss,
-      description:
-        'Stylisation rapide, design responsive moderne et respect d’une charte graphique cohérente.',
-    },
-  ];
+  const [hardSkills, setHardSkills] = useState<HardSkillType[]>([]);
+  const [softSkills, setSoftSkills] = useState<SoftSkillType[]>([]);
 
-  //Liste des données de chaque soft skill
-  const softSkilles = [
-    { name: 'Autonomie', type: 'soft' },
-    { name: 'Adaptabilité', type: 'soft' },
-    { name: 'Rigueur', type: 'soft' },
-    { name: 'Travail en équipe', type: 'soft' },
-    { name: 'Responsive Design', type: 'transvers' },
-    { name: 'SEO de base', type: 'transvers' },
-    { name: 'Git & GitHub', type: 'transvers' },
-    { name: 'Notion', type: 'transvers' },
-  ];
+  useEffect(() => {
+    fetch('/datas/hard-skills.json')
+      .then(res => res.json())
+      .then(data => setHardSkills(data))
+      .catch(err => console.error('Erreur chargement hardskills:', err));
+
+    fetch('/datas/soft-skills.json')
+      .then(res => res.json())
+      .then(data => setSoftSkills(data))
+      .catch(err => console.error('Erreur chargement softSkills:', err));
+  }, []);
 
   return (
     <section id="skilles">
@@ -72,8 +41,11 @@ function Skilles(): React.JSX.Element {
 
       <div className="flex flex-col gap-8 h-full md:justify-between">
         <div className=" md:flex md:flex-col md:justify-between md:h-full">
-          {skilles.map((skill, index) => (
-            <Skill key={`${skill.technologie}-${index}`} skill={skill} />
+          {hardSkills.map((hardSkill, index) => (
+            <Skill
+              key={`${hardSkill.technologie}-${index}`}
+              skill={hardSkill}
+            />
           ))}
         </div>
 
@@ -81,17 +53,17 @@ function Skilles(): React.JSX.Element {
           <h3>Compétences transverses & soft skills</h3>
 
           <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-            {softSkilles.map((skilles, index) => (
+            {softSkills.map((skills, index) => (
               <span
-                key={`${skilles.name}-${index}`}
+                key={`${skills.name}-${index}`}
                 className={` ${
-                  skilles.type === 'soft'
+                  skills.type === 'soft'
                     ? 'bg-color-four text-color-two'
                     : 'bg-color-three text-color-four'
                 } 
                    border-1 border-color-three p-1 rounded-md `}
               >
-                {skilles.name}
+                {skills.name}
               </span>
             ))}
           </div>

@@ -1,0 +1,10 @@
+[
+  { "name": "Autonomie", "type": "soft" },
+  { "name": "Adaptabilité", "type": "soft" },
+  { "name": "Rigueur", "type": "soft" },
+  { "name": "Travail en équipe", "type": "soft" },
+  { "name": "Responsive Design", "type": "transvers" },
+  { "name": "SEO de base", "type": "transvers" },
+  { "name": "Git & GitHub", "type": "transvers" },
+  { "name": "Notion", "type": "transvers" }
+]
