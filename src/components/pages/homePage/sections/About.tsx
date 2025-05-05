@@ -34,7 +34,8 @@ function About(): React.JSX.Element {
 
         <img
           src="/images/profil.webp"
-          alt="photo Aurélien Aranud"
+          alt="photo Aurélien Arnaud"
+          loading="lazy"
           className="w-2/3 md:w-1/3 md:h-full object-cover md:pr-8"
         />
       </div>
