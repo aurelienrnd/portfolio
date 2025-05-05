@@ -1,5 +1,4 @@
 // Hooks
-import { useEffect, useRef, useState } from 'react';
 import Skill from '../../../utility/Skill';
 import {
   faHtml5,
@@ -15,52 +14,43 @@ import {
  * @component Skill - Affiche une animation en % de chaque skill
  */
 function Skilles(): React.JSX.Element {
-  //Gestion de l'état d'affichage de chaque skill
-  const [isVisible, setIsVisible] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
-
   // Liste des données de chaque skill
   const skilles = [
     {
-      technologie: 'HTML5:',
-      maitrise: '80%',
+      technologie: 'HTML5',
       logo: faHtml5,
-      ref: useRef<HTMLDivElement>(null!),
+      description:
+        'Structure propre et sémantique des pages web, avec attention à l’accessibilité.',
     },
     {
-      technologie: 'CSS3:',
-      maitrise: '75%',
+      technologie: 'CSS3',
       logo: faCss,
-      ref: useRef<HTMLDivElement>(null!),
+      description:
+        'Mise en page responsive avec Flexbox et Grid, animations simples et design soigné.',
     },
     {
-      technologie: 'JavaScript:',
-      maitrise: '75%',
+      technologie: 'JavaScript',
       logo: faJs,
-      ref: useRef<HTMLDivElement>(null!),
+      description:
+        'Scripts dynamiques, interactions DOM, logique d’application claire et modulaire.',
     },
     {
-      technologie: 'React:',
-      maitrise: '65%',
+      technologie: 'React',
       logo: faReact,
-      ref: useRef<HTMLDivElement>(null!),
+      description:
+        'Composants fonctionnels, gestion d’état, hooks et routage via React Router.',
     },
     {
-      technologie: 'Express.js:',
-      maitrise: '50%',
-      logo: faNodeJs, // Pas d’icône FA pour Express, tu peux réutiliser celle de Node.js
-      ref: useRef<HTMLDivElement>(null!),
+      technologie: 'Express.js',
+      logo: faNodeJs,
+      description:
+        'Création d’API REST simples, gestion des routes et middleware côté serveur.',
     },
     {
-      technologie: 'Tailwind:',
-      maitrise: '70%',
-      logo: faCss, // Remplaçable par une image custom ou un composant SVG
-      ref: useRef<HTMLDivElement>(null!),
+      technologie: 'TailwindCSS',
+      logo: faCss,
+      description:
+        'Stylisation rapide, design responsive moderne et respect d’une charte graphique cohérente.',
     },
   ];
 
@@ -76,43 +66,6 @@ function Skilles(): React.JSX.Element {
     { name: 'Notion', type: 'transvers' },
   ];
 
-  // Démarre l'animation quand l'element rentre dans le viewport
-  useEffect(() => {
-    // Pour chaque skill
-    skilles.map((skill, index) => {
-      // Je créer un observateur
-      const observer = new IntersectionObserver(
-        elements => {
-          elements.forEach(element => {
-            // Si l'element rentre dans le viewpoint
-            if (element.isIntersecting) {
-              // Je l'affiche
-              setIsVisible(prev => {
-                const newState = [...prev];
-                newState[index] = true;
-                return newState;
-              });
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      // J'associe la phrase a l'observateur
-      const currentRef = skill.ref.current;
-      if (currentRef) {
-        observer.observe(currentRef);
-      }
-
-      // Je stop l'observation
-      return () => {
-        if (currentRef) {
-          observer.unobserve(currentRef);
-        }
-      };
-    });
-  });
-
   return (
     <section id="skilles">
       <h2>Mes compétence en developpement web</h2>
@@ -120,12 +73,7 @@ function Skilles(): React.JSX.Element {
       <div className="flex flex-col gap-8 md:h-full md:justify-between">
         <div className="flex flex-col justify-around gap-4 md:h-3/4">
           {skilles.map((skill, index) => (
-            <Skill
-              key={`${skill.technologie}-${index}`}
-              skill={skill}
-              index={index}
-              isVisible={isVisible}
-            />
+            <Skill key={`${skill.technologie}-${index}`} skill={skill} />
           ))}
         </div>
 

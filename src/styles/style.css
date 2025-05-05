@@ -86,7 +86,7 @@
   }
 
   #home-page #skilles {
-    @apply md:min-h-[550px] md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen;
+    @apply md:min-h-[0px] md:max-h-[100000px] flex flex-col gap-8 text-center md:text-start md:h-screen;
   }
 
   #project #banner-project {
