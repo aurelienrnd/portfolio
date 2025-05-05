@@ -1,7 +1,7 @@
 // Hooks
 import { useEffect, useState } from 'react';
 // Compoment
-import Skill from '../../../utility/Skill';
+import Skill from '../../../utility/Skill.tsx';
 // Type
 import { IconList } from '../../../utility/Skill.tsx';
 interface HardSkillType {
@@ -19,7 +19,7 @@ interface SoftSkillType {
  * @returns {JSX.Element} - Section Skilles
  * @component Skill - Affiche une animation en % de chaque skill
  */
-function Skilles(): React.JSX.Element {
+function Skills(): React.JSX.Element {
   const [hardSkills, setHardSkills] = useState<HardSkillType[]>([]);
   const [softSkills, setSoftSkills] = useState<SoftSkillType[]>([]);
 
@@ -36,7 +36,7 @@ function Skilles(): React.JSX.Element {
   }, []);
 
   return (
-    <section id="skilles">
+    <section id="skills">
       <h2>Mes compétence en developpement web</h2>
 
       <div className="flex flex-col gap-8 h-full md:justify-between">
@@ -73,4 +73,4 @@ function Skilles(): React.JSX.Element {
   );
 }
 
-export default Skilles;
+export default Skills;

@@ -1,7 +1,7 @@
 // Compoments
 import Banner from './sections/Banner.tsx';
 import About from './sections/About.tsx';
-import Skill from './sections/Skilles.tsx';
+import Skills from './sections/Skills.tsx';
 
 /**Affiche la page d'accueil du site
  * @description Contient les sections Banner, About et Skill
@@ -15,7 +15,7 @@ function HomePage(): React.JSX.Element {
     <main id="home-page">
       <Banner />
       <About />
-      <Skill />
+      <Skills />
     </main>
   );
 }

@@ -35,7 +35,7 @@ function Header(): React.JSX.Element {
   const navList: NavList[] = [
     { destination: navDestination, label: navLabel, icon: navIcon },
     { destination: '/#about', label: 'À propos', icon: faAddressCard },
-    { destination: '/#skilles', label: 'Compétences', icon: faGear },
+    { destination: '/#skills', label: 'Compétences', icon: faGear },
     { destination: '/#contact', label: 'Contact', icon: faPaperPlane },
   ];
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 @import 'tailwindcss';
 
+/* Liste des différentes variables de couleurs et de polices */
 @theme {
   /*** Colors ***/
   --color-color-one: #1e293b; /* fond */
@@ -14,6 +15,7 @@
   --font-code: 'Fira Code', monospace;
 }
 
+/* Liste des différentes animations */
 @layer utilities {
   @keyframes slide-and-rotate {
     0% {
@@ -63,6 +65,7 @@
   }
 }
 
+/* Liste des différentes balises avec leurs styles réutilisables */
 @layer base {
   body {
     @apply bg-color-one text-color-two font-text;
@@ -76,34 +79,8 @@
     @apply px-4 pt-18 pb-8;
   }
 
-  #home-page #banner {
-    height: calc(100vh - 4rem);
-    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] flex flex-col items-center md:gap-8;
-  }
-
-  #home-page #about {
-    @apply md:min-h-[650px] md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen bg-color-four;
-  }
-
-  #home-page #skilles {
-    @apply md:min-h-[636px]  md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen;
-  }
-
-  #project #banner-project {
-    @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
-  }
-
-  #project #cards {
-    @apply flex flex-col gap-8 text-center md:text-start;
-  }
-
   footer {
     @apply px-4 pt-8 pb-2 bg-color-four flex flex-col gap-8 w-full text-center;
-  }
-
-  #error {
-    height: calc(100vh - 4rem);
-    @apply flex flex-col items-center justify-around;
   }
 
   h1,
@@ -124,6 +101,7 @@
   }
 }
 
+/* Liste des différents composants stylisés */
 @layer components {
   .btn {
     @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-105 transition-transform duration-300 text-center text-color-four;
@@ -131,5 +109,31 @@
 
   .card {
     @apply bg-color-two text-color-one p-4 rounded-xl hover:scale-105 transition-transform duration-300 text-sm flex flex-col gap-2 max-w-125;
+  }
+
+  #home-page #banner {
+    height: calc(100vh - 4rem);
+    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] flex flex-col items-center md:gap-8;
+  }
+
+  #home-page #about {
+    @apply md:min-h-[650px] md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen bg-color-four;
+  }
+
+  #home-page #skills {
+    @apply md:min-h-[636px]  md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen;
+  }
+
+  #project #banner-project {
+    @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
+  }
+
+  #project #cards {
+    @apply flex flex-col gap-8 text-center md:text-start;
+  }
+
+  #error {
+    height: calc(100vh - 4rem);
+    @apply flex flex-col items-center justify-around;
   }
 }

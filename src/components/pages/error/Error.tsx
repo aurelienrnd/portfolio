@@ -4,8 +4,8 @@ function Error() {
     <main>
       <section id="error">
         <div className="text-center">
-          <h1 className="">Erreur 404</h1>
-          <p className="">Page non trouvée</p>
+          <h1>Erreur 404</h1>
+          <p>Page non trouvée</p>
         </div>
 
         <Link to="/" className="btn">
