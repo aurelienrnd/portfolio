@@ -49,7 +49,7 @@ function Cards(): React.JSX.Element {
         'Site personnel de présentation, codé en React, TypeScript et TailwindCSS v4. Responsive, clair et optimisé SEO.',
       dificulty:
         'N’ayant jamais utilisé TypeScript ni TailwindCSS v4, j’ai dû surmonter une courbe d’apprentissage abrupte en suivant des tutoriels ciblés et en explorant activement la documentation pour comprendre la logique des types et des classes utilitaires.',
-      image: '/images/test.png',
+      image: '/images/portfolio.webp',
       techs: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
       codeUrl: 'https://github.com/aurelienrnd/portfolio',
       siteUrl: 'https://aurelienrnd-portfolio.netlify.app',

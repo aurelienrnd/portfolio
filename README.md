@@ -90,8 +90,9 @@ src/
   - Contient un formulaire et différent liens de contact
 
 ## Étapes encore a réalisées
+- Modiffication skills
 - Poster en ligne
-- audit lighthouse
+- Audit lighthouse
 
 
 ## 🔧 Scripts utiles

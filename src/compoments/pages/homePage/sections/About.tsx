@@ -1,6 +1,3 @@
-// Image
-import phtoProfil from '../../../../assets/Screenshot_20250428-230534.png';
-
 /** Section About
  * @description Affiche la section About
  * @returns {JSX.Element} - Page d'accueil du site
@@ -36,7 +33,7 @@ function About(): React.JSX.Element {
         </div>
 
         <img
-          src={phtoProfil}
+          src="/images/profil.webp"
           alt="photo Aurélien Aranud"
           className="w-2/3 md:w-1/3 md:h-full object-cover md:pr-8"
         />
