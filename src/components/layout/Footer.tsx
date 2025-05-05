@@ -4,10 +4,10 @@ import FormContact from '../utility/FormContact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-/** Gestion du footer du site
- * @description - Affiche le footer de la page
- * @returns {JSX.Element} - le footer du site
- * @component FormContact - Affiche un formulaire que preremplie un email une fois validé
+/** Gestion du pied de page du site
+ * @description - Affiche le pied de page de la page.
+ * @returns {JSX.Element} - Le composant footer du site.
+ * @component FormContact - Affiche un formulaire qui préremplit un e-mail une fois validé.
  */
 function Footer(): React.JSX.Element {
   return (

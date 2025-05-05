@@ -2,7 +2,7 @@
 type Props = {
   title: string;
   description: string;
-  dificulty: string;
+  difficulty: string;
   image: string;
   techs: string[];
   codeUrl: string;
@@ -10,13 +10,13 @@ type Props = {
 };
 
 /** Affiche un projet sous forme de carte
- * @description - Utilise les information transmise en prop pour créer une carte avec les info du projet
- * @returns {JSX.Element} - une carte projet
+ * @description - Utilise les informations transmises en props pour générer une carte avec les détails du projet.
+ * @returns {JSX.Element} - Une carte projet.
  */
 function Card({
   title,
   description,
-  dificulty,
+  difficulty,
   image,
   techs,
   codeUrl,
@@ -34,7 +34,7 @@ function Card({
         <div className="flex flex-col gap-2">
           <h3>{title}</h3>
           <p>{description}</p>
-          <p>{dificulty}</p>
+          <p>{difficulty}</p>
         </div>
 
         <div className="flex gap-2 flex-wrap justify-center md:justify-start">

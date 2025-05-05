@@ -22,9 +22,9 @@ interface SkillProps {
   description: string;
 }
 
-/** Affiche un skill avec les information contenue en prop
- * @description -  Affiche une animation en % de chaque skill
- * @returns {JSX.Element} -
+/** Affiche une compétence avec les informations contenues dans les props
+ * @description - Affiche une animation en pourcentage pour chaque compétence.
+ * @returns {JSX.Element} - Le composant représentant une compétence.
  */
 function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
   const iconList: IconList = {

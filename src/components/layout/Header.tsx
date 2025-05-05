@@ -18,20 +18,20 @@ export type NavList = {
   icon: import('@fortawesome/fontawesome-svg-core').IconDefinition;
 };
 
-/** Gestion de l'entête du site
- * @description -  Utilise le hook useLocation pour changer le label et la destination du lien "Projet" dans le tableau navList,
- * et affiche le header de la page
- * @returns {JSX.Element} - Header du site
- * @component NavDesktop - Menu de navigation pour les écrans larges
- * @component NavMobile - Menu de navigation pour les petit ecrant
+/** Gestion de l'en-tête du site
+ * @description - Utilise le hook useLocation pour changer dynamiquement le label et la destination du lien "Projet/Accueil"
+ * dans le tableau navList, et affiche le header de la page.
+ * @returns {JSX.Element} - Composant Header du site.
+ * @component NavDesktop - Menu de navigation pour les écrans larges.
+ * @component NavMobile - Menu de navigation pour les petits écrans.
  */
 function Header(): React.JSX.Element {
-  // Création de UseStates pour modiffier les données du lien "Projet/Acceuil" de façons dynamique
+  // Création de useState pour modifier dynamiquement le lien "Projet/Accueil"
   const [navDestination, setNavDestination] = useState('/project');
   const [navLabel, setNavLabel] = useState('Projets');
   const [navIcon, setNavIcon] = useState(faFolder);
 
-  // Création du tableau contenanat les info de chaque lien de navigation
+  // Création du tableau contenant les informations de chaque lien de navigation
   const navList: NavList[] = [
     { destination: navDestination, label: navLabel, icon: navIcon },
     { destination: '/#about', label: 'À propos', icon: faAddressCard },
@@ -39,7 +39,7 @@ function Header(): React.JSX.Element {
     { destination: '/#contact', label: 'Contact', icon: faPaperPlane },
   ];
 
-  // Modifie le liens "Projet" en "Acceuil" en fonction de la page visitée
+  // Modifie le lien "Projet" en "Accueil" en fonction de la page visitée
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === '/project') {

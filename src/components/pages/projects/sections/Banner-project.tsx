@@ -1,6 +1,6 @@
-/**Affiche la page Projet
- * @description Contient un text d'untroduction
- * @returns {JSX.Element} - Page Projet du site
+/** Affiche la bannière de la page Projet
+ * @description - Contient un texte d’introduction.
+ * @returns {JSX.Element} - La bannière de la page Projet du site.
  */
 function Banner(): React.JSX.Element {
   return (

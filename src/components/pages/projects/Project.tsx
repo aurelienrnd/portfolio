@@ -1,12 +1,12 @@
 // Compoments
-import Banner from './sections/Banner.tsx';
+import Banner from './sections/Banner-project.tsx';
 import Cards from './sections/Cards.tsx';
 
-/**Affiche la page Projet
- * @description Contient les sections Banner, Cards
- * @returns {JSX.Element} - Page Projet du site
- * @component Banner - Section d'accueil
- * @component Cards - Section Cards
+/** Affiche la page Projet
+ * @description - Contient les sections Banner et Cards.
+ * @returns {JSX.Element} - La page Projet du site.
+ * @component Banner - Section d’accueil.
+ * @component Cards - Section des cartes projets.
  */
 function Project(): React.JSX.Element {
   return (

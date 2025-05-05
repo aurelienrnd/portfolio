@@ -7,26 +7,26 @@ interface ProjectsType {
   id: number;
   title: string;
   description: string;
-  dificulty: string;
+  difficulty: string;
   image: string;
   techs: string[];
   codeUrl: string;
 }
 
 /** Section Cards
- * @description Fait une requette pour recupperer la liste des diférent projet
- * @returns {JSX.Element} - Section Cards
- * @component Card - Affiche une carte de chaque projet
+ * @description - Effectue une requête pour récupérer la liste des différents projets.
+ * @returns {JSX.Element} - La section des cartes projets.
+ * @component Card - Affiche une carte pour chaque projet.
  */
 function Cards(): React.JSX.Element {
-  // List des données de chaque projet
+  // Liste des données de chaque projet
   const [projects, setProject] = useState<ProjectsType[]>([]);
 
   useEffect(() => {
     fetch('/datas/projects.json')
       .then(res => res.json())
       .then(data => setProject(data))
-      .catch(err => console.error('Erreur chargement preojects:', err));
+      .catch(err => console.error('Erreur chargement project:', err));
   }, []);
 
   return (

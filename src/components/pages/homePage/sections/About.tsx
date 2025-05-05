@@ -1,6 +1,6 @@
 /** Section About
- * @description Affiche la section About
- * @returns {JSX.Element} - Page d'accueil du site
+ * @description - Affiche la section About.
+ * @returns {JSX.Element} - La section À propos du site.
  */
 function About(): React.JSX.Element {
   return (

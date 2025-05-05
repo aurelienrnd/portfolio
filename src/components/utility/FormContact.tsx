@@ -2,18 +2,18 @@
 import { useState } from 'react';
 
 /** Affiche un formulaire de contact dans le footer
- * @description - Affiche un formulaire qui preremplie un email quand l'utilisateur le valide
- * @returns {JSX.Element} - Un formulaire de contact
+ * @description - Affiche un formulaire qui préremplit un e-mail quand l'utilisateur le valide.
+ * @returns {JSX.Element} - Un formulaire de contact.
  */
 function FormContact(): React.JSX.Element {
-  //Datas du formulaire
+  // Données du formulaire
   const [formData, setFormData] = useState({
     nom: '',
     email: '',
     message: '',
   });
 
-  //Gestion des data du formulaire
+  // Gestion des données du formulaire
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -24,7 +24,7 @@ function FormContact(): React.JSX.Element {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  //Creation d'un email preremplie
+  // Création d'un e-mail prérempli
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 

@@ -1,11 +1,11 @@
 // Hooks
 import { useState } from 'react';
 
-/** Affiche un questionaire de navigation avec un style de terminal
- * @description Utilise un tableaux de question et le useState pour gérer l'affichage de la question
- * Redirige vers la section correspondante si l'utilisateur clique sur le bouton "oui"
- * Affiche la question suivante si l'utilisateur clique sur le bouton "non"
- * @returns {JSX.Element} - Questionaire de navigation
+/** Affiche un questionnaire de navigation avec un style terminal
+ * @description - Utilise un tableau de questions et le hook useState pour gérer l'affichage des questions.
+ * Redirige vers la section correspondante si l'utilisateur clique sur "oui".
+ * Affiche la question suivante si l'utilisateur clique sur "non".
+ * @returns {JSX.Element} - Questionnaire de navigation.
  */
 function Cmd(): React.JSX.Element {
   const [questionLength, setQuestionLength] = useState(1);
@@ -15,7 +15,7 @@ function Cmd(): React.JSX.Element {
       question: 'En savoir plus à propos de moi ?',
       direction: '#about',
     },
-    { question: 'Connaitre mes compétences ?', direction: '#skilles' },
+    { question: 'Connaitre mes compétences ?', direction: '#skills' },
   ];
 
   return (

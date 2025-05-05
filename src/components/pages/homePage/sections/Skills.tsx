@@ -14,10 +14,10 @@ interface SoftSkillType {
   type: string;
 }
 
-/** Section Skilles
- * @description Envoie des requête pour recuperer les données soft et hard skill
- * @returns {JSX.Element} - Section Skilles
- * @component Skill - Affiche une animation en % de chaque skill
+/** Section Skills
+ * @description - Envoie des requêtes pour récupérer les données des soft et hard skills.
+ * @returns {JSX.Element} - La section des compétences.
+ * @component Skill - Affiche une animation en pourcentage pour chaque compétence.
  */
 function Skills(): React.JSX.Element {
   const [hardSkills, setHardSkills] = useState<HardSkillType[]>([]);
@@ -37,7 +37,7 @@ function Skills(): React.JSX.Element {
 
   return (
     <section id="skills">
-      <h2>Mes compétence en developpement web</h2>
+      <h2> Mes compétences en développement web</h2>
 
       <div className="flex flex-col gap-8 h-full md:justify-between">
         <div className=" md:flex md:flex-col md:justify-between md:h-full">

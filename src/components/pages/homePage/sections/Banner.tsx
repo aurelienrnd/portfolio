@@ -5,22 +5,22 @@ import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
 
 /** Section Banner
- * @description Affiche la section Banner à l'interieur de HomePage
- * @returns {JSX.Element} - Section Banner
- * @component Cmd - Affiche un questionaire de navigation avec un style de terminal
+ * @description - Affiche la section Banner à l'intérieur de HomePage.
+ * @returns {JSX.Element} - La section Banner.
+ * @component Cmd - Affiche un questionnaire de navigation avec un style terminal.
  */
 function Banner(): React.JSX.Element {
   const text =
     'Passionné par le code. Mon parcours atypique m’a appris à apprendre vite, partout dans le monde. Aujourd’hui, je crée des interfaces claires et responsives avec React';
 
-  // Création d'un loader
+  // Création d’un loader
   const FakeLoader = (): React.JSX.Element => (
     <div className="h-1/3 flex w-1/2  items-center">
       <div className="bg-color-three h-1 fake-loader rounded-md"></div>
     </div>
   );
 
-  // Gestion de l'état du loader
+  // Gestion de l’état du loader
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -34,7 +34,7 @@ function Banner(): React.JSX.Element {
         <h1>Aurélien Arnaud</h1>
 
         <div className=" h-1/3 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
-          <h2>Développeur d'aplication web</h2>
+          <h2>Développeur d'application web</h2>
           <Link to="project" className="btn md:mr-8">
             Voir mes projets
           </Link>
@@ -48,6 +48,6 @@ function Banner(): React.JSX.Element {
   );
 }
 
-//TODO - afficher dans le navigateur la page afficher a l'écrant
+// TODO - Afficher dans le navigateur la page affichée à l’écran
 
 export default Banner;

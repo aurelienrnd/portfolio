@@ -13,9 +13,9 @@ type NavProps = {
 };
 
 /** Menu de navigation pour les écrans larges
- * @description Utilise .map sur le tableau navList pour créer une de balise Link pour chaque élément
- * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation
- * @returns {JSX.Element} - Menu de navigation pour les écrans larges
+ * @description - Utilise `.map` sur le tableau navList pour créer une balise Link pour chaque élément.
+ * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation.
+ * @returns {JSX.Element} - Le menu de navigation pour les écrans larges.
  */
 export function NavDesktop({ navList }: NavProps): React.JSX.Element {
   return (
@@ -36,14 +36,14 @@ export function NavDesktop({ navList }: NavProps): React.JSX.Element {
   );
 }
 
-/** Menu de navigation pour les petit écrans
- * @description Utilise ReactModal pour créer un menu de navigation qui s'ouvre et se ferme au clic sur le bouton hamburger
- * Utilise .map sur le tableau navList pour créer une de balise Link pour chaque élément
- * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation
- * @returns {JSX.Element} - Menu de navigation pour les petit écrans
+/** Menu de navigation pour les petits écrans
+ * @description - Utilise ReactModal pour créer un menu de navigation qui s’ouvre et se ferme au clic sur le bouton hamburger.
+ * Utilise `.map` sur le tableau navList pour générer une balise Link pour chaque élément.
+ * @param {NavProps} navList - Tableau d'objets contenant les destinations et les labels de navigation.
+ * @returns {JSX.Element} - Le menu de navigation pour les petits écrans.
  */
 export function NavMobile({ navList }: NavProps): React.JSX.Element {
-  // Gestion de l'ouverture ou de la fermeture de la modal
+  // Gestion de l’ouverture ou de la fermeture de la modale
   const [isOpen, setIsOpen] = useState(false);
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
@@ -51,7 +51,7 @@ export function NavMobile({ navList }: NavProps): React.JSX.Element {
 
   return (
     <div className="md:hidden">
-      <button onClick={handleMenuToggle} aria-label="">
+      <button onClick={handleMenuToggle} aria-label="Ouvrir le menu">
         <FontAwesomeIcon icon={faBars} className="mr-4" />
       </button>
 
