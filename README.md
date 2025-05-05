@@ -90,7 +90,8 @@ src/
   - Contient un formulaire et différent liens de contact
 
 ## Étapes encore a réalisées
-- Modiffication skills
+- creer tableaux json
+- imorter avec fetch
 - Poster en ligne
 - Audit lighthouse
 
