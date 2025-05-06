@@ -1,1 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 @import 'tailwindcss';
+
+/* Liste des différentes variables de couleurs et de polices */
+@theme {
+  /*** Colors ***/
+  --color-color-one: #1e293b; /* fond */
+  --color-color-two: #e5e7eb; /* texte principal */
+  --color-color-three: #10b981; /* bouton principal */
+  --color-color-four: #263143; /* fond secondaire */
+
+  /*** Font ***/
+  --font-title: 'Poppins', sans-serif;
+  --font-text: 'Inter', sans-serif;
+  --font-code: 'Fira Code', monospace;
+}
+
+/* Liste des différentes animations */
+@layer utilities {
+  @keyframes slide-and-rotate {
+    0% {
+      transform: translateY(10px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-10px) rotate(90deg);
+    }
+
+    100% {
+      transform: translateY(10px) rotate(180deg);
+    }
+  }
+  .slide-top {
+    animation: slide-and-rotate 1.5s ease-in-out infinite both;
+  }
+
+  @keyframes slide-in-blurred-top {
+    0% {
+      transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      transform-origin: 0% 100%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+      transform-origin: 100% 0%;
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  .openModal {
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+
+  @keyframes line-bounce {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .fake-loader {
+    animation: line-bounce 1.25s both;
+  }
+}
+
+/* Liste des différentes balises avec leurs styles réutilisables */
+@layer base {
+  body {
+    @apply bg-color-one text-color-two font-text;
+  }
+
+  header {
+    @apply px-4 h-16 w-full flex justify-between items-center sticky top-0 bg-color-one z-9999;
+  }
+
+  section {
+    @apply px-4 pt-18 pb-8;
+  }
+
+  footer {
+    @apply px-4 pt-8 pb-2 bg-color-four flex flex-col gap-8 w-full text-center;
+  }
+
+  h1,
+  h2 {
+    @apply text-3xl md:text-4xl font-bold font-title;
+  }
+
+  h3 {
+    @apply text-xl font-bold font-title;
+  }
+
+  input {
+    @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1 md:w-full;
+  }
+
+  textarea {
+    @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1 w-full h-20;
+  }
+}
+
+/* Liste des différents composants stylisés */
+@layer components {
+  .btn {
+    @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-105 transition-transform duration-300 text-center text-color-four;
+  }
+
+  .card {
+    @apply bg-color-two text-color-one p-4 rounded-xl hover:scale-105 transition-transform duration-300 text-sm flex flex-col gap-2 max-w-125;
+  }
+
+  #home-page #banner {
+    height: calc(100vh - 4rem);
+    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] flex flex-col items-center md:gap-8;
+  }
+
+  #home-page #about {
+    @apply md:min-h-[650px] md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen bg-color-four;
+  }
+
+  #home-page #skills {
+    @apply md:min-h-[636px]  md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen;
+  }
+
+  #project #banner-project {
+    @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
+  }
+
+  #project #cards {
+    @apply flex flex-col gap-8 text-center md:text-start;
+  }
+
+  #error {
+    height: calc(100vh - 4rem);
+    @apply flex flex-col items-center justify-around;
+  }
+}
