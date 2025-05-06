@@ -34,6 +34,6 @@
     "image": "/images/portfolio.webp",
     "techs": ["React", "TypeScript", "TailwindCSS", "Vite"],
     "codeUrl": "https://github.com/aurelienrnd/portfolio",
-    "siteUrl": "https://aurelienrnd-portfolio.netlify.app"
+    "siteUrl": "https://portfolio-aurelien-arnaud.vercel.app/"
   }
 ]
