@@ -62,7 +62,8 @@ export function NavMobile({ navList }: NavProps): React.JSX.Element {
       >
         <nav className="flex flex-col items-start gap-4 my-6 w-2/3">
           {navList.map(nav => (
-            <button
+            <Link
+              to={nav.destination}
               key={nav.label}
               onClick={handleMenuToggle}
               className="flex gap-4 items-center w-full h-12 px-4 rounded-md active:bg-color-three"
@@ -71,8 +72,8 @@ export function NavMobile({ navList }: NavProps): React.JSX.Element {
                 icon={nav.icon}
                 className="text-xl text-color-twoo"
               />
-              <Link to={nav.destination}>{nav.label}</Link>
-            </button>
+              <button>{nav.label}</button>
+            </Link>
           ))}
         </nav>
       </ReactModal>
