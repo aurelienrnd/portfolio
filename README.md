@@ -106,8 +106,6 @@ src/
 - Création du Footer :
   - Contient un formulaire de contact et divers liens externes
 
-
-
 ## 🔧 Scripts utiles
 
 ```bash
