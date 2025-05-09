@@ -8,6 +8,7 @@ import {
   faReact,
   faCss,
 } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 export type IconList = {
   faHtml5: IconDefinition;
@@ -15,6 +16,7 @@ export type IconList = {
   faJs: IconDefinition;
   faReact: IconDefinition;
   faNodeJs: IconDefinition;
+  faDatabase: IconDefinition;
 };
 interface SkillProps {
   logo: keyof IconList;
@@ -33,6 +35,7 @@ function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
     faJs,
     faReact,
     faNodeJs,
+    faDatabase,
   };
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-2 md:px-4 md:ml-4 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300">

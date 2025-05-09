@@ -2,7 +2,7 @@
   {
     "technologie": "HTML5",
     "logo": "faHtml5",
-    "description": "Structure propre et sémantique des pages web, avec attention à l’accessibilité."
+    "description": "Sémantique des pages web, avec attention à l’accessibilité, W3C."
   },
   {
     "technologie": "CSS3",
@@ -28,5 +28,10 @@
     "technologie": "TailwindCSS",
     "logo": "faCss",
     "description": "Stylisation rapide, design responsive moderne et respect d’une charte graphique cohérente."
+  },
+  {
+    "technologie": "mongodb",
+    "logo": "faDatabase",
+    "description": "Base de données NoSQL orientée documents, utilisée pour stocker et manipuler des données JSON via Mongoose."
   }
 ]
