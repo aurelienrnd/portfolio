@@ -16,9 +16,13 @@ function Footer(): React.JSX.Element {
 
       <div className="flex flex-col md:flex-row gap-4 items-center justify-between w-full">
         <div className="flex flex-col-reverse md:flex-row-reverse gap-4 items-center justify-between w-full">
-          <button className="cursor-pointer hover:text-color-three border-2 hover:border-color-three rounded-lg px-4 py-2">
+          <a
+            className="cursor-pointer hover:text-color-three border-2 hover:border-color-three rounded-lg px-4 py-2"
+            href="/cv/cv-aurelien-arnaud.pdf"
+            download
+          >
             Obtenir mon CV
-          </button>
+          </a>
           <span className="font-syne text-sm font-extrabold">
             Aurelien Arnaud
           </span>
