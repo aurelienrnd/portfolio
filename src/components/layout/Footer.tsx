@@ -12,38 +12,41 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 function Footer(): React.JSX.Element {
   return (
     <footer id="contact">
-      <div className="flex flex-col-reverse md:flex-row-reverse gap-8">
-        <div className="flex md:flex-row-reverse justify-between md:justify-start items-center md:items-end md:gap-8 md:w-1/3">
+      <FormContact />
+
+      <div className="flex flex-col md:flex-row gap-4 items-center justify-between w-full">
+        <div className="flex flex-col-reverse md:flex-row-reverse gap-4 items-center justify-between w-full">
+          <button className="cursor-pointer hover:text-color-three border-2 hover:border-color-three rounded-lg px-4 py-2">
+            Obtenir mon CV
+          </button>
           <span className="font-syne text-sm font-extrabold">
             Aurelien Arnaud
           </span>
-
-          <div className="flex text-5xl gap-8">
-            <a
-              href="https://github.com/aurelienrnd"
-              target="_blank"
-              aria-label="github"
-            >
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="hover:text-color-three"
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/"
-              target="_blank"
-              aria-label="linkedin"
-            >
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="hover:text-color-three"
-              />
-            </a>
-          </div>
         </div>
 
-        <FormContact />
+        <div className="flex text-5xl gap-8 justify-center items-center">
+          <a
+            href="https://github.com/aurelienrnd"
+            target="_blank"
+            aria-label="github"
+          >
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="hover:text-color-three"
+            />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/"
+            target="_blank"
+            aria-label="linkedin"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="hover:text-color-three"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
