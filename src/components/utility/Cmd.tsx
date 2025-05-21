@@ -1,3 +1,6 @@
+// Library
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare } from '@fortawesome/free-solid-svg-icons';
 // Hooks
 import { useState } from 'react';
 
@@ -27,7 +30,7 @@ function Cmd(): React.JSX.Element {
           className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex flex-col gap-4`}
         >
           <div className="flex gap-4">
-            <div className="slide-top">⬜</div>
+            <FontAwesomeIcon icon={faSquare} className="slide-top" />
             <p>{element.question}</p>
           </div>
 
