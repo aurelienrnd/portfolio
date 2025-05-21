@@ -14,7 +14,7 @@ function Footer(): React.JSX.Element {
     <footer id="contact">
       <FormContact />
 
-      <div className="flex flex-col md:flex-row gap-4 items-center justify-between w-full">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-between w-full">
         <div className="flex flex-col-reverse md:flex-row-reverse gap-4 items-center justify-between w-full">
           <a
             className="cursor-pointer hover:text-color-three border-2 hover:border-color-three rounded-lg px-4 py-2"
