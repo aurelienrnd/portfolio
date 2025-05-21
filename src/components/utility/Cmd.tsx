@@ -16,6 +16,7 @@ function Cmd(): React.JSX.Element {
       direction: '#about',
     },
     { question: 'Connaitre mes compétences ?', direction: '#skills' },
+    { question: 'Télécharger mon CV ?', path: '/cv/cv-aurelien-arnaud.pdf' },
   ];
 
   return (
@@ -31,9 +32,16 @@ function Cmd(): React.JSX.Element {
           </div>
 
           <div className=" flex gap-8 justify-center">
-            <a href={element.direction} className="hover:border-b-1">
-              oui\
-            </a>
+            {element.path ? (
+              <a href={element.path} download className="hover:border-b-1">
+                oui\
+              </a>
+            ) : (
+              <a href={element.direction} className="hover:border-b-1">
+                oui\
+              </a>
+            )}
+
             <button
               className="cursor-pointer hover:border-b-1"
               onClick={() =>
