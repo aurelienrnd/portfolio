@@ -12,6 +12,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 - Affichage dynamique des différents hard-skills et soft-skills depuis des données JSON stockées dans public/datas
 - Affichage dynamique des différents projets depuis des données JSON stockées dans public/datas
 - Création d’un formulaire de contact générant un email prérempli
+- Option de téléchargement du CV au format PDF
 
 ## 🚀 Stack technique
 
