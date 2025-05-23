@@ -2,11 +2,22 @@
 
 Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies modernes pour valoriser mes compétences, projets et parcours professionnel.
 
+## ✅ Objectif
+- Initialisation du projet avec Vite, React et TypeScript
+- Gestion du style avec TailwindCSS
+- Mise en place du routage entre les différentes pages du site
+- Modification dynamique du lien Projets/Accueil dans le menu de navigation en fonction de la page visitée
+- En version mobile, affichage du menu de navigation dans une modale au clic sur une icône
+- Création d’un composant Cmd proposant une navigation interactive avec l’utilisateur
+- Affichage dynamique des différents hard-skills et soft-skills depuis des données JSON stockées dans public/datas
+- Affichage dynamique des différents projets depuis des données JSON stockées dans public/datas
+- Création d’un formulaire de contact générant un email prérempli
+
 ## 🚀 Stack technique
 
 - [Vite] – bundler ultra rapide
 - [React] – bibliothèque UI
-- [React Router] – routage entre les différentes pages du site
+- [React-Router] – routage entre les différentes pages du site
 - [TypeScript] – typage strict et sécurisé
 - [TailwindCSS] – framework CSS utilitaire
 - [Prettier] – formateur de code
@@ -73,44 +84,20 @@ src/
 └── ...            
 ```
 
-## ✅ Étapes déjà réalisées
-
-- Initialisation avec Vite + React + TypeScript
-- Suppression des fichiers inutiles
-- Création de l’arborescence
-- Installation et configuration de TailwindCSS v4
-- Mise en place de Prettier + prettier-plugin-tailwindcss
-- Initialisation Git, création du dépôt et premier push
-- Mise en place du routage entre les différentes pages du site
-- Initialisation des premiers éléments de style dans style.css
-- Création du Header :
-  - Ajout du composant ScrollToAnchor pour naviguer d’une page à une ancre située sur une autre page
-  - Modification dynamique du lien Projets/Accueil selon la page visitée
-  - En version mobile, affichage du menu de navigation dans une modale au clic sur une icône
-- Création de la HomePage :
-  - Section Banner
-    - Bouton CTA redirigeant vers la page projet
-    - Faux loader affichant un questionnaire pour rediriger l’utilisateur vers différentes sections du site
-  - Section About
-    - Ajout de texte et d’une photo
-    - Adaptation au responsive via Media Queries
-  - Section Skills
-    - Affichage dynamique des différentes compétences avec animation au scroll
-    - Responsive via Media Queries
-- Création de la page Project :
-  - Section Banner
-    - Contient un texte d’introduction
-  - Section Cards
-    - Liste de projets sous forme de cartes
-    - Responsive
-- Création du Footer :
-  - Contient un formulaire de contact et divers liens externes
-
 ## 🔧 Scripts utiles
-
+- Lancer le serveur de développement
 ```bash
-npm run dev         # Lancer le serveur de développement
-npm run build       # Générer la version de production
-npm run lint        # Vérifier la qualité du code avec ESLint
-npm run preview     # Prévisualiser du site en mode production.
+npm run dev         
+```
+- Générer la version de production
+```bash
+npm run build       
+```
+-  Vérifier la qualité du code avec ESLint
+```bash
+npm run lint       
+```
+- Prévisualiser du site en mode production.
+```bash
+npm run preview     
 ```
