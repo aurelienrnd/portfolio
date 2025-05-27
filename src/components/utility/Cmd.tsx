@@ -23,7 +23,7 @@ function Cmd(): React.JSX.Element {
   ];
 
   return (
-    <div className=" h-1/3 flex justify-center items-center md:font-code">
+    <div className=" h-1/3 flex justify-center items-center md:font-code scale-in-ver-center">
       {questionList.map((element, index) => (
         <div
           key={`question-${index}`}
