@@ -35,5 +35,29 @@
     "techs": ["React", "TypeScript", "TailwindCSS", "Vite"],
     "codeUrl": "https://github.com/aurelienrnd/portfolio",
     "siteUrl": "https://portfolio-aurelien-arnaud.vercel.app/"
+  },
+  {
+    "id": 5,
+    "title": "Nina Carducci",
+    "description": "Réalisation d’un audit pour améliorer les performances, l’accessibilité et le SEO d’un site web à l’aide d’outils comme Lighthouse et Wave.",
+    "difficulty": "La principale difficulté a été d’interpréter les résultats techniques fournis par les outils comme Lighthouse ou Wave, notamment pour corriger des problèmes d’accessibilité complexes (contrastes, balises ARIA) et optimiser le chargement des ressources sans altérer le rendu du site.",
+    "image": "/images/nina-carducci.webp",
+    "techs": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Google LighoutHouse",
+      "W3C Validator"
+    ],
+    "codeUrl": "https://github.com/aurelienrnd/Nina-Carducci.git"
+  },
+  {
+    "id": 6,
+    "title": "Sophie Bluel",
+    "description": "Création d’une page web dynamique en JavaScript : gestion d’événements, manipulation du DOM, création d’une page de connexion et communication avec une API.",
+    "difficulty": "L’une des principales difficultés a été de gérer les erreurs lors des appels API et de sécuriser les accès à la page administrateur en vérifiant correctement le token de connexion.",
+    "image": "/images/sophie-bluel.webp",
+    "techs": ["HTML", "JavaScript", "CSS"],
+    "codeUrl": "https://github.com/aurelienrnd/Site_Sophie_Bluel.git"
   }
 ]
