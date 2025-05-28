@@ -92,7 +92,7 @@
   }
 
   section {
-    @apply px-4 pt-16 pb-8;
+    @apply px-4 pt-8 pb-8;
   }
 
   footer {
@@ -128,7 +128,6 @@
   }
 
   #home-page #banner {
-    height: calc(100vh - 4rem);
     @apply min-h-[600px] md:min-h-[550px] max-h-[900px] flex flex-col items-center md:gap-8;
   }
 
