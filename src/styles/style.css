@@ -131,11 +131,11 @@
   }
 
   #home-page #about {
-    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four;
+    @apply md:min-h-[540px] md:max-h-[900px] md:h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four;
   }
 
   #home-page #skills {
-    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start;
+    @apply md:min-h-[540px] md:max-h-[900px] md:h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start;
   }
 
   #project #banner-project {
