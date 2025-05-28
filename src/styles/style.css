@@ -91,7 +91,7 @@
   }
 
   section {
-    @apply px-4 pt-8 pb-8;
+    @apply px-8 pt-8 pb-8;
   }
 
   footer {
@@ -131,19 +131,19 @@
   }
 
   #home-page #about {
-    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four px-8;
+    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four;
   }
 
   #home-page #skills {
-    @apply md:min-h-[600px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start px-8;
+    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start;
   }
 
   #project #banner-project {
-    @apply bg-color-four flex flex-col gap-8 text-center md:text-start px-8;
+    @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
   }
 
   #project #cards {
-    @apply flex flex-col gap-8 text-center md:text-start px-8;
+    @apply flex flex-col gap-8 text-center md:text-start;
   }
 
   #error {
