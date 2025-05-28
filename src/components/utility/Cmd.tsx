@@ -3,6 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare } from '@fortawesome/free-solid-svg-icons';
 // Hooks
 import { useState } from 'react';
+import { Link } from 'react-router';
+
+type QuestionList = {
+  question: string; // Question à afficher
+  direction?: string; // Lien de redirection (optionnel)
+  path?: string; // Chemin de téléchargement (optionnel)
+};
 
 /** Affiche un questionnaire de navigation avec un style terminal
  * @description - Utilise un tableau de questions et le hook useState pour gérer l'affichage des questions.
@@ -12,13 +19,13 @@ import { useState } from 'react';
  */
 function Cmd(): React.JSX.Element {
   const [questionLength, setQuestionLength] = useState(1);
-  const questionList = [
-    { question: 'Vous souhaitez me contacter ?', direction: '#contact' },
+  const questionList: QuestionList[] = [
+    { question: 'Vous souhaitez me contacter ?', direction: '/#contact' },
     {
       question: 'En savoir plus à propos de moi ?',
-      direction: '#about',
+      direction: '/#about',
     },
-    { question: 'Connaitre mes compétences ?', direction: '#skills' },
+    { question: 'Connaitre mes compétences ?', direction: '/#skills' },
     { question: 'Télécharger mon CV ?', path: '/cv/cv-aurelien-arnaud.pdf' },
   ];
 
@@ -40,9 +47,9 @@ function Cmd(): React.JSX.Element {
                 oui\
               </a>
             ) : (
-              <a href={element.direction} className="hover:border-b-1">
+              <Link to={element.direction ?? '#'} className="hover:border-b-1">
                 oui\
-              </a>
+              </Link>
             )}
 
             <button
