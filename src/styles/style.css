@@ -64,11 +64,6 @@
     animation: line-bounce 1.25s both;
   }
 
-  .scale-in-ver-center {
-    animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-      both;
-  }
-
   @keyframes scale-in-ver-center {
     0% {
       transform: scaleY(0);
@@ -78,6 +73,10 @@
       transform: scaleY(1);
       opacity: 1;
     }
+  }
+  .scale-in-ver-center {
+    animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
   }
 }
 
@@ -128,27 +127,26 @@
   }
 
   #home-page #banner {
-    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] flex flex-col items-center md:gap-8;
+    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] h-[calc(100vh-64px)]  flex flex-col items-center md:gap-8;
   }
 
   #home-page #about {
-    @apply md:min-h-[650px] md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen bg-color-four;
+    @apply md:min-h-[540px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four px-8;
   }
 
   #home-page #skills {
-    @apply md:min-h-[636px]  md:max-h-[900px] flex flex-col gap-8 text-center md:text-start md:h-screen;
+    @apply md:min-h-[600px] md:max-h-[900px] h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start px-8;
   }
 
   #project #banner-project {
-    @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
+    @apply bg-color-four flex flex-col gap-8 text-center md:text-start px-8;
   }
 
   #project #cards {
-    @apply flex flex-col gap-8 text-center md:text-start;
+    @apply flex flex-col gap-8 text-center md:text-start px-8;
   }
 
   #error {
-    height: calc(100vh - 4rem);
-    @apply flex flex-col items-center justify-around;
+    @apply h-[calc(100vh-64px)] flex flex-col items-center justify-around;
   }
 }
