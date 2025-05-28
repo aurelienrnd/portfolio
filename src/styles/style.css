@@ -92,11 +92,11 @@
   }
 
   section {
-    @apply px-4 pt-18 pb-8;
+    @apply px-4 pt-16 pb-8;
   }
 
   footer {
-    @apply px-4 pt-8 pb-2 bg-color-four flex flex-col md:items-center gap-8 md:gap-0 w-full text-center;
+    @apply px-4 pt-16 pb-0 bg-color-four flex flex-col md:items-center gap-8 md:gap-0 w-full text-center;
   }
 
   h1,

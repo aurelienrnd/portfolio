@@ -21,9 +21,19 @@ function ScrollToAnchor(): null {
       // On ajoute un délai pour s'assurer que le DOM est complètement chargé
       setTimeout(() => {
         // On fait défiler jusqu'à l'élément avec l'ID "lastHash"
-        document
-          .getElementById(lastHash.current)
-          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const target = document.getElementById(lastHash.current);
+        if (target) {
+          //On laisse un espace de 64px avant l'élément pour le sticky header
+          const stickyHearder = -64;
+          const y =
+            target.getBoundingClientRect().top +
+            window.pageYOffset +
+            stickyHearder;
+
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+
+        // On réinitialise "lastHash" pour éviter de faire défiler à nouveau
         lastHash.current = '';
       }, 100);
     }
