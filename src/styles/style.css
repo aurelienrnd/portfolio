@@ -114,12 +114,40 @@
   textarea {
     @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1 w-full h-20;
   }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .slide-in-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
 }
 
 /* Liste des différents composants stylisés */
 @layer components {
   .btn {
-    @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-105 transition-transform duration-300 text-center text-color-four;
+    @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-120 transition-transform duration-300 text-center text-color-four;
   }
 
   .card {
