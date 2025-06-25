@@ -12,9 +12,10 @@ import {
  */
 function About(): React.JSX.Element {
   const [visibleMap, setVisibleMap] = useState(false);
-
+  const [isHovered, setIsHovered] = useState(false);
   const handleBouton = () => {
     setVisibleMap(!visibleMap);
+    setIsHovered(false);
   };
 
   return (
@@ -48,7 +49,9 @@ function About(): React.JSX.Element {
 
         <div className="w-full md:w-1/3 md:h-full flex relative">
           <button
-            className="absolute z-2 flex h-full flex-col justify-between w-12 cursor-pointer bg-color-two/30 border py-4"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={`absolute z-2 flex h-full flex-col justify-between items-start cursor-pointer bg-color-two/30 py-4 px-4 ${isHovered ? 'w-38' : 'w-12'} transition-all duration-300 ease-in-out`}
             onClick={handleBouton}
             aria-label={
               visibleMap
@@ -60,8 +63,17 @@ function About(): React.JSX.Element {
               icon={faUser}
               className={visibleMap ? '' : 'text-color-three'}
             />
-            <div className="width-full border">
-              <FontAwesomeIcon icon={faChevronRight} />
+
+            <div className="w-full flex justify-between items-center">
+              {isHovered && (
+                <span className=" bg-color-two text-xs px-1 py-1 rounded-md font-semibold text-center text-color-four">
+                  {visibleMap ? 'Photo de profil' : 'Afficher la map'}
+                </span>
+              )}
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                className={`${isHovered ? 'rotate-180' : ''}`}
+              />
             </div>
 
             <FontAwesomeIcon
@@ -71,7 +83,7 @@ function About(): React.JSX.Element {
           </button>
 
           {visibleMap ? (
-            <div className="h-60 md:h-full w-full object-cover flex justify-center border ">
+            <div className="h-60 md:h-full w-full object-cover flex justify-center">
               MAP
             </div>
           ) : (
