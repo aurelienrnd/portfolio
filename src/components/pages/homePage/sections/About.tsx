@@ -1,8 +1,15 @@
+import { useState } from 'react';
 /** Section About
  * @description - Affiche la section About.
  * @returns {JSX.Element} - La section À propos du site.
  */
 function About(): React.JSX.Element {
+  const [visibleMap, setVisibleMap] = useState(false);
+
+  const handleBouton = () => {
+    setVisibleMap(!visibleMap);
+  };
+
   return (
     <section id="about">
       <h2>Mon parcours de développeur</h2>
@@ -32,12 +39,32 @@ function About(): React.JSX.Element {
           </p>
         </div>
 
-        <img
-          src="/images/profil.webp"
-          alt="photo Aurélien Arnaud"
-          loading="lazy"
-          className="w-2/3 md:w-1/3 md:h-full object-cover md:pr-8"
-        />
+        <div className="border w-full md:w-1/3 md:h-full flex relative mb-2">
+          <button
+            className="absolute z-2 flex h-full w-12 hover:w-full bg-color-two/10  cursor-pointer border"
+            onClick={handleBouton}
+            aria-label={
+              visibleMap
+                ? 'Afficher la photo de profil'
+                : 'Afficher la map: tour du monde'
+            }
+          >
+            {/* Ajouter une iconne pour les boutons  */}
+          </button>
+
+          {visibleMap ? (
+            <div className="h-60 md:h-full w-full object-cover flex justify-center items-center  border ">
+              MAP
+            </div>
+          ) : (
+            <img
+              src="/images/profil.webp"
+              alt="photo Aurélien Arnaud"
+              loading="lazy"
+              className="h-60 md:h-full w-full object-cover"
+            />
+          )}
+        </div>
       </div>
     </section>
   );
