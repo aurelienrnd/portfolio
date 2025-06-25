@@ -1,4 +1,11 @@
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMap,
+  faUser,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
+
 /** Section About
  * @description - Affiche la section About.
  * @returns {JSX.Element} - La section À propos du site.
@@ -39,9 +46,9 @@ function About(): React.JSX.Element {
           </p>
         </div>
 
-        <div className="border w-full md:w-1/3 md:h-full flex relative mb-2">
+        <div className="w-full md:w-1/3 md:h-full flex relative">
           <button
-            className="absolute z-2 flex h-full w-12 hover:w-full bg-color-two/10  cursor-pointer border"
+            className="absolute z-2 flex h-full flex-col justify-between w-12 cursor-pointer bg-color-two/30 border py-4"
             onClick={handleBouton}
             aria-label={
               visibleMap
@@ -49,11 +56,22 @@ function About(): React.JSX.Element {
                 : 'Afficher la map: tour du monde'
             }
           >
-            {/* Ajouter une iconne pour les boutons  */}
+            <FontAwesomeIcon
+              icon={faUser}
+              className={visibleMap ? '' : 'text-color-three'}
+            />
+            <div className="width-full border">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </div>
+
+            <FontAwesomeIcon
+              icon={faMap}
+              className={visibleMap ? 'text-color-three' : ''}
+            />
           </button>
 
           {visibleMap ? (
-            <div className="h-60 md:h-full w-full object-cover flex justify-center items-center  border ">
+            <div className="h-60 md:h-full w-full object-cover flex justify-center border ">
               MAP
             </div>
           ) : (
