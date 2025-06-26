@@ -35,7 +35,7 @@ function ProfilAndMap() {
         <div className="w-full flex gap-2 items-center">
           {isHovered && (
             <span className=" bg-color-two text-xs px-1 py-1 rounded-md font-semibold text-center text-color-four">
-              {visibleMap ? 'Map tour du monde' : 'Photo de profil'}
+              {visibleMap ? 'Photo de profil' : 'Map tour du monde'}
             </span>
           )}
           <FontAwesomeIcon
@@ -51,9 +51,7 @@ function ProfilAndMap() {
       </button>
 
       {visibleMap ? (
-        <div className="h-60 md:h-full w-full object-cover flex justify-center">
-          <Map />
-        </div>
+        <Map />
       ) : (
         <img
           src="/images/profil.webp"
