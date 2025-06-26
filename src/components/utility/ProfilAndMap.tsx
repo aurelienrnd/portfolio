@@ -5,6 +5,7 @@ import {
   faUser,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import Map from '../utility/Map.tsx';
 
 function ProfilAndMap() {
   const [visibleMap, setVisibleMap] = useState(false);
@@ -51,7 +52,7 @@ function ProfilAndMap() {
 
       {visibleMap ? (
         <div className="h-60 md:h-full w-full object-cover flex justify-center">
-          MAP
+          <Map />
         </div>
       ) : (
         <img
