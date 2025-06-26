@@ -40,6 +40,24 @@ function Map(): React.JSX.Element {
           'circle-stroke-width': 1,
         },
       });
+
+      map.addLayer({
+        id: 'points-labels',
+        type: 'symbol',
+        source: 'city', // même source que les cercles
+        minzoom: 2, // les noms apparaîtront à partir du zoom 2
+        layout: {
+          'text-field': ['get', 'name'], // propriété du GeoJSON contenant les noms
+          'text-size': 12,
+          'text-offset': [0, 1.2],
+          'text-anchor': 'top',
+        },
+        paint: {
+          'text-color': '#10b981',
+          'text-halo-color': '#263143',
+          'text-halo-width': 1,
+        },
+      });
     });
 
     // Supprime la carte lorsque le composant est démonté
