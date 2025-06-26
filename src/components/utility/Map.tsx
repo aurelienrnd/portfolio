@@ -47,7 +47,7 @@ function Map(): React.JSX.Element {
     };
   }, []);
 
-  return <div ref={mapContainerRef} className="h-60 md:h-full w-full" />;
+  return <div ref={mapContainerRef} className="h-60 md:h-full w-full" />; //NOTE -  prevoir observer pour charger la carte seulement quand elle entre dans le viewport ci le charge et trop long en production
 }
 
 export default Map;
