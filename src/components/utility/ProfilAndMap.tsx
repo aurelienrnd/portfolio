@@ -11,7 +11,6 @@ function ProfilAndMap() {
   const [isHovered, setIsHovered] = useState(false);
   const handleBouton = () => {
     setVisibleMap(!visibleMap);
-    setIsHovered(false);
   };
 
   return (
@@ -19,7 +18,7 @@ function ProfilAndMap() {
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`absolute z-2 flex h-full flex-col justify-between items-start cursor-pointer bg-color-two/30 py-4 px-4 ${isHovered ? 'w-38' : 'w-12'} transition-all duration-300 ease-in-out`}
+        className={`absolute z-2 flex h-full flex-col justify-between items-start cursor-pointer bg-color-two/30 py-4 px-4 ${isHovered ? 'w-auto' : 'w-12'} transition-all duration-300 ease-in-out`}
         onClick={handleBouton}
         aria-label={
           visibleMap
@@ -32,10 +31,10 @@ function ProfilAndMap() {
           className={visibleMap ? '' : 'text-color-three'}
         />
 
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex gap-2 items-center">
           {isHovered && (
             <span className=" bg-color-two text-xs px-1 py-1 rounded-md font-semibold text-center text-color-four">
-              {visibleMap ? 'Photo de profil' : 'Afficher la map'}
+              {visibleMap ? 'Map tour du monde' : 'Photo de profil'}
             </span>
           )}
           <FontAwesomeIcon
