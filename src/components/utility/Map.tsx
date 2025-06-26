@@ -20,6 +20,27 @@ function Map(): React.JSX.Element {
       zoom: 1, // Niveau de zoom initial
     });
 
+    map.on('load', () => {
+      // Ajout de la source GeoJSON des villes
+      map.addSource('city', {
+        type: 'geojson',
+        data: '/datas/city.geojson', // Chemin vers le fichier GeoJSON contenant les villes
+      });
+
+      // Ajout du style pour afficher les villes en tant que cercles
+      map.addLayer({
+        id: 'points-localisation',
+        type: 'circle',
+        source: 'city', //nom de la donnée ou apliquer ce style
+        paint: {
+          'circle-radius': 4,
+          'circle-color': '#10b981',
+          'circle-stroke-color': '#263143',
+          'circle-stroke-width': 1,
+        },
+      });
+    });
+
     // Supprime la carte lorsque le composant est démonté
     return () => {
       map.remove();
