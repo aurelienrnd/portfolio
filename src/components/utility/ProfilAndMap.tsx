@@ -19,7 +19,7 @@ function ProfilAndMap() {
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`absolute z-2 flex h-full flex-col justify-between items-start cursor-pointer bg-color-two/30 py-4 px-4 ${isHovered ? 'w-auto' : 'w-12'}`} //FIXME - bug transition-all duration-300 ease-in-out
+        className={`absolute z-2 flex h-full flex-col justify-between items-start cursor-pointer bg-color-two/30 py-4 px-4 ${isHovered ? 'w-auto' : 'w-12'}`}
         onClick={handleBouton}
         aria-label={
           visibleMap
