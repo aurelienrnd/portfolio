@@ -18,6 +18,7 @@ function Map(): React.JSX.Element {
         import.meta.env.VITE_MAPTILER_KEY, // Style de carte personnalisé au format JSON
       center: [2.35, 48.85], // Coordonnées de centrage initial (ici Paris)
       zoom: 1, // Niveau de zoom initial
+      attributionControl: false, // désactive l'attribution par défaut
     });
 
     map.on('load', () => {
