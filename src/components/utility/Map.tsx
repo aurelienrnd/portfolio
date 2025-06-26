@@ -13,7 +13,9 @@ function Map(): React.JSX.Element {
     // Création et initialisation de la carte avec MapLibre
     const map = new maplibregl.Map({
       container: mapContainerRef.current, // Élément DOM cible
-      style: '/datas/map.json', // Style de carte personnalisé au format JSON
+      style:
+        'https://api.maptiler.com/maps/019752a4-5291-79d7-8919-3cb31452e26d/style.json?key=' +
+        import.meta.env.VITE_MAPTILER_KEY, // Style de carte personnalisé au format JSON
       center: [2.35, 48.85], // Coordonnées de centrage initial (ici Paris)
       zoom: 1, // Niveau de zoom initial
     });
