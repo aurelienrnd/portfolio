@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMap,
   faUser,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import Map from '../utility/Map.tsx';
+import Loader from './Loaoder.tsx';
+const Map = lazy(() => import('../utility/Map'));
 
 function ProfilAndMap() {
   const [visibleMap, setVisibleMap] = useState(false);
@@ -51,7 +52,19 @@ function ProfilAndMap() {
       </button>
 
       {visibleMap ? (
-        <Map />
+        <Suspense
+          fallback={
+            <div className="flex flex-col items-center justify-center md:font-code h-60 md:h-full w-full object-cover">
+              <div className="flex gap-4 items-center">
+                <span>Chargement de la carte...</span>
+              </div>
+
+              <Loader />
+            </div>
+          }
+        >
+          <Map />
+        </Suspense>
       ) : (
         <img
           src="/images/profil.webp"
