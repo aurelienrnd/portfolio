@@ -1,6 +1,6 @@
 // Compoments
-import Banner from './sections/Banner-project.tsx';
-import Cards from './sections/Cards.tsx';
+import Banner from './sections/banner-project/Banner-project.tsx';
+import Cards from './sections/cards/Cards.tsx';
 
 /** Affiche la page Projet
  * @description - Contient les sections Banner et Cards.
