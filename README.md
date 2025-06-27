@@ -75,6 +75,8 @@ src/
 │       │        │
 │       │        ├── about/
 │       │        │   ├── About.tsx
+│       │        │   ├── LoadingMap.tsx
+│       │        │   ├── MapButon.tsx
 │       │        │   ├── ProfilAndMap.tsx
 │       │        │   └── Map.tsx
 │       │        │
