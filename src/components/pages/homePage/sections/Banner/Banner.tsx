@@ -1,4 +1,4 @@
-//Compoments
+//Components
 import Cmd from './Cmd.tsx';
 import Loader from '../../../../utility/Loaoder.tsx';
 //Hooks

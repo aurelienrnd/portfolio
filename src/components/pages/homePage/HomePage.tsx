@@ -1,7 +1,7 @@
 // Components
-import Banner from './sections/Banner/Banner.tsx';
-import About from './sections/About/About.tsx';
-import Skills from './sections/Skills/Skills.tsx';
+import Banner from './sections/banner/Banner.tsx';
+import About from './sections/about/About.tsx';
+import Skills from './sections/skills/Skills.tsx';
 
 /** Affiche la page d'accueil du site
  * @description - Contient les sections Banner, About et Skills.

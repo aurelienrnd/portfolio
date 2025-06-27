@@ -1,6 +1,6 @@
 // Hooks
 import { useEffect, useState } from 'react';
-// Compoment
+// Components
 import Skill from './Skill.tsx';
 // Type
 import { IconList } from './Skill.tsx';
