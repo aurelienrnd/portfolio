@@ -1,19 +1,31 @@
+// Hooks
 import { useState, lazy, Suspense } from 'react';
+// Libraries
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMap,
   faUser,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import Loader from './Loaoder.tsx';
-const Map = lazy(() => import('../utility/Map'));
+//Compoments
+import Loader from '../../../../utility/Loaoder.tsx';
+const Map = lazy(() => import('./Map.tsx'));
 
-function ProfilAndMap() {
+/** Lorsqu'on clique sur le bouton, il affiche soit une photo de profil, soit une carte du tour du monde.
+ * @description - Permet, grâce à un bouton, d’afficher une photo de profil ou une carte interactive.
+ * @component Map - Affiche la carte du tour du monde.
+ * @component Loader - Affiche un loader pendant le chargement de la carte.
+ * @returns {JSX.Element} - Un bouton, une image et une carte.
+ */
+function ProfilAndMap(): React.JSX.Element {
+  // Gère l’état d’affichage entre la carte et la photo de profil
   const [visibleMap, setVisibleMap] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const handleBouton = () => {
     setVisibleMap(!visibleMap);
   };
+
+  // Gère l’état d’animation du bouton
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="w-full md:w-1/3 md:h-full flex relative">

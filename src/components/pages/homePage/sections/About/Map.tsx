@@ -1,9 +1,16 @@
+// Hooks
 import { useEffect, useRef } from 'react';
+// Libraries
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'; // css de la map
 
+/** Affiche une carte du tour du monde avec des villes marquées.
+ * @description - Effectue une requête à l’API MapTiler pour récupérer le style de la carte,
+ * puis y ajoute plusieurs couches à partir d’un fichier GeoJSON situé dans le dossier public.
+ * @returns {JSX.Element} - Une carte interactive.
+ */
 function Map(): React.JSX.Element {
-  // Référence vers la div qui contiendra la map
+  // Référence à la div qui contiendra la carte
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -22,13 +29,13 @@ function Map(): React.JSX.Element {
     });
 
     map.on('load', () => {
-      // Ajout de la source GeoJSON des villes
+      // Ajout de la source GeoJSON pour les villes
       map.addSource('city', {
         type: 'geojson',
         data: '/datas/city.geojson', // Chemin vers le fichier GeoJSON contenant les villes
       });
 
-      // Ajout du style pour afficher les villes en tant que cercles
+      // Ajout du style pour afficher les emplacements de chaque ville
       map.addLayer({
         id: 'points-localisation',
         type: 'circle',
@@ -41,11 +48,12 @@ function Map(): React.JSX.Element {
         },
       });
 
+      // Ajout du style pour afficher les nom de chaque ville
       map.addLayer({
         id: 'points-labels',
         type: 'symbol',
-        source: 'city', // même source que les cercles
-        minzoom: 2, // les noms apparaîtront à partir du zoom 2
+        source: 'city', //nom de la donnée ou apliquer ce style
+        minzoom: 2, // les noms apparaissent à partir du zoom 2
         layout: {
           'text-field': ['get', 'name'], // propriété du GeoJSON contenant les noms
           'text-size': 12,
@@ -66,7 +74,7 @@ function Map(): React.JSX.Element {
     };
   }, []);
 
-  return <div ref={mapContainerRef} className="h-60 md:h-full w-full" />; //NOTE -  prevoir observer pour charger la carte seulement quand elle entre dans le viewport ci le charge et trop long en production
+  return <div ref={mapContainerRef} className="h-60 md:h-full w-full" />;
 }
 
 export default Map;

@@ -1,5 +1,5 @@
 // Components
-import { NavDesktop, NavMobile } from '../utility/Nav.tsx';
+import { NavDesktop, NavMobile } from './Nav.tsx';
 //Hooks React
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';

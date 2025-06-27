@@ -1,6 +1,6 @@
 //Compoments
-import Cmd from '../../../utility/Cmd.tsx';
-import Loader from '../../../utility/Loaoder.tsx';
+import Cmd from './Cmd.tsx';
+import Loader from '../../../../utility/Loaoder.tsx';
 //Hooks
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';

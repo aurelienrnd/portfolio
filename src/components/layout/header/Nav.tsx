@@ -6,7 +6,7 @@ import ReactModal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 // Types Tsx
-import { NavList } from '../layout/Header.tsx';
+import { NavList } from './Header.tsx';
 
 type NavProps = {
   navList: NavList[];

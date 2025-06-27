@@ -1,7 +1,9 @@
-import ProfilAndMap from '../../../utility/ProfilAndMap';
+//Compoments
+import ProfilAndMap from './ProfilAndMap';
 
 /** Section About
  * @description - Affiche la section About.
+ * @component ProfilAndMap - Affiche la photo de profil ou une carte du tour du monde.
  * @returns {JSX.Element} - La section À propos du site.
  */
 function About(): React.JSX.Element {
