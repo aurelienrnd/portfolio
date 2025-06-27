@@ -28,8 +28,6 @@ function Map(): React.JSX.Element {
       attributionControl: false, // désactive l'attribution par défaut
     });
 
-    console.log('clé API utilisée :', import.meta.env.VITE_MAPTILER_KEY);
-
     // Ajout de la source GeoJSON pour les villes
     map.on('load', () => {
       map.addSource('city', {
