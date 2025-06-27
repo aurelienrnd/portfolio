@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
-import Header from './components/layout/Header.tsx';
-import HomePage from './components/pages/homePage/HomePage.tsx';
+import Header from './components/layout/header/Header.tsx';
+import HomePage from './components/pages/home-page/HomePage.tsx';
 import Project from './components/pages/projects/Project.tsx';
 import Error from './components/pages/error/Error.tsx';
-import Footer from './components/layout/Footer.tsx';
+import Footer from './components/layout/footer/Footer.tsx';
 import ScrollToAnchor from './components/utility/ScrollToAnchor.tsx';
 import React from 'react';
 

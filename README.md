@@ -3,6 +3,7 @@
 Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies modernes pour valoriser mes compétences, projets et parcours professionnel.
 
 ## ✅ Objectif
+
 - Initialisation du projet avec Vite, React et TypeScript
 - Gestion du style avec TailwindCSS
 - Mise en place du routage entre les différentes pages du site
@@ -24,7 +25,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 - [Prettier] – formateur de code
 - [FontAwesome] – affichage d’icônes
 - [React-modal] – création de modale
-
+- [Maplibre-gl] – création d'une carte interactive
 
 ## 📁 Structure du projet
 
@@ -33,6 +34,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 public/
 │
 ├── datas/
+│   ├── city.geojson
 │   ├── hard-skills.json
 │   ├── soft-skills.json
 │   └── project.json
@@ -42,7 +44,7 @@ public/
 │
 ├── images/
 │    └── ...
-│   
+│
 └── ..
 
 src/
@@ -50,55 +52,79 @@ src/
 ├── main.tsx
 ├── App.tsx
 ├── assets/
-├── styles/  
+├── styles/
 │   └── style.css
 │
-├── components/  
-│   ├── layout/  
-│   │   ├── Header.tsx
-│   │   └── Footer.tsx
+├── components/
+│   ├── layout/
+│   │   ├── header/
+│   │   │   ├── Header.tsx
+│   │   │   └── Nav.tsx
+│   │   │
+│   │   └── footer/
+│   │       ├── Footer.tsx
+│   │       └── FormContact.tsx
 │   │
-│   └── pages/  
-│       ├── homePage/  
-│       │   ├── HomePage.tsx
-│       │   └── sections/
-│       │       ├── Banner.tsx
-│       │       ├── About.tsx
-│       │       └── Skills.tsx
+│   └── pages/
+│       ├── homePage/
+│       │    ├── HomePage.tsx
+│       │    └── sections/
+│       │        ├── banner/
+│       │        │   ├── Banner.tsx
+│       │        │   └── Cmd.tsx
+│       │        │
+│       │        ├── about/
+│       │        │   ├── About.tsx
+│       │        │   ├── LoadingMap.tsx
+│       │        │   ├── MapButon.tsx
+│       │        │   ├── ProfilAndMap.tsx
+│       │        │   └── Map.tsx
+│       │        │
+│       │        └── skills/
+│       │            ├── Skills.tsx
+│       │            └── Skill.tsx
 │       │
-│       ├── projects/  
+│       ├── projects/
 │       │   ├── Projects.tsx
 │       │   └── section/
-│       │       ├── Banner-project.tsx
-│       │       └── Cards.tsx
-│       │       
+│       │       ├── banner-project/
+│       │       │   └── Banner-project.tsx
+│       │       │
+│       │       └── Card/
+│       │           ├── Cards.tsx
+│       │           └── Card.tsx
+│       │
 │       ├── error/
 │       │   └── Error.tsx
 │       │
 │       └── utility/
 │           ├── ScrollToAnchor.tsx
-│           ├── Cmd.tsx
-│           ├── Nav.tsx
-│           ├── Skill.tsx
-│           ├── Card.tsx
-│           └── Skill.tsx
-└── ...            
+│           └── Loaoder.tsx
+└── ...
 ```
 
 ## 🔧 Scripts utiles
+
 - Lancer le serveur de développement
+
 ```bash
-npm run dev         
+npm run dev
 ```
+
 - Générer la version de production
+
 ```bash
-npm run build       
+npm run build
 ```
--  Vérifier la qualité du code avec ESLint
+
+- Vérifier la qualité du code avec ESLint
+
 ```bash
-npm run lint       
+npm run lint
 ```
+
 - Prévisualiser du site en mode production.
+
 ```bash
-npm run preview     
+npm run preview
 ```

@@ -1,5 +1,6 @@
-//Compoments
-import Cmd from '../../../utility/Cmd.tsx';
+//Components
+import Cmd from './Cmd.tsx';
+import Loader from '../../../../utility/Loaoder.tsx';
 //Hooks
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
@@ -12,13 +13,6 @@ import { useEffect, useState } from 'react';
 function Banner(): React.JSX.Element {
   const text =
     'Passionné par le code. Mon parcours atypique m’a appris à apprendre vite, partout dans le monde. Aujourd’hui, je crée des interfaces claires et responsives avec React';
-
-  // Création d’un loader
-  const FakeLoader = (): React.JSX.Element => (
-    <div className="h-1/3 flex w-1/2  items-center justify-center">
-      <div className="bg-color-three h-1 fake-loader rounded-md"></div>
-    </div>
-  );
 
   // Gestion de l’état du loader
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +37,7 @@ function Banner(): React.JSX.Element {
         <p className="md:w-1/2 slide-in-left">{text}</p>
       </div>
 
-      {isLoading ? <FakeLoader /> : <Cmd />}
+      {isLoading ? <Loader /> : <Cmd />}
     </section>
   );
 }

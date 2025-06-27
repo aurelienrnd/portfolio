@@ -1,7 +1,7 @@
 // Hooks
 import { useEffect, useState } from 'react';
 // Compoments
-import Card from '../../../utility/Card.tsx';
+import Card from './Card.tsx';
 // Type
 interface ProjectsType {
   id: number;

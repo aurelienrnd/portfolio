@@ -1,9 +1,9 @@
 // Hooks
 import { useEffect, useState } from 'react';
-// Compoment
-import Skill from '../../../utility/Skill.tsx';
+// Components
+import Skill from './Skill.tsx';
 // Type
-import { IconList } from '../../../utility/Skill.tsx';
+import { IconList } from './Skill.tsx';
 interface HardSkillType {
   technologie: string;
   logo: keyof IconList;

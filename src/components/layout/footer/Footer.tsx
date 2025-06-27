@@ -1,5 +1,5 @@
 // Components
-import FormContact from '../utility/FormContact';
+import FormContact from './FormContact.tsx';
 //Library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
