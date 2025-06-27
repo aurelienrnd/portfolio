@@ -28,8 +28,8 @@ function Map(): React.JSX.Element {
       attributionControl: false, // désactive l'attribution par défaut
     });
 
+    // Ajout de la source GeoJSON pour les villes
     map.on('load', () => {
-      // Ajout de la source GeoJSON pour les villes
       map.addSource('city', {
         type: 'geojson',
         data: '/datas/city.geojson', // Chemin vers le fichier GeoJSON contenant les villes
