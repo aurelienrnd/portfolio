@@ -17,7 +17,7 @@ interface SoftSkillType {
 /** Section Skills
  * @description - Envoie des requêtes pour récupérer les données des soft et hard skills.
  * @returns {JSX.Element} - La section des compétences.
- * @component Skill - Affiche une animation en pourcentage pour chaque compétence.
+ * @component Skill - Affiche chaque compétence.
  */
 function Skills(): React.JSX.Element {
   const [hardSkills, setHardSkills] = useState<HardSkillType[]>([]);
