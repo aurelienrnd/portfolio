@@ -201,7 +201,7 @@ Le composent présente le profil du développeur à travers une série de paragr
 
 - Le composant LoadingMap est chargé de façon dynamique grâce aux fonctions lazy et Suspense de React. Lors de son affichage, un composant Loader est temporairement rendu pour indiquer le chargement en cours, garantissant une expérience fluide pour l’utilisateur. Une fois le module Map chargé, la carte du monde est affichée.
 
-- Il utilise l’API de MapTiler pour charger dynamiquement un style de carte personnalisé. Ensuite, il superpose plusieurs couches de données géographiques à partir d’un fichier GeoJSON stocké dans le dossier public.
+- Le composent Map utilise l’API de MapTiler pour charger dynamiquement un style de carte personnalisé. Ensuite, il superpose plusieurs couches de données géographiques à partir d’un fichier GeoJSON stocké dans le dossier public.
 
 #### Skill
 
