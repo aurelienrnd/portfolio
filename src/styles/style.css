@@ -1,22 +1,22 @@
+/* Imports de polices Google Fonts et de Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 @import 'tailwindcss';
 
-/* Liste des différentes variables de couleurs et de polices */
+/* Déclaration des variables CSS des couleurs et polices */
 @theme {
-  /*** Colors ***/
   --color-color-one: #1e293b; /* fond */
   --color-color-two: #e5e7eb; /* texte principal */
   --color-color-three: #10b981; /* bouton principal */
   --color-color-four: #263143; /* fond secondaire */
 
-  /*** Font ***/
   --font-title: 'Poppins', sans-serif;
   --font-text: 'Inter', sans-serif;
   --font-code: 'Fira Code', monospace;
 }
 
-/* Liste des différentes animations */
+/* Déclaration des animations personnalisées et de leur keyframes. */
 @layer utilities {
+  /* Animation de l'icone dans le composent Cmd */
   @keyframes slide-and-rotate {
     0% {
       transform: translateY(10px) rotate(0deg);
@@ -34,6 +34,7 @@
     animation: slide-and-rotate 1.5s ease-in-out infinite both;
   }
 
+  /* Animation d'ouverture modale */
   @keyframes slide-in-blurred-top {
     0% {
       transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -52,6 +53,7 @@
     animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
 
+  /* Animation du Loader */
   @keyframes line-bounce {
     from {
       width: 0%;
@@ -64,6 +66,7 @@
     animation: line-bounce 1.25s both;
   }
 
+  /* Animation du composent Cmd */
   @keyframes scale-in-ver-center {
     0% {
       transform: scaleY(0);
@@ -78,9 +81,39 @@
     animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
       both;
   }
+
+  /* Animation des elements du composent banner */
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  /* Animation des elements du composent banner */
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .slide-in-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
 }
 
-/* Liste des différentes balises avec leurs styles réutilisables */
+/* Styles de base pour les balises HTML. */
 @layer base {
   body {
     @apply bg-color-one text-color-two font-text;
@@ -114,37 +147,9 @@
   textarea {
     @apply bg-color-two border-1 border-color-one text-color-four rounded-md p-1 w-full h-20;
   }
-
-  @keyframes slide-in-left {
-    0% {
-      transform: translateX(-1000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .slide-in-left {
-    animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  @keyframes slide-in-right {
-    0% {
-      transform: translateX(1000px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .slide-in-right {
-    animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
 }
 
-/* Liste des différents composants stylisés */
+/* Composants personnalisés pour réutilisation : boutons, cartes, sections... */
 @layer components {
   .btn {
     @apply bg-color-three px-6 py-3 rounded-md font-semibold hover:scale-120 transition-transform duration-300 text-center text-color-four;
@@ -155,15 +160,15 @@
   }
 
   #home-page #banner {
-    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] h-[calc(100vh-64px)]  flex flex-col items-center md:gap-8;
+    @apply min-h-[600px] md:min-h-[550px] max-h-[900px] h-[calc(100vh-64px)/* Hauteur de l'ecran moins la hauteur du header */]  flex flex-col items-center md:gap-8;
   }
 
   #home-page #about {
-    @apply md:min-h-[600px] md:max-h-[900px] md:h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start bg-color-four;
+    @apply md:min-h-[600px] md:max-h-[900px] md:h-[calc(100vh-64px)/* Hauteur de l'ecran moins la hauteur du header */] flex flex-col gap-8 text-center md:text-start bg-color-four;
   }
 
   #home-page #skills {
-    @apply md:min-h-[730px] md:max-h-[900px] md:h-[calc(100vh-64px)] flex flex-col gap-8 text-center md:text-start;
+    @apply md:min-h-[730px] md:max-h-[900px] md:h-[calc(100vh-64px)/* Hauteur de l'ecran moins la hauteur du header */] flex flex-col gap-8 text-center md:text-start;
   }
 
   #project #banner-project {
@@ -175,6 +180,6 @@
   }
 
   #error {
-    @apply h-[calc(100vh-64px)] flex flex-col items-center justify-around;
+    @apply h-[calc(100vh-64px)/* Hauteur de l'ecran moins la hauteur du header */] flex flex-col items-center justify-around;
   }
 }
