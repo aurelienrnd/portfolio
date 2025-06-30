@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import ScrollProvider from './components/utility/provider/ScrollProvider.tsx';
 import Header from './components/layout/header/Header.tsx';
 import HomePage from './components/pages/home-page/HomePage.tsx';
 import Project from './components/pages/projects/Project.tsx';
@@ -9,6 +10,7 @@ import React from 'react';
 
 /** Routage de l'application
  * @returns {JSX.Element} - Le composant App qui contient le routage de l'application.
+ * @Component ScrollProvider - Détermine si la page est en cours de défilement.
  * @component ScrollToAnchor - Permet la navigation vers une ancre située sur une autre page.
  * @component Header - Composant d'en-tête de l'application.
  * @component HomePage - Page d'accueil de l'application.
@@ -20,14 +22,16 @@ import React from 'react';
 function App(): React.JSX.Element {
   return (
     <Router>
-      <ScrollToAnchor />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="project/" element={<Project />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
+      <ScrollProvider>
+        <ScrollToAnchor />
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="project/" element={<Project />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </ScrollProvider>
     </Router>
   );
 }
