@@ -1,5 +1,7 @@
+// import hooks
 import { useEffect, useRef, useContext } from 'react';
 import { useLocation } from 'react-router';
+// import context
 import ScrollContext from './context/ScrollContext.tsx';
 
 /** Permet la navigation vers une ancre située dans une autre page.
