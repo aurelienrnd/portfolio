@@ -1,7 +1,5 @@
 // import hooks
 import { useRef, useState, useEffect, useContext } from 'react';
-// Import context
-import ScrollContext from './context/ScrollContext.tsx';
 // type
 type UseAnimationElementReturn<T extends Element> = {
   setRef: (index: number) => (refHtml: T | null) => void;
@@ -19,10 +17,6 @@ type UseAnimationElementReturn<T extends Element> = {
 export function UseAnimationElement<T extends Element>(
   numbOfRef: number
 ): UseAnimationElementReturn<T> {
-  // Récupère le contexte pour détecter si un scroll automatique est en cours
-  const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
-  const { isScrolling } = scrollContext;
-
   // Crée un tableau de références pour chaque élément HTML à observer dans le composant
   const refArray = useRef<(T | null)[]>([]);
 
@@ -47,11 +41,6 @@ export function UseAnimationElement<T extends Element>(
   );
 
   useEffect(() => {
-    console.log('isScrolling :' + isScrolling);
-
-    // Si un scroll automatique est en cours, on ne déclenche pas l’animation
-    if (isScrolling) return;
-
     // On crée un tableau d’observers et y associe chaque référence puis on vérifie que la référence est bien définie avant de l’observer
     const observersHarray: IntersectionObserver[] = [];
     refArray.current.forEach((ref, index) => {
@@ -61,7 +50,7 @@ export function UseAnimationElement<T extends Element>(
         ([entry]) => {
           setVisibilities(prev => {
             const next = [...prev];
-            next[index] = prev[index] || entry.isIntersecting; // Si l’élément est déjà visible, on conserve son état à true
+            next[index] = entry.isIntersecting; // Si l’élément est déjà visible, on conserve son état à true
             return next;
           });
         },
@@ -77,7 +66,7 @@ export function UseAnimationElement<T extends Element>(
     return () => {
       observersHarray.forEach(observer => observer.disconnect());
     };
-  }, [numbOfRef, isScrolling]);
+  }, [numbOfRef]);
 
   return { setRef, visibilities };
 }

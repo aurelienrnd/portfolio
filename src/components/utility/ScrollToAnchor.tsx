@@ -1,8 +1,6 @@
 // import hooks
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
-// import context
-import ScrollContext from './context/ScrollContext.tsx';
 
 /** Permet la navigation vers une ancre située dans une autre page.
  * @description Ce composant utilise le hook `useLocation` de React Router pour détecter les changements d’URL
@@ -12,9 +10,6 @@ import ScrollContext from './context/ScrollContext.tsx';
  * @returns {null} Composant ScrollToAnchor.
  */
 function ScrollToAnchor(): null {
-  const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
-  const { setIsScrolling } = scrollContext;
-
   const location = useLocation();
   const lastHash = useRef('');
 
@@ -24,11 +19,8 @@ function ScrollToAnchor(): null {
       lastHash.current = location.hash.slice(1);
     }
 
-    // On vérifie si un élément avec l'ID "lastHash" exist puis on informe le context que l'on scroll
+    // On vérifie si un élément avec l'ID "lastHash" exist puis on ajoute un délai pour s'assurer que le DOM est chargé
     if (lastHash.current && document.getElementById(lastHash.current)) {
-      setIsScrolling(true);
-
-      // On ajoute un délai pour s'assurer que le DOM est complètement chargé
       setTimeout(() => {
         // On fait défiler jusqu'à l'élément avec l'ID "lastHash"
         const target = document.getElementById(lastHash.current);
@@ -49,12 +41,7 @@ function ScrollToAnchor(): null {
         lastHash.current = '';
       }, 100);
     }
-
-    // On ajoute un délai pour s'assurer que le scroll est terminé avant de mettre à jour le contexte.
-    setTimeout(() => {
-      setIsScrolling(false);
-    }, 800);
-  }, [location, setIsScrolling]);
+  }, [location]);
 
   return null;
 }
