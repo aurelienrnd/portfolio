@@ -5,8 +5,7 @@ import { useLocation } from 'react-router';
 /** Permet la navigation vers une ancre située dans une autre page.
  * @description Ce composant utilise le hook `useLocation` de React Router pour détecter les changements d’URL
  * et faire défiler automatiquement jusqu’à l’élément correspondant dans le DOM.
- * Il utilise `useRef` pour mémoriser l’ID de l’ancre, et `useEffect` pour déclencher le défilement lors des changements d’URL.
- * Il informe également le contexte `ScrollContext` de l’état de défilement via son `useState`.
+ * Il utilise `useRef` pour mémoriser l’ID de l’ancre, et `useEffect` pour déclencher le défilement lors des changements d’URL
  * @returns {null} Composant ScrollToAnchor.
  */
 function ScrollToAnchor(): null {

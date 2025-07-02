@@ -1,5 +1,5 @@
 // import hooks
-import { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect } from 'react';
 // type
 type UseAnimationElementReturn<T extends Element> = {
   setRef: (index: number) => (refHtml: T | null) => void;
@@ -7,9 +7,8 @@ type UseAnimationElementReturn<T extends Element> = {
 };
 
 /** Gère un tableau de références HTML et leur visibilité à l'écran via IntersectionObserver.
- * @description Initialise un tableau contenant différentes références d’éléments HTML du composant.
- * Vérifie si un scroll automatique est actif via le contexte, puis utilise un observeur pour détecter
- * l’apparition de chaque élément à l’écran et mettre à jour leur état de visibilité.
+ * @description Initialise un tableau contenant différentes références d’éléments HTML du composant ,
+ *  puis utilise un observeur pour détecter l’apparition de chaque élément à l’écran et mettre à jour leur état de visibilité.
  * @param numbOfRef - Nombre d’éléments à observer
  * @function setRef - Fonction pour associer une ref à un élément HTML donné
  * @returns { setRef, visibilities } - setRef : fonction d’attachement de ref ; visibilities : tableau d'états de visibilité (true/false)
