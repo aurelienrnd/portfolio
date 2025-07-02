@@ -37,7 +37,7 @@ function About(): React.JSX.Element {
             <p
               key={item.key}
               ref={setRef(index)}
-              className={visibilities[index] ? 'slide-in-left' : 'opacity-0'}
+              className={visibilities[index] ? 'text-focus-in' : 'opacity-0'}
             >
               {item.paragraphe}
             </p>
