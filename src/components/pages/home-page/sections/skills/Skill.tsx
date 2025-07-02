@@ -10,6 +10,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
+import { SetMultyRefs } from '../../../../utility/SetMultyRefs.tsx';
+
 export type IconList = {
   faHtml5: IconDefinition;
   faCss: IconDefinition;
@@ -29,6 +31,7 @@ interface SkillProps {
  * @returns {JSX.Element} - Le composant représentant une compétence.
  */
 function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
+  const { setRef } = SetMultyRefs<HTMLParagraphElement>(1);
   const iconList: IconList = {
     faHtml5,
     faCss,
@@ -38,7 +41,10 @@ function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
     faDatabase,
   };
   return (
-    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-2 md:px-4 md:ml-4 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300">
+    <div
+      ref={setRef(1)}
+      className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-2 md:px-4 md:ml-4 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300"
+    >
       <FontAwesomeIcon
         icon={iconList[skill.logo]}
         className="text-xl text-color-three"

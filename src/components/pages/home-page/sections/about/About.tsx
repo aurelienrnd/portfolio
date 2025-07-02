@@ -1,5 +1,6 @@
 // Hooks
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { SetMultyRefs } from '../../../../utility/SetMultyRefs.tsx';
 //Components
 import ProfilAndMap from './ProfilAndMap.tsx';
 //types
@@ -16,16 +17,12 @@ interface TextType {
  */
 function About(): React.JSX.Element {
   const [text, setText] = useState<TextType[]>([]);
-  const paragraphRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const { setRef } = SetMultyRefs<HTMLParagraphElement>(text.length);
 
   useEffect(() => {
     fetch('/datas/about.json')
       .then(res => res.json())
-      .then(data => {
-        setText(data);
-        paragraphRefs.current = data.map(() => null);
-        console.log(paragraphRefs);
-      })
+      .then(data => setText(data))
       .catch(err => console.error('Erreur chargement hardskills:', err));
   }, []);
 
@@ -35,12 +32,7 @@ function About(): React.JSX.Element {
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:justify-between md:h-full">
         <div className="flex flex-col gap-4 md:justify-between md:w-2/3 md:h-full md:max-h-150">
           {text.map((item, index) => (
-            <p
-              key={item.key}
-              ref={el => {
-                paragraphRefs.current[index] = el;
-              }}
-            >
+            <p key={item.key} ref={setRef(index)}>
               {item.paragraphe}
             </p>
           ))}
