@@ -85,7 +85,7 @@
   /* Animation des elements du composent banner */
   @keyframes slide-in-left {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(-10%);
       opacity: 0;
     }
     100% {
@@ -100,7 +100,7 @@
   /* Animation des elements du composent banner */
   @keyframes slide-in-right {
     0% {
-      transform: translateX(1000px);
+      transform: translateX(10%);
       opacity: 0;
     }
     100% {
