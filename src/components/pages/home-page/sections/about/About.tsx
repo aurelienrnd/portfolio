@@ -17,7 +17,9 @@ interface TextType {
  */
 function About(): React.JSX.Element {
   const [text, setText] = useState<TextType[]>([]);
-  const { setRef } = SetMultyRefs<HTMLParagraphElement>(text.length);
+  const { setRef, visibilities } = SetMultyRefs<HTMLParagraphElement>(
+    text.length
+  );
 
   useEffect(() => {
     fetch('/datas/about.json')
@@ -32,7 +34,11 @@ function About(): React.JSX.Element {
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:justify-between md:h-full">
         <div className="flex flex-col gap-4 md:justify-between md:w-2/3 md:h-full md:max-h-150">
           {text.map((item, index) => (
-            <p key={item.key} ref={setRef(index)}>
+            <p
+              key={item.key}
+              ref={setRef(index)}
+              className={visibilities[index] ? 'slide-in-left' : 'opacity-0'}
+            >
               {item.paragraphe}
             </p>
           ))}
