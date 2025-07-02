@@ -1,54 +1,81 @@
 // import hooks
 import { useRef, useState, useEffect, useContext } from 'react';
+// Import context
 import ScrollContext from './context/ScrollContext.tsx';
+// type
+type UseAnimationElementReturn<T extends Element> = {
+  setRef: (index: number) => (refHtml: T | null) => void;
+  visibilities: boolean[];
+};
 
-export function UseAnimationElement<T extends Element>(numbOfRef: number) {
+/** Gère un tableau de références HTML et leur visibilité à l'écran via IntersectionObserver.
+ * @description Initialise un tableau contenant différentes références d’éléments HTML du composant.
+ * Vérifie si un scroll automatique est actif via le contexte, puis utilise un observeur pour détecter
+ * l’apparition de chaque élément à l’écran et mettre à jour leur état de visibilité.
+ * @param numbOfRef - Nombre d’éléments à observer
+ * @function setRef - Fonction pour associer une ref à un élément HTML donné
+ * @returns { setRef, visibilities } - setRef : fonction d’attachement de ref ; visibilities : tableau d'états de visibilité (true/false)
+ */
+export function UseAnimationElement<T extends Element>(
+  numbOfRef: number
+): UseAnimationElementReturn<T> {
+  // Récupère le contexte pour détecter si un scroll automatique est en cours
   const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
   const { isScrolling } = scrollContext;
 
-  const refArray = useRef<(T | null)[]>([]); //Initialise un tableau de références vide grâce à useRef.
-  const [visibilities, setVisibilities] = useState<boolean[]>(() =>
-    Array(numbOfRef).fill(false)
-  );
+  // Crée un tableau de références pour chaque élément HTML à observer dans le composant
+  const refArray = useRef<(T | null)[]>([]);
 
-  // Si le tableaux est vide alors on crée un tableau comportant le nombre de ref a utilisé, toutes initialisées à `null`
+  // Si le tableau est vide, on le remplit avec le nombre de références nécessaires, toutes initialisées à `null`
   if (refArray.current.length !== numbOfRef) {
     refArray.current = Array(numbOfRef).fill(null);
   }
 
-  function setRef(index: number) {
-    return function (refHtml: T | null) {
+  /** Ajoute une nouvelle référence au tableau.
+   * @description Met à jour le tableau avec la référence d’un élément HTML du composant.
+   * @returns {(T | null)} - Fonction de rappel pour associer l’élément HTML à sa position dans le tableau
+   */
+  function setRef(index: number): (refHtml: T | null) => void {
+    return function (refHtml) {
       refArray.current[index] = refHtml;
     };
   }
 
+  // Initialise un tableau qui gère l’état de visibilité de chaque référence
+  const [visibilities, setVisibilities] = useState<boolean[]>(() =>
+    Array(numbOfRef).fill(false)
+  );
+
   useEffect(() => {
     console.log('isScrolling :' + isScrolling);
 
+    // Si un scroll automatique est en cours, on ne déclenche pas l’animation
     if (isScrolling) return;
 
-    const observers: IntersectionObserver[] = [];
-
+    // On crée un tableau d’observers et y associe chaque référence puis on vérifie que la référence est bien définie avant de l’observer
+    const observersHarray: IntersectionObserver[] = [];
     refArray.current.forEach((ref, index) => {
       if (!ref) return;
-
+      // Lorsque l’élément entre dans la zone visible de l’écran, on met à jour son état de visibilité
       const observer = new IntersectionObserver(
         ([entry]) => {
           setVisibilities(prev => {
             const next = [...prev];
-            next[index] = prev[index] || entry.isIntersecting;
+            next[index] = prev[index] || entry.isIntersecting; // Si l’élément est déjà visible, on conserve son état à true
             return next;
           });
         },
         { threshold: 0.2 }
       );
 
+      // Lance l’observation de l’élément et enregistre l’observer dans le tableau
       observer.observe(ref);
-      observers.push(observer);
+      observersHarray.push(observer);
     });
 
+    // On déconnecte chaque observer du tableau pour nettoyer l’effet
     return () => {
-      observers.forEach(observer => observer.disconnect());
+      observersHarray.forEach(observer => observer.disconnect());
     };
   }, [numbOfRef, isScrolling]);
 

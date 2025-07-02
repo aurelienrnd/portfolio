@@ -11,7 +11,7 @@ interface TextType {
 
 /** Section À propos
  * @description - Effectue une requête pour récupérer les données textuelles, puis utilise `.map` pour afficher chaque paragraphe,
- * accompagnés d’une photo de profil ou d’une carte du tour du monde.
+ * accompagnés d’une photo de profil ou d’une carte du tour du monde. Utilise UseAnimationElement  à l’apparition pour rendre chaque paragraphe visible.
  * @component ProfilAndMap - Affiche soit la photo de profil, soit la carte du tour du monde.
  * @returns {JSX.Element} - La section À propos du site.
  */

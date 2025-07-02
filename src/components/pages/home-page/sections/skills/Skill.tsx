@@ -27,11 +27,14 @@ interface SkillProps {
 }
 
 /** Affiche une compétence avec les informations contenues dans les props
- * @description - Affiche une animation en pourcentage pour chaque compétence.
+ * @description - Utilise UseAnimationElement à l’apparition pour rendre chaque compétence visible
+ * Il récupère l’icône associée via FontAwesome et affiche les informations passées en props.
  * @returns {JSX.Element} - Le composant représentant une compétence.
  */
 function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
+  // Gestion de l’animation lors de l’apparition d’un élément HTML
   const { setRef, visibilities } = UseAnimationElement<HTMLDivElement>(1);
+
   const iconList: IconList = {
     faHtml5,
     faCss,
