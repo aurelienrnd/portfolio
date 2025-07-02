@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import ScrollContext from './context/ScrollContext.tsx';
 
-export function SetMultyRefs<T extends Element>(numbOfRef: number) {
+export function UseAnimationElement<T extends Element>(numbOfRef: number) {
   const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
   const { isScrolling } = scrollContext;
 

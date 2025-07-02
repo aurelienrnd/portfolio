@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
-import { SetMultyRefs } from '../../../../utility/SetMultyRefs.tsx';
+import { UseAnimationElement } from '../../../../utility/UseAnimationElement.tsx';
 
 export type IconList = {
   faHtml5: IconDefinition;
@@ -31,7 +31,7 @@ interface SkillProps {
  * @returns {JSX.Element} - Le composant représentant une compétence.
  */
 function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
-  const { setRef, visibilities } = SetMultyRefs<HTMLParagraphElement>(1);
+  const { setRef, visibilities } = UseAnimationElement<HTMLParagraphElement>(1);
   const iconList: IconList = {
     faHtml5,
     faCss,

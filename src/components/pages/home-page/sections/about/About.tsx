@@ -1,6 +1,6 @@
 // Hooks
 import { useEffect, useState } from 'react';
-import { SetMultyRefs } from '../../../../utility/SetMultyRefs.tsx';
+import { UseAnimationElement } from '../../../../utility/UseAnimationElement';
 //Components
 import ProfilAndMap from './ProfilAndMap.tsx';
 //types
@@ -17,7 +17,7 @@ interface TextType {
  */
 function About(): React.JSX.Element {
   const [text, setText] = useState<TextType[]>([]);
-  const { setRef, visibilities } = SetMultyRefs<HTMLParagraphElement>(
+  const { setRef, visibilities } = UseAnimationElement<HTMLParagraphElement>(
     text.length
   );
 
