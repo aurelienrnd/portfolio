@@ -1,7 +1,11 @@
-// useParagraphRefs.ts
-import { useRef, useState, useEffect } from 'react';
+// import hooks
+import { useRef, useState, useEffect, useContext } from 'react';
+import ScrollContext from './context/ScrollContext.tsx';
 
 export function SetMultyRefs<T extends Element>(numbOfRef: number) {
+  const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
+  const { isScrolling } = scrollContext;
+
   const refArray = useRef<(T | null)[]>([]); //Initialise un tableau de références vide grâce à useRef.
   const [visibilities, setVisibilities] = useState<boolean[]>(() =>
     Array(numbOfRef).fill(false)
@@ -19,17 +23,20 @@ export function SetMultyRefs<T extends Element>(numbOfRef: number) {
   }
 
   useEffect(() => {
+    console.log('isScrolling :' + isScrolling);
+
+    if (isScrolling) return;
+
     const observers: IntersectionObserver[] = [];
 
     refArray.current.forEach((ref, index) => {
       if (!ref) return;
-      if (visibilities[index]) return;
 
       const observer = new IntersectionObserver(
         ([entry]) => {
           setVisibilities(prev => {
             const next = [...prev];
-            next[index] = entry.isIntersecting;
+            next[index] = prev[index] || entry.isIntersecting;
             return next;
           });
         },
@@ -43,11 +50,7 @@ export function SetMultyRefs<T extends Element>(numbOfRef: number) {
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
-  }, [numbOfRef]);
-
-  useEffect(() => {
-    console.log(visibilities);
-  }, [visibilities]);
+  }, [numbOfRef, isScrolling]);
 
   return { setRef, visibilities };
 }
