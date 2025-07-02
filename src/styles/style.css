@@ -100,7 +100,7 @@
   /* Animation des elements du composent banner */
   @keyframes slide-in-right {
     0% {
-      transform: translateX(10%);
+      transform: translateX(30%);
       opacity: 0;
     }
     100% {
@@ -110,6 +110,21 @@
   }
   .slide-in-right {
     animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  /* Animation text */
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  .text-focus-in {
+    animation: text-focus-in 800ms cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
 }
 
