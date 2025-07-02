@@ -31,7 +31,7 @@ interface SkillProps {
  * @returns {JSX.Element} - Le composant représentant une compétence.
  */
 function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
-  const { setRef, visibilities } = UseAnimationElement<HTMLParagraphElement>(1);
+  const { setRef, visibilities } = UseAnimationElement<HTMLDivElement>(1);
   const iconList: IconList = {
     faHtml5,
     faCss,
