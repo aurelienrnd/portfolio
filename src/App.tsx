@@ -9,7 +9,6 @@ import React from 'react';
 
 /** Routage de l'application
  * @returns {JSX.Element} - Le composant App qui contient le routage de l'application.
- * @Component ScrollProvider - Détermine si la page est en cours de défilement.
  * @component ScrollToAnchor - Permet la navigation vers une ancre située sur une autre page.
  * @component Header - Composant d'en-tête de l'application.
  * @component HomePage - Page d'accueil de l'application.
