@@ -13,7 +13,7 @@ import ScrollContext from './context/ScrollContext.tsx';
  */
 function ScrollToAnchor(): null {
   const scrollContext = useContext(ScrollContext)!; // ! la valeur retournée ne sera pas null ni undefined à cet endroit
-  const { isScrolling, setIsScrolling } = scrollContext;
+  const { setIsScrolling } = scrollContext;
 
   const location = useLocation();
   const lastHash = useRef('');
@@ -55,10 +55,6 @@ function ScrollToAnchor(): null {
       setIsScrolling(false);
     }, 800);
   }, [location, setIsScrolling]);
-
-  useEffect(() => {
-    console.log(isScrolling);
-  }, [isScrolling]);
 
   return null;
 }
