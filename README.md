@@ -86,6 +86,7 @@ src/
 │       │
 │       └── utility/
 │           ├── ScrollToAnchor.tsx
+│           ├── UseAnimationElement.tsx
 │           └── Loaoder.tsx
 └── ...
 ```
@@ -222,3 +223,9 @@ Cette bannière permet d’orienter le visiteur dès son arrivée sur la page, e
 La section Cards est chargée de l'affichage des différents projets du portfolio. Elle récupère dynamiquement les données via le dossier public, puis génère une carte pour chaque projet à l’aide du composant Card
 
 - Le composant Card permet d’afficher un projet individuel sous forme de carte responsive. Il reçoit ses données via des props (titre, description, stack technique, lien vers le code, etc.) et les organise de manière lisible et attrayante.
+
+## 🛠️ Custom hooks
+
+### UseAnimationElement
+
+Ce custom hook permet de gérer l’apparition à l’écran de plusieurs éléments HTML dans un composant React. Il utilise IntersectionObserver pour détecter si chaque élément est visible dans la fenêtre de visualisation, et met à jour un tableau d’états (visibilities) en conséquence. Il fournit une fonction setRef(index) pour attribuer une référence à chaque élément ciblé.
