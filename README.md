@@ -75,7 +75,7 @@ src/
 │       │   ├── Projects.tsx
 │       │   └── section/
 │       │       ├── banner-project/
-│       │       │   └── Banner-project.tsx
+│       │       │   └── BannerProject.tsx
 │       │       │
 │       │       └── Card/
 │       │           ├── Cards.tsx
@@ -214,7 +214,7 @@ La section Skills présente l’ensemble des compétences techniques (hard skill
 
 La page Project présente les réalisations du développeur. Elle est structurée en deux sections principales : Banner, qui introduit la page avec un titre ou une accroche, et Cards, qui affiche l’ensemble des projets sous forme de cartes.
 
-#### Banner
+#### BannerProject
 
 Cette bannière permet d’orienter le visiteur dès son arrivée sur la page, en mettant en valeur la démarche, la diversité ou l’objectif des projets sélectionnés.
 
