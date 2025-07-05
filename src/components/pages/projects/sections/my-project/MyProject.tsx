@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import CarouselProject from './CarouselProject';
+
 // Type
-interface ProjectsType {
+export interface ProjectsType {
   id: number;
   title: string;
   description: string;
@@ -19,14 +21,12 @@ function MyProject(): React.JSX.Element {
       .then(res => res.json())
       .then(data => setProject(data))
       .catch(err => console.error('Erreur chargement project:', err));
-
-    console.log(projects);
   }, []);
 
   return (
     <section id="my-project">
       <h2>Projets réalisés</h2>
-      {/* Création d'un carousell*/}
+      <CarouselProject projects={projects} />
     </section>
   );
 }
