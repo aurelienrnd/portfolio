@@ -186,7 +186,7 @@
     @apply bg-color-four flex flex-col gap-8 text-center md:text-start;
   }
 
-  #project #cards {
+  #project #my-project {
     @apply flex flex-col gap-8 text-center md:text-start;
   }
 

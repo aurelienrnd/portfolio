@@ -1,5 +1,6 @@
 // Compoments
 import BannerProject from './sections/banner-project/BannerProject.tsx';
+import MyProject from './sections/my-project/MyProject.tsx';
 
 /** Affiche la page Projet
  * @description - Contient les sections Banner et Cards.
@@ -11,6 +12,7 @@ function Project(): React.JSX.Element {
   return (
     <main id="project">
       <BannerProject />
+      <MyProject />
     </main>
   );
 }
