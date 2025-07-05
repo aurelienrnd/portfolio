@@ -1,5 +1,4 @@
 // Compoments
-import BannerProject from './sections/banner-project/BannerProject.tsx';
 import MyProject from './sections/my-project/MyProject.tsx';
 
 /** Affiche la page Projet
@@ -11,7 +10,6 @@ import MyProject from './sections/my-project/MyProject.tsx';
 function Project(): React.JSX.Element {
   return (
     <main id="project">
-      <BannerProject />
       <MyProject />
     </main>
   );
