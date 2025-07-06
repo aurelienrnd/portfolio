@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import CarouselProject from './CarouselProject';
+import CarouselProject from './CarouselProject.tsx';
+import Description from './Description.tsx';
 
 // Type
 export interface ProjectsType {
@@ -10,11 +11,12 @@ export interface ProjectsType {
   image: string;
   techs: string[];
   codeUrl: string;
+  siteUrl?: string;
 }
 
 function MyProject(): React.JSX.Element {
-  // Liste des données de chaque projet
   const [projects, setProject] = useState<ProjectsType[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     fetch('/datas/projects.json')
@@ -26,7 +28,12 @@ function MyProject(): React.JSX.Element {
   return (
     <section id="my-project">
       <h2>Projets réalisés</h2>
-      <CarouselProject projects={projects} />
+      <CarouselProject
+        projects={projects}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
+      />
+      <Description projects={projects} selectedIndex={selectedIndex} />
     </section>
   );
 }

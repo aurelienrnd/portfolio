@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { ProjectsType } from './MyProject.tsx';
 
-interface Prop {
+interface Props {
   projects: ProjectsType[];
+  selectedIndex: number;
+  setSelectedIndex: (index: number) => void;
 }
 
-function CarouselProject({ projects }: Prop): React.JSX.Element {
+function CarouselProject({
+  projects,
+  selectedIndex,
+  setSelectedIndex,
+}: Props): React.JSX.Element {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'center',
   });
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -22,7 +27,7 @@ function CarouselProject({ projects }: Prop): React.JSX.Element {
 
     emblaApi.on('select', onSelect);
     onSelect();
-  }, [emblaApi]);
+  }, [emblaApi, setSelectedIndex]);
 
   return (
     <div className="w-full overflow-hidden" ref={emblaRef}>
