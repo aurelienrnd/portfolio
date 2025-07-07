@@ -11,7 +11,7 @@ function Description({ projects, selectedIndex }: Props): React.JSX.Element {
   if (!curentProject) return <p>Chargement...</p>;
 
   return (
-    <article className="w-full flex flex-col gap-2 items-center justify-center">
+    <article className="w-full flex flex-col gap-2 items-center justify-center text-focus-in">
       <h3>{curentProject.title}</h3>
       <div className="flex flex-col gap-4">
         <p>{curentProject.description}</p>
@@ -26,10 +26,10 @@ function Description({ projects, selectedIndex }: Props): React.JSX.Element {
           ))}
         </div>
         <p>{curentProject.difficulty}</p>
-        <div className="flex justify-between">
-          <a href={curentProject.codeUrl}>Lien du repo git</a>
+        <div className="flex justify-between text-color-three">
+          <a href={curentProject.codeUrl}>Voir repo Github</a>
           {curentProject.siteUrl && (
-            <a href={curentProject?.siteUrl}>Lien du site</a>
+            <a href={curentProject?.siteUrl}>Voir le site</a>
           )}
         </div>
       </div>
