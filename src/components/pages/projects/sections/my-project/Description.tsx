@@ -9,7 +9,13 @@ interface Props {
 function Description({ projects, selectedIndex }: Props): React.JSX.Element {
   const curentProject = projects[selectedIndex];
 
-  if (!curentProject) return <Loader />;
+  if (!curentProject)
+    return (
+      <div className="flex flex-col gap-4 items-center justify-center">
+        <span>Chargement des projets ...</span>
+        <Loader />
+      </div>
+    );
 
   return (
     <article className="w-full flex flex-col gap-2 items-center md:items-start justify-center text-focus-in">
