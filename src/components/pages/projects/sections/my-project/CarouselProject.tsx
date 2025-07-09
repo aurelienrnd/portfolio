@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import type { ProjectsType } from './MyProject.tsx';
+import {
+  PrevButton,
+  NextButton,
+} from '../../../../utility/ArrowButtonCarousel.tsx';
+import usePrevNextButtons from '../../../../utility/custom-hooks/usePrevNextCarouselButtons.tsx';
 
 interface Props {
   projects: ProjectsType[];
@@ -18,6 +23,8 @@ function CarouselProject({
     align: 'center',
   });
 
+  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
+
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -30,7 +37,7 @@ function CarouselProject({
   }, [emblaApi, setSelectedIndex]);
 
   return (
-    <div className="w-full overflow-hidden" ref={emblaRef}>
+    <div className="w-full overflow-hidden flex flex-col gap-4" ref={emblaRef}>
       <div className="flex">
         {projects.map((project, index) => (
           <div
@@ -46,6 +53,10 @@ function CarouselProject({
             />
           </div>
         ))}
+      </div>
+      <div className="flex justify-end gap-4">
+        <PrevButton onClick={onPrevButtonClick} />
+        <NextButton onClick={onNextButtonClick} />
       </div>
     </div>
   );
