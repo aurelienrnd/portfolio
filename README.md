@@ -13,6 +13,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 - [FontAwesome] – affichage d’icônes
 - [React-modal] – création de modale
 - [Maplibre-gl] – création d'une carte interactive
+- [EmblaCarousel] - creation de carousel interactif
 
 ## 📁 Structure du projet
 
