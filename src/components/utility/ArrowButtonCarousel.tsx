@@ -14,6 +14,7 @@ export function PrevButton(props: ButtonProps) {
       type="button"
       className="border hover:border-color-three hover:text-color-three rounded-full w-8 h-8"
       {...props}
+      aria-label="précédant"
     >
       <FontAwesomeIcon icon={faChevronLeft} />
     </button>
@@ -26,6 +27,7 @@ export function NextButton(props: ButtonProps) {
       type="button"
       className="border hover:border-color-three hover:text-color-three rounded-full w-8 h-8"
       {...props}
+      aria-label="suivant"
     >
       <FontAwesomeIcon icon={faChevronRight} />
     </button>
