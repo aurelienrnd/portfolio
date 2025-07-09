@@ -1,22 +1,10 @@
-import type { ProjectsType } from './MyProject.tsx';
-import Loader from '../../../../utility/Loaoder.tsx';
+import type { ProjectType } from './MyProject.tsx';
 
-interface Props {
-  projects: ProjectsType[];
-  selectedIndex: number;
+interface Prop {
+  curentProject: ProjectType;
 }
 
-function Description({ projects, selectedIndex }: Props): React.JSX.Element {
-  const curentProject = projects[selectedIndex];
-
-  if (!curentProject)
-    return (
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <span>Chargement des projets ...</span>
-        <Loader />
-      </div>
-    );
-
+function Description({ curentProject }: Prop): React.JSX.Element {
   return (
     <article className="w-full flex flex-col gap-2 items-center md:items-start justify-center text-focus-in">
       <h3>{curentProject.title}</h3>
