@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import type { ProjectsType } from './MyProject.tsx';
+import type { ProjectType } from './MyProject.tsx';
 import {
   PrevButton,
   NextButton,
@@ -8,7 +8,7 @@ import {
 import usePrevNextButtons from '../../../../utility/custom-hooks/usePrevNextCarouselButtons.tsx';
 
 interface Props {
-  projects: ProjectsType[];
+  projects: ProjectType[];
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
 }
