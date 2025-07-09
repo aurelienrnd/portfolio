@@ -1,9 +1,15 @@
+// types
 import type { ProjectType } from './MyProject.tsx';
-
 interface Prop {
   curentProject: ProjectType;
 }
 
+/** Affiche les détails du projet sélectionné.
+ * @description Ce composant présente le titre, la description, les technologies utilisées,
+ * la difficulté et les liens vers le code source et le site en ligne (si disponible).
+ * @param {ProjectType} props.curentProject - Le projet actuellement sélectionné à afficher.
+ * @returns {JSX.Element} Un article contenant les informations détaillées du projet.
+ */
 function Description({ curentProject }: Prop): React.JSX.Element {
   return (
     <article className="w-full flex flex-col gap-2 items-center md:items-start justify-center text-focus-in">
