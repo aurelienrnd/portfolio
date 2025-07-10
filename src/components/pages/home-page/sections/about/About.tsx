@@ -1,6 +1,6 @@
 // Hooks
 import { useEffect, useState } from 'react';
-import { UseAnimationElement } from '../../../../utility/UseAnimationElement';
+import { UseAnimationElement } from '../../../../utility/custom-hooks/UseAnimationElement.tsx';
 //Components
 import ProfilAndMap from './ProfilAndMap.tsx';
 //types

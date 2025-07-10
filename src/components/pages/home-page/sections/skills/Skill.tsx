@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
-import { UseAnimationElement } from '../../../../utility/UseAnimationElement.tsx';
+import { UseAnimationElement } from '../../../../utility/custom-hooks/UseAnimationElement';
 
 export type IconList = {
   faHtml5: IconDefinition;

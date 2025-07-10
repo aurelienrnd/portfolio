@@ -13,6 +13,7 @@ Bienvenue dans le dépôt de mon portfolio, conçu avec des technologies moderne
 - [FontAwesome] – affichage d’icônes
 - [React-modal] – création de modale
 - [Maplibre-gl] – création d'une carte interactive
+- [EmblaCarousel] - creation de carousel interactif
 
 ## 📁 Structure du projet
 
@@ -75,19 +76,23 @@ src/
 │       │   ├── Projects.tsx
 │       │   └── section/
 │       │       ├── banner-project/
-│       │       │   └── Banner-project.tsx
+│       │       │   └── BannerProject.tsx
 │       │       │
-│       │       └── Card/
-│       │           ├── Cards.tsx
-│       │           └── Card.tsx
+│       │       └── my-project/
+│       │           ├── CarouselProject.tsx
+│       │           ├── MyProject.tsx
+│       │           └── Description.tsx
 │       │
 │       ├── error/
 │       │   └── Error.tsx
 │       │
 │       └── utility/
 │           ├── ScrollToAnchor.tsx
-│           ├── UseAnimationElement.tsx
-│           └── Loaoder.tsx
+│           ├── Loaoder.tsx
+│           ├── ArrowButtonCarousel.tsx
+│           └── custom-hooks/
+│               ├── UseAnimationElement.tsx
+│               └── usePrevNextCarouselButtons.tsx
 └── ...
 ```
 
@@ -214,18 +219,25 @@ La section Skills présente l’ensemble des compétences techniques (hard skill
 
 La page Project présente les réalisations du développeur. Elle est structurée en deux sections principales : Banner, qui introduit la page avec un titre ou une accroche, et Cards, qui affiche l’ensemble des projets sous forme de cartes.
 
-#### Banner
+#### BannerProject
 
 Cette bannière permet d’orienter le visiteur dès son arrivée sur la page, en mettant en valeur la démarche, la diversité ou l’objectif des projets sélectionnés.
 
-#### Cards
+#### MyProject
+permet d’afficher dynamiquement une liste de projets sous forme de carrousel. Les données sont chargées depuis un fichier JSON situé dans le dossier public. Un indicateur de chargement est affiché pendant la récupération des données. Une fois les projets disponibles, l’utilisateur peut naviguer entre eux via un carrousel interactif, et consulter les détails du projet sélectionné (titre, description, technologies, niveau de difficulté, et liens externes) affichés dans une section dédiée.
 
-La section Cards est chargée de l'affichage des différents projets du portfolio. Elle récupère dynamiquement les données via le dossier public, puis génère une carte pour chaque projet à l’aide du composant Card
+- Ce composant React affiche une liste de projets sous forme de carrousel interactif, en utilisant la librairie Embla Carousel. Il permet à l’utilisateur de faire défiler les projets grâce à des boutons de navigation "Précédent" et "Suivant". Chaque projet est affiché sous forme de slide avec son image, et mis en valeur selon l’index sélectionné. Le composant reçoit les données des projets en props, ainsi que l’index actif et la fonction de mise à jour associée.
 
-- Le composant Card permet d’afficher un projet individuel sous forme de carte responsive. Il reçoit ses données via des props (titre, description, stack technique, lien vers le code, etc.) et les organise de manière lisible et attrayante.
+- Ce composant React affiche les informations détaillées du projet actuellement sélectionné. Il présente le titre, la description, les technologies utilisées, le niveau de difficulté, ainsi que des liens vers le dépôt GitHub et le site du projet (si disponible). Il est conçu pour accompagner un carrousel de projets et met en valeur chaque réalisation de façon claire et structurée.
 
 ## 🛠️ Custom hooks
 
 ### UseAnimationElement
 
 Ce custom hook permet de gérer l’apparition à l’écran de plusieurs éléments HTML dans un composant React. Il utilise IntersectionObserver pour détecter si chaque élément est visible dans la fenêtre de visualisation, et met à jour un tableau d’états (visibilities) en conséquence. Il fournit une fonction setRef(index) pour attribuer une référence à chaque élément ciblé.
+
+### usePrevNextCarouselButtons
+
+Ce custom hook permet de gérer la navigation entre les éléments d’un carrousel Embla dans un composant React. Il fournit deux fonctions onPrevButtonClick et onNextButtonClick, qui déclenchent le défilement vers l’élément précédent ou suivant en utilisant l’API d’EmblaCarousel. Le hook prend en paramètre une instance de l’API et adapte dynamiquement le comportement des boutons. 
+
+
