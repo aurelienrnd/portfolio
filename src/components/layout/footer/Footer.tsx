@@ -33,6 +33,7 @@ function Footer(): React.JSX.Element {
               href="https://github.com/aurelienrnd"
               target="_blank"
               aria-label="github"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon
                 icon={faGithub}
@@ -43,6 +44,7 @@ function Footer(): React.JSX.Element {
               href="https://www.linkedin.com/in/aur%C3%A9lien-arnaud-99bba6350/"
               target="_blank"
               aria-label="linkedin"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
