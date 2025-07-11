@@ -18,7 +18,9 @@ function Footer(): React.JSX.Element {
         <a
           className="cursor-pointer hover:text-color-three border-2 hover:border-color-three rounded-lg px-4 py-2"
           href="/cv/cv-aurelien-arnaud.pdf"
-          download
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Télécharger mon CV au format PDF"
         >
           Obtenir mon CV
         </a>
