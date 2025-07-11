@@ -30,6 +30,8 @@ function Description({ curentProject }: Prop): React.JSX.Element {
         <div className="flex justify-between md:justify-start md:gap-4 text-color-three">
           <a
             href={curentProject.codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:border-1 border-color-three p-1 rounded-md"
           >
             Voir repo Github
@@ -37,6 +39,8 @@ function Description({ curentProject }: Prop): React.JSX.Element {
           {curentProject.siteUrl && (
             <a
               href={curentProject?.siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:border-1 border-color-three p-1 rounded-md"
             >
               Voir le site
