@@ -1,4 +1,3 @@
-// import hooks
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
@@ -10,7 +9,7 @@ import { useLocation } from 'react-router';
  */
 function ScrollToAnchor(): null {
   const location = useLocation();
-  const lastHash = useRef('');
+  const lastHash = useRef<string>('');
 
   useEffect(() => {
     // Si un hash existe dans l'URL, on le stocke dans "lastHash" sans le symbole '#'
@@ -22,12 +21,14 @@ function ScrollToAnchor(): null {
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
         // On fait défiler jusqu'à l'élément avec l'ID "lastHash"
-        const target = document.getElementById(lastHash.current);
+        const target: HTMLElement | null = document.getElementById(
+          lastHash.current
+        );
 
         if (target) {
           //On laisse un espace de 64px avant l'élément pour le sticky header
-          const stickyHeader = -64;
-          const y =
+          const stickyHeader: number = -64;
+          const y: number =
             target.getBoundingClientRect().top +
             window.pageYOffset +
             stickyHeader;
