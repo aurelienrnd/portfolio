@@ -1,20 +1,19 @@
-//hooks
 import React, { useEffect } from 'react';
-// libraries
 import useEmblaCarousel from 'embla-carousel-react';
 import {
   PrevButton,
   NextButton,
 } from '../../../../utility/ArrowButtonCarousel.tsx';
-// custom hook
 import usePrevNextButtons from '../../../../utility/custom-hooks/usePrevNextCarouselButtons.tsx';
-// types
 import type { ProjectType } from './MyProject.tsx';
-interface Props {
+import type { UsePrevNextButtonsType } from '../../../../utility/custom-hooks/usePrevNextCarouselButtons.tsx';
+
+// Typage TypeScript
+type Props = {
   projects: ProjectType[];
   selectedIndex: number;
   setSelectedIndex: (index: number) => void;
-}
+};
 
 /**
  * Affiche un carrousel interactif de projets.
@@ -43,13 +42,14 @@ function CarouselProject({
   });
 
   // Récuperation des fonctions suivante et précédante de chaque bouton
-  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
+  const { onPrevButtonClick, onNextButtonClick }: UsePrevNextButtonsType =
+    usePrevNextButtons(emblaApi);
 
   // Met à jour l'index du projet sélectionné lorsque l'utilisateur change de slide dans le carrousel.
   useEffect(() => {
     if (!emblaApi) return;
 
-    const onSelect = () => {
+    const onSelect = (): void => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
 
@@ -60,7 +60,7 @@ function CarouselProject({
   return (
     <div className="w-full overflow-hidden flex flex-col gap-4" ref={emblaRef}>
       <div className="flex">
-        {projects.map((project, index) => (
+        {projects.map((project: ProjectType, index: number) => (
           <div
             key={`project-${project.id}`}
             className={`md:flex-[0_0_40%] flex-[0_0_80%] min-w-0 px-4 transition-opacity duration-300 ${

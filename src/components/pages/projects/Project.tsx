@@ -1,4 +1,3 @@
-// Compoments
 import BannerProject from './sections/banner-project/BannerProject.tsx';
 import MyProject from './sections/my-project/MyProject.tsx';
 

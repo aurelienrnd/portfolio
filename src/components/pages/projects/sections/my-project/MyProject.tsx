@@ -1,12 +1,10 @@
-// hooks
-import { useEffect, useState } from 'react';
-// composents
+import React, { useEffect, useState } from 'react';
 import CarouselProject from './CarouselProject.tsx';
 import Description from './Description.tsx';
 import Loader from '../../../../utility/Loaoder.tsx';
 
-// Type
-export interface ProjectType {
+// Typage TypeScript
+export type ProjectType = {
   id: number;
   title: string;
   description: string;
@@ -15,7 +13,7 @@ export interface ProjectType {
   techs: string[];
   codeUrl: string;
   siteUrl?: string;
-}
+};
 
 /** Affiche les différents projets.
  * @description Récupère les projets depuis un fichier JSON situé dans le dossier public, puis les affiche dans un carrousel.
@@ -32,16 +30,16 @@ function MyProject(): React.JSX.Element {
   // Liste de tous les projets réalisés
   const [projects, setProject] = useState<ProjectType[]>([]);
   // Index du projet actuellement affiché dans la modal
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   // Projet actuellement affiché
   const curentProject: ProjectType = projects[selectedIndex];
 
   // Récupération des projets depuis le fichier JSON local
   useEffect(() => {
     fetch('/datas/projects.json')
-      .then(res => res.json())
-      .then(data => setProject(data))
-      .catch(err => console.error('Erreur chargement project:', err));
+      .then((res: Response) => res.json())
+      .then((data: ProjectType[]) => setProject(data))
+      .catch((err: Error) => console.error('Erreur chargement project:', err));
   }, []);
 
   if (!curentProject)
