@@ -1,6 +1,4 @@
-// Hooks
-import { useState } from 'react';
-//Compoments
+import React, { useState } from 'react';
 import MapButton from './MapButton.tsx';
 import LoadingMap from './LoadingMap.tsx';
 
@@ -12,7 +10,7 @@ import LoadingMap from './LoadingMap.tsx';
  */
 function ProfilAndMap(): React.JSX.Element {
   // Gère l’état d’affichage entre la carte et la photo de profil
-  const [visibleMap, setVisibleMap] = useState(false);
+  const [visibleMap, setVisibleMap] = useState<boolean>(false);
 
   return (
     <div className="w-full md:w-1/3 md:h-full flex relative">

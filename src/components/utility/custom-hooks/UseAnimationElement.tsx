@@ -1,7 +1,7 @@
-// import hooks
 import { useRef, useState, useEffect } from 'react';
-// type
-type UseAnimationElementReturn<T extends Element> = {
+
+// Typage TypeScript
+export type UseAnimationElementType<T extends Element> = {
   setRef: (index: number) => (refHtml: T | null) => void;
   visibilities: boolean[];
 };
@@ -9,13 +9,13 @@ type UseAnimationElementReturn<T extends Element> = {
 /** Gère un tableau de références HTML et leur visibilité à l'écran via IntersectionObserver.
  * @description Initialise un tableau contenant différentes références d’éléments HTML du composant ,
  *  puis utilise un observeur pour détecter l’apparition de chaque élément à l’écran et mettre à jour leur état de visibilité.
- * @param numbOfRef - Nombre d’éléments à observer
+ * @param {number} numbOfRef - Nombre d’éléments à observer
  * @function setRef - Fonction pour associer une ref à un élément HTML donné
  * @returns { setRef, visibilities } - setRef : fonction d’attachement de ref ; visibilities : tableau d'états de visibilité (true/false)
  */
 export function UseAnimationElement<T extends Element>(
   numbOfRef: number
-): UseAnimationElementReturn<T> {
+): UseAnimationElementType<T> {
   // Crée un tableau de références pour chaque élément HTML à observer dans le composant
   const refArray = useRef<(T | null)[]>([]);
 
@@ -42,13 +42,13 @@ export function UseAnimationElement<T extends Element>(
   useEffect(() => {
     // On crée un tableau d’observers et y associe chaque référence puis on vérifie que la référence est bien définie avant de l’observer
     const observersHarray: IntersectionObserver[] = [];
-    refArray.current.forEach((ref, index) => {
+    refArray.current.forEach((ref: T | null, index: number) => {
       if (!ref) return;
       // Lorsque l’élément entre dans la zone visible de l’écran, on met à jour son état de visibilité
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setVisibilities(prev => {
-            const next = [...prev];
+      const observer: IntersectionObserver = new IntersectionObserver(
+        ([entry]: IntersectionObserverEntry[]) => {
+          setVisibilities((prev: boolean[]): boolean[] => {
+            const next: boolean[] = [...prev];
             next[index] = entry.isIntersecting; // Si l’élément est déjà visible, on conserve son état à true
             return next;
           });

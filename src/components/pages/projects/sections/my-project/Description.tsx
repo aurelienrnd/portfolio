@@ -1,8 +1,9 @@
-// types
 import type { ProjectType } from './MyProject.tsx';
-interface Prop {
+
+// Typage TypeScript
+type Prop = {
   curentProject: ProjectType;
-}
+};
 
 /** Affiche les détails du projet sélectionné.
  * @description Ce composant présente le titre, la description, les technologies utilisées,
@@ -17,10 +18,10 @@ function Description({ curentProject }: Prop): React.JSX.Element {
       <div className="flex flex-col gap-4">
         <p>{curentProject.description}</p>
         <div className=" flex flex-wrap items-center justify-center md:justify-start gap-2">
-          {curentProject.techs.map(tech => (
+          {curentProject.techs.map((tech: string, index: number) => (
             <span
               className="bg-color-three text-color-four p-1 rounded-md"
-              key={tech}
+              key={`${tech}-${index}`}
             >
               {tech}
             </span>

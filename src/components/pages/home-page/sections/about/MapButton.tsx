@@ -1,6 +1,4 @@
-// Hooks
-import { useState } from 'react';
-// Libraries
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMap,
@@ -8,7 +6,7 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
-// Types
+// Typage TypeScript
 type Props = {
   visibleMap: boolean;
   setVisibleMap: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,18 +15,18 @@ type Props = {
 /** Affiche le bouton permettant de basculer entre la carte et la photo de profil.
  * @description - Utilise useState pour gérer l’animation des différents éléments du bouton lors du survol.
  * Lorsqu'on clique dessus, le bouton met à jour l’état `visibleMap` transmis par le composant parent.
- * @param {boolean} visibleMap - État indiquant si la carte est actuellement affichée.
- * @param {Function} setVisibleMap - Fonction permettant de modifier l’état `visibleMap`.
+ * @param {boolean} props.visibleMap - État indiquant si la carte est actuellement affichée.
+ * @param {Function} props.setVisibleMap - Fonction permettant de modifier l’état `visibleMap`.
  * @returns {JSX.Element} - Un bouton interactif animé.
  */
 function MapButton({ visibleMap, setVisibleMap }: Props): React.JSX.Element {
   // Gère l’état d’affichage entre la carte et la photo de profil
-  const handleBouton = () => {
+  const handleBouton = (): void => {
     setVisibleMap(!visibleMap);
   };
 
   // Gère l’état d’animation du bouton
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
     <button

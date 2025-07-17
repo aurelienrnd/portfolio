@@ -1,6 +1,4 @@
-// Hooks
-import { lazy, Suspense } from 'react';
-//Composents
+import React, { lazy, Suspense } from 'react';
 import Loader from '../../../../utility/Loaoder.tsx';
 const Map = lazy(() => import('./Map.tsx'));
 

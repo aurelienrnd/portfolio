@@ -1,11 +1,10 @@
-// Library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare } from '@fortawesome/free-solid-svg-icons';
-// Hooks
 import { useState } from 'react';
 import { Link } from 'react-router';
 
-type QuestionList = {
+// Typage TypeScript
+type QuestionType = {
   question: string; // Question à afficher
   direction?: string; // Lien de redirection (optionnel)
   path?: string; // Chemin de téléchargement (optionnel)
@@ -18,8 +17,8 @@ type QuestionList = {
  * @returns {JSX.Element} - Questionnaire de navigation.
  */
 function Cmd(): React.JSX.Element {
-  const [questionLength, setQuestionLength] = useState(1);
-  const questionList: QuestionList[] = [
+  const [questionLength, setQuestionLength] = useState<number>(1);
+  const questionList: QuestionType[] = [
     { question: 'Vous souhaitez me contacter ?', direction: '/#contact' },
     {
       question: 'En savoir plus à propos de moi ?',
@@ -31,7 +30,7 @@ function Cmd(): React.JSX.Element {
 
   return (
     <div className=" h-1/3 flex justify-center items-center md:font-code scale-in-ver-center">
-      {questionList.map((element, index) => (
+      {questionList.map((element: QuestionType, index: number) => (
         <div
           key={`question-${index}`}
           className={`${questionLength === index ? 'not-sr-only' : 'sr-only'} flex flex-col gap-4`}

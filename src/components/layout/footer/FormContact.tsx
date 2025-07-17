@@ -1,5 +1,11 @@
-// Hook
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+// Typage TypeScript
+type FormDataType = {
+  nom: string;
+  email: string;
+  message: string;
+};
 
 /** Affiche un formulaire de contact dans le footer
  * @description - Affiche un formulaire qui préremplit un e-mail quand l'utilisateur le valide.
@@ -7,7 +13,7 @@ import { useState } from 'react';
  */
 function FormContact(): React.JSX.Element {
   // Données du formulaire
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataType>({
     nom: '',
     email: '',
     message: '',
@@ -16,20 +22,20 @@ function FormContact(): React.JSX.Element {
   // Gestion des données du formulaire
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const champForm = event.target;
-    const name = champForm.name;
-    const value = champForm.value;
+  ): void => {
+    const champForm: HTMLInputElement | HTMLTextAreaElement = event.target;
+    const name: string = champForm.name;
+    const value: string = champForm.value;
 
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev: FormDataType) => ({ ...prev, [name]: value }));
   };
 
   // Création d'un e-mail prérempli
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
 
-    const { nom, email, message } = formData;
-    const mailtoLink = `mailto:aurelienarnaud921@gmail.com?subject=Contact depuis le portfolio&body=Nom: ${encodeURIComponent(nom)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+    const { nom, email, message }: FormDataType = formData;
+    const mailtoLink: string = `mailto:aurelienarnaud921@gmail.com?subject=Contact depuis le portfolio&body=Nom: ${encodeURIComponent(nom)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
 
     window.location.href = mailtoLink;
   };

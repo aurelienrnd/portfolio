@@ -1,13 +1,12 @@
-// Hooks
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { UseAnimationElement } from '../../../../utility/custom-hooks/UseAnimationElement.tsx';
-//Components
 import ProfilAndMap from './ProfilAndMap.tsx';
-//types
-interface TextType {
+
+// Typage TypeScript
+type TextType = {
   key: string;
   paragraphe: string;
-}
+};
 
 /** Section À propos
  * @description - Effectue une requête pour récupérer les données textuelles, puis utilise `.map` pour afficher chaque paragraphe,
@@ -33,7 +32,7 @@ function About(): React.JSX.Element {
       <h2>Mon parcours de développeur</h2>
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:justify-between md:h-full">
         <div className="flex flex-col gap-4 md:justify-between md:w-2/3 md:h-full md:max-h-150">
-          {text.map((item, index) => (
+          {text.map((item: TextType, index: number) => (
             <p
               key={item.key}
               ref={setRef(index)}

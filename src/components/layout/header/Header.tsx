@@ -1,9 +1,6 @@
-// Components
+import React, { useEffect, useState } from 'react';
 import { NavDesktop, NavMobile } from './Nav.tsx';
-//Hooks React
-import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-//Library
 import {
   faHouse,
   faGear,
@@ -11,11 +8,13 @@ import {
   faAddressCard,
   faFolder,
 } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-export type NavList = {
+// Typage TypeScript
+export type NavType = {
   destination: string;
   label: string;
-  icon: import('@fortawesome/fontawesome-svg-core').IconDefinition;
+  icon: IconDefinition;
 };
 
 /** Gestion de l'en-tête du site
@@ -27,12 +26,12 @@ export type NavList = {
  */
 function Header(): React.JSX.Element {
   // Création de useState pour modifier dynamiquement le lien "Projet/Accueil"
-  const [navDestination, setNavDestination] = useState('/project');
-  const [navLabel, setNavLabel] = useState('Projets');
-  const [navIcon, setNavIcon] = useState(faFolder);
+  const [navDestination, setNavDestination] = useState<string>('/project');
+  const [navLabel, setNavLabel] = useState<string>('Projets');
+  const [navIcon, setNavIcon] = useState<IconDefinition>(faFolder);
 
   // Création du tableau contenant les informations de chaque lien de navigation
-  const navList: NavList[] = [
+  const navList: NavType[] = [
     { destination: navDestination, label: navLabel, icon: navIcon },
     { destination: '/#about', label: 'À propos', icon: faAddressCard },
     { destination: '/#skills', label: 'Compétences', icon: faGear },

@@ -1,9 +1,8 @@
-// hooks
 import { useCallback } from 'react';
-// library
 import { EmblaCarouselType } from 'embla-carousel';
-// type
-type UsePrevNextButtonsType = {
+
+// Typage TypeScript
+export type UsePrevNextButtonsType = {
   onPrevButtonClick: () => void;
   onNextButtonClick: () => void;
 };
@@ -16,11 +15,11 @@ type UsePrevNextButtonsType = {
 function usePrevNextCarouselButtons(
   emblaApi: EmblaCarouselType | undefined
 ): UsePrevNextButtonsType {
-  const onPrevButtonClick = useCallback(() => {
+  const onPrevButtonClick: () => void = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
 
-  const onNextButtonClick = useCallback(() => {
+  const onNextButtonClick: () => void = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 

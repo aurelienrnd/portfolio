@@ -1,4 +1,3 @@
-// Library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -9,9 +8,10 @@ import {
   faCss,
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-
 import { UseAnimationElement } from '../../../../utility/custom-hooks/UseAnimationElement';
+import type { HardSkillType } from './Skills.tsx';
 
+// Typage TypeScript
 export type IconList = {
   faHtml5: IconDefinition;
   faCss: IconDefinition;
@@ -20,18 +20,17 @@ export type IconList = {
   faNodeJs: IconDefinition;
   faDatabase: IconDefinition;
 };
-interface SkillProps {
-  logo: keyof IconList;
-  technologie: string;
-  description: string;
-}
+type PropsType = {
+  skill: HardSkillType;
+};
 
 /** Affiche une compétence avec les informations contenues dans les props
  * @description - Utilise UseAnimationElement à l’apparition pour rendre chaque compétence visible
  * Il récupère l’icône associée via FontAwesome et affiche les informations passées en props.
+ * @param {HardSkillType} skill - La compétence à afficher.
  * @returns {JSX.Element} - Le composant représentant une compétence.
  */
-function Skill({ skill }: { skill: SkillProps }): React.JSX.Element {
+function Skill({ skill }: PropsType): React.JSX.Element {
   // Gestion de l’animation lors de l’apparition d’un élément HTML
   const { setRef, visibilities } = UseAnimationElement<HTMLDivElement>(1);
 
