@@ -1,9 +1,7 @@
-//Components
 import Cmd from './Cmd.tsx';
 import Loader from '../../../../utility/Loaoder.tsx';
-//Hooks
 import { Link } from 'react-router';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 /** Section Banner
  * @description - Affiche la section Banner à l'intérieur de HomePage.
@@ -11,11 +9,11 @@ import { useEffect, useState } from 'react';
  * @component Cmd - Affiche un questionnaire de navigation avec un style terminal.
  */
 function Banner(): React.JSX.Element {
-  const text =
+  const text: string =
     'Passionné par le code. Mon parcours atypique m’a appris à apprendre vite, partout dans le monde. Aujourd’hui, je crée des interfaces claires et responsives avec React';
 
   // Gestion de l’état du loader
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -41,7 +39,5 @@ function Banner(): React.JSX.Element {
     </section>
   );
 }
-
-// TODO - Afficher dans le navigateur la page affichée à l’écran
 
 export default Banner;

@@ -1,6 +1,4 @@
-// Hooks
-import { useEffect, useRef } from 'react';
-// Libraries
+import React, { useEffect, useRef } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'; // css de la map
 
@@ -18,7 +16,7 @@ function Map(): React.JSX.Element {
     if (!mapContainerRef.current) return;
 
     // Création et initialisation de la carte avec MapLibre
-    const map = new maplibregl.Map({
+    const map: maplibregl.Map = new maplibregl.Map({
       container: mapContainerRef.current, // Élément DOM cible
       style:
         'https://api.maptiler.com/maps/019752a4-5291-79d7-8919-3cb31452e26d/style.json?key=' +

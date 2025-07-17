@@ -1,4 +1,3 @@
-// Components
 import Banner from './sections/banner/Banner.tsx';
 import About from './sections/about/About.tsx';
 import Skills from './sections/skills/Skills.tsx';
