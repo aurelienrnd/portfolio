@@ -1,12 +1,10 @@
-// Hooks React
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
-// Library
 import ReactModal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-// Types
-import { NavType } from './Header.tsx';
+import type { NavType } from './Header.tsx';
+
 // Typage TypeScript
 type PropsType = {
   navList: NavType[];
@@ -14,7 +12,7 @@ type PropsType = {
 
 /** Menu de navigation pour les écrans larges
  * @description - Utilise `.map` sur le tableau navList pour créer une balise Link pour chaque élément.
- * @param {NavType[]} navList - Tableau d'objets contenant les destinations et les labels de navigation.
+ * @param {NavType[]} props.navList - Tableau d'objets contenant les destinations et les labels de navigation.
  * @returns {JSX.Element} - Le menu de navigation pour les écrans larges.
  */
 export function NavDesktop({ navList }: PropsType): React.JSX.Element {
